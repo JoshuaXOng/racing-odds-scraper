@@ -6,12 +6,13 @@
   "scripts": {
     "start": "node src/index.js",
     "stage": "node src/stage.js",
-    "test": "echo Uhhhh..."
+    "test": "jest"
   },
   "keywords": [],
   "author": "Joshua Ong",
   "license": "MIT",
   "dependencies": {
+    "jest": "^27.2.5",
     "puppeteer": "^10.4.0"
   }
 }
