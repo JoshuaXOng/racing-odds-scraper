@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "stage": "node src/stage.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo Uhhhh..."
   },
   "keywords": [],
   "author": "Joshua Ong",

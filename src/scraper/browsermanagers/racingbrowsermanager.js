@@ -3,6 +3,8 @@
  */
 'use strict';
 
+const { BrowserManager } = require('./browsermanager');
+
 
 
 class HorseRacingBrowserManager extends BrowserManager {
@@ -12,10 +14,10 @@ class HorseRacingBrowserManager extends BrowserManager {
     /**
      * Constructor.
      * 
-     * @param {puppeteer.Browser} _browser 
+     * @param {puppeteer.Browser} browser 
      */
-    constructor(_browser) {
-        this._browser = _browser;
+    constructor(browser) {
+        this._browser = browser;
     }
 
     open
