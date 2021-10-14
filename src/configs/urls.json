@@ -1,0 +1,6 @@
+{
+    "betfair": {
+        "base": "https://www.betfair.com.au",
+        "horseRacingBettingPage": "https://www.betfair.com.au/exchange/plus/horse-racing"
+    }
+}

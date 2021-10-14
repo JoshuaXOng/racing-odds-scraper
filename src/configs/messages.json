@@ -1,0 +1,7 @@
+{
+    "errors": {
+        "nonHeadlessRequestDecorator": {
+            "incorrectApplication": "Non-headless-request decorator can only be applied to a Puppeteer Page."
+        }
+    }
+}
