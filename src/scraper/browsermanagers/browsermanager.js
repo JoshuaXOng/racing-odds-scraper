@@ -4,6 +4,7 @@
 'use strict';
 
 const puppeteer = require('puppeteer');
+const assert = require('assert');
 
 
 
@@ -72,7 +73,7 @@ class BrowserManager {
     /**
      * Opens a new `puppeteer.Page` and makes it go to the input `url`.
      * 
-     * @param {string} url 
+     * @param {string} url
      */
     async openTab(url) {
         const page = await this._browser.newPage();
@@ -80,7 +81,21 @@ class BrowserManager {
         return page;
     }
 
-    closeTab() {}
+    /**
+     * Closes `puppeteer.Page`s of `this._browser` that matches `url` input.
+     * 
+     * @param {string} url
+     */
+    async closeTabs(url) {
+        
+        const pages = await this._browser.pages();
+        const targetPages = pages.filter(page => page.url() === url);
+        await targetPages.forEach(targetPage => targetPage.close());
+        
+        const isAllTPagesClosed = targetPages.every(page => page.isClosed());
+        assert(isAllTPagesClosed, 'Target pages have not been closed, incorrect async/await logic.');
+
+    }
 
 }
 

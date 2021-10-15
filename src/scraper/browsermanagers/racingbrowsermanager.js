@@ -1,15 +1,26 @@
 /**
- * Contains the class `HorseRacingBrowserManager`.
+ * Contains the `RacingBrowserManager` class.
  */
+
 'use strict';
 
-const { BrowserManager } = require('./browsermanager');
+const { BrowserManager } = require("./browsermanager");
 
 
 
-class HorseRacingBrowserManager extends BrowserManager {
+class RacingBrowserManager extends BrowserManager {
 
     _browser;
+
+    /**
+     * A `puppeteer.Page` that 
+     */
+    shedulePage;
+
+    /**
+     * 
+     */
+    eventPages = [];
 
     /**
      * Constructor.
@@ -20,6 +31,9 @@ class HorseRacingBrowserManager extends BrowserManager {
         this._browser = browser;
     }
 
-    open
 
 }
+
+
+
+module.exports = { RacingBrowserManager };
