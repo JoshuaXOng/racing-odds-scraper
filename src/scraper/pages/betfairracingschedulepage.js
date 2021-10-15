@@ -1,10 +1,10 @@
 'use strict';
 
-const { RacingPage } = require("./racingpage");
+const { RacingSchedulePage } = require("./racingschedulepage");
 
 
 
-class BetfairRacingSchedulePage extends RacingPage {
+class BetfairRacingSchedulePage extends RacingSchedulePage {
 
 }
 

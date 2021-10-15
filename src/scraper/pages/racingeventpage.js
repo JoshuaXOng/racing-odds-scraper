@@ -10,4 +10,4 @@ class RacingEventPage extends EventPage {
 
 
 
-module.exports = { RacingPage };
+module.exports = { RacingEventPage };

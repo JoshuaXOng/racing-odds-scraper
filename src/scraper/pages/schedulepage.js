@@ -6,7 +6,9 @@ class SchedulePage {
 
     fetchSchedule() {}
 
-    fetchVenues() {}
+    fetchVenuesNames() {}
+
+    fetchVenuesUrls() {}
 
 }
 

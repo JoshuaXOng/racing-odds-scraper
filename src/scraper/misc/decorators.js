@@ -5,8 +5,8 @@
 'use strict';
 
 const puppeteer = require('puppeteer');
-const messages = require('../configs/messages.json');
-const requestsconfig = require('../configs/requests.json');
+const messages = require('../../configs/messages.json');
+const requestsconfig = require('../../configs/requests.json');
 
 
 
