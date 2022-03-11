@@ -676,3 +676,41 @@ com.mongodb.MongoWriteException: Write operation error on server 127.0.0.1:27017
 2022-03-12 10:16:47.238  INFO 18812 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-03-12 10:16:47.240  INFO 18812 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 2022-03-12 10:16:47.342  INFO 18812 --- [http-nio-8080-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:39}] to 127.0.0.1:27017
+2022-03-12 10:18:54.715  INFO 19648 --- [main] racing.odds.server.app.App               : Starting App using Java 15.0.2 on DESKTOP-2L25P9V with PID 19648 (C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app\build\classes\java\main started by Joshua Ong in C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app)
+2022-03-12 10:18:54.719  INFO 19648 --- [main] racing.odds.server.app.App               : No active profile set, falling back to 1 default profile: "default"
+2022-03-12 10:18:55.233  INFO 19648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-03-12 10:18:55.290  INFO 19648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 2 MongoDB repository interfaces.
+2022-03-12 10:18:55.811  INFO 19648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-12 10:18:55.823  INFO 19648 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-12 10:18:55.823  INFO 19648 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-12 10:18:55.911  INFO 19648 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-12 10:18:55.912  INFO 19648 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1136 ms
+2022-03-12 10:18:56.068  INFO 19648 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-03-12 10:18:56.166  INFO 19648 --- [cluster-rtt-ClusterId{value='622bd8e0464b294d4cf2cc06', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:41}] to 127.0.0.1:27017
+2022-03-12 10:18:56.167  INFO 19648 --- [cluster-ClusterId{value='622bd8e0464b294d4cf2cc06', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:40}] to 127.0.0.1:27017
+2022-03-12 10:18:56.168  INFO 19648 --- [cluster-ClusterId{value='622bd8e0464b294d4cf2cc06', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=25289000}
+2022-03-12 10:18:56.735  INFO 19648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-12 10:18:56.741  INFO 19648 --- [main] racing.odds.server.app.App               : Started App in 2.646 seconds (JVM running for 2.994)
+2022-03-12 10:18:58.550  INFO 19648 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-12 10:18:58.551  INFO 19648 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-12 10:18:58.552  INFO 19648 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-12 10:18:58.642  INFO 19648 --- [http-nio-8080-exec-2] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:42}] to 127.0.0.1:27017
+2022-03-12 10:25:05.821  INFO 7544 --- [main] racing.odds.server.app.App               : Starting App using Java 15.0.2 on DESKTOP-2L25P9V with PID 7544 (C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app\build\classes\java\main started by Joshua Ong in C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app)
+2022-03-12 10:25:05.824  INFO 7544 --- [main] racing.odds.server.app.App               : No active profile set, falling back to 1 default profile: "default"
+2022-03-12 10:25:06.251  INFO 7544 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-03-12 10:25:06.300  INFO 7544 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 3 MongoDB repository interfaces.
+2022-03-12 10:25:06.779  INFO 7544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-12 10:25:06.789  INFO 7544 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-12 10:25:06.789  INFO 7544 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-12 10:25:06.860  INFO 7544 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-12 10:25:06.860  INFO 7544 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 991 ms
+2022-03-12 10:25:06.964  INFO 7544 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-03-12 10:25:07.022  INFO 7544 --- [cluster-ClusterId{value='622bda522d5097303224d55b', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:43}] to 127.0.0.1:27017
+2022-03-12 10:25:07.022  INFO 7544 --- [cluster-rtt-ClusterId{value='622bda522d5097303224d55b', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:44}] to 127.0.0.1:27017
+2022-03-12 10:25:07.022  INFO 7544 --- [cluster-ClusterId{value='622bda522d5097303224d55b', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=16215000}
+2022-03-12 10:25:07.510  INFO 7544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-12 10:25:07.518  INFO 7544 --- [main] racing.odds.server.app.App               : Started App in 2.083 seconds (JVM running for 2.405)
+2022-03-12 10:25:11.199  INFO 7544 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-12 10:25:11.199  INFO 7544 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-12 10:25:11.200  INFO 7544 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-03-12 10:25:11.286  INFO 7544 --- [http-nio-8080-exec-2] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:45}] to 127.0.0.1:27017
