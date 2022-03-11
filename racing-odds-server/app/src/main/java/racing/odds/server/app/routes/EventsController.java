@@ -6,7 +6,9 @@ import java.util.Objects;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mongodb.client.result.UpdateResult;
 
+import org.springframework.data.mongodb.core.FindAndModifyOptions;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -51,10 +53,12 @@ public class EventsController {
     public Event updateEvent(@PathVariable String id, @RequestBody Event event) {
         Map<String, Object> processesedEvent = MapUtils.fromObjectWoNulls(event);
         
+        Query predicate = Query.query(Criteria.where("_id").is(id));
         Update updateCommands = new Update();
         processesedEvent.forEach(updateCommands::set);
+        FindAndModifyOptions options = FindAndModifyOptions.options().returnNew(true);
 
-        return mongoOps.findAndModify(Query.query(Criteria.where("_id").is(id)), updateCommands, Event.class);
+        return mongoOps.findAndModify(predicate, updateCommands, options, Event.class);
     }
   
     @RequestMapping(method=RequestMethod.DELETE, value="/{id}")

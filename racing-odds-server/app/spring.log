@@ -520,3 +520,22 @@ Consider defining a bean named 'mongoTemplate' in your configuration.
 2022-03-12 09:23:48.625  INFO 8000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-03-12 09:23:48.631  INFO 8000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 2022-03-12 09:23:48.798  INFO 8000 --- [http-nio-8080-exec-2] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:25}] to 127.0.0.1:27017
+2022-03-12 09:33:44.036  INFO 2932 --- [main] racing.odds.server.app.App               : Starting App using Java 15.0.2 on DESKTOP-2L25P9V with PID 2932 (C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app\build\classes\java\main started by Joshua Ong in C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app)
+2022-03-12 09:33:44.040  INFO 2932 --- [main] racing.odds.server.app.App               : No active profile set, falling back to 1 default profile: "default"
+2022-03-12 09:33:44.751  INFO 2932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-03-12 09:33:44.798  INFO 2932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 1 MongoDB repository interfaces.
+2022-03-12 09:33:45.327  INFO 2932 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-12 09:33:45.336  INFO 2932 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-12 09:33:45.336  INFO 2932 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-12 09:33:45.413  INFO 2932 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-12 09:33:45.414  INFO 2932 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1293 ms
+2022-03-12 09:33:45.537  INFO 2932 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-03-12 09:33:45.597  INFO 2932 --- [cluster-ClusterId{value='622bce49e0dbd56560537e56', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:26}] to 127.0.0.1:27017
+2022-03-12 09:33:45.597  INFO 2932 --- [cluster-rtt-ClusterId{value='622bce49e0dbd56560537e56', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:27}] to 127.0.0.1:27017
+2022-03-12 09:33:45.598  INFO 2932 --- [cluster-ClusterId{value='622bce49e0dbd56560537e56', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=19245000}
+2022-03-12 09:33:46.139  INFO 2932 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-12 09:33:46.148  INFO 2932 --- [main] racing.odds.server.app.App               : Started App in 2.716 seconds (JVM running for 3.163)
+2022-03-12 09:33:58.778  INFO 2932 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-12 09:33:58.778  INFO 2932 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-12 09:33:58.779  INFO 2932 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-12 09:33:58.877  INFO 2932 --- [http-nio-8080-exec-2] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:28}] to 127.0.0.1:27017
