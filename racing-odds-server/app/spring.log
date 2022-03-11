@@ -1,0 +1,278 @@
+2022-03-12 00:00:29.787  INFO 13560 --- [main] racing.odds.server.app.App               : Starting App using Java 15.0.2 on DESKTOP-2L25P9V with PID 13560 (C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app\build\classes\java\main started by Joshua Ong in C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app)
+2022-03-12 00:00:29.794  INFO 13560 --- [main] racing.odds.server.app.App               : No active profile set, falling back to default profiles: default
+2022-03-12 00:00:30.264  INFO 13560 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-03-12 00:00:30.308  INFO 13560 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 MongoDB repository interfaces.
+2022-03-12 00:00:30.772  INFO 13560 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-12 00:00:30.781  INFO 13560 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-12 00:00:30.781  INFO 13560 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2022-03-12 00:00:30.843  INFO 13560 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-12 00:00:30.843  INFO 13560 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1002 ms
+2022-03-12 00:00:30.962  INFO 13560 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-03-12 00:00:31.039  INFO 13560 --- [cluster-ClusterId{value='622b47ee50c7a26b72c12cef', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:28}] to 127.0.0.1:27017
+2022-03-12 00:00:31.039  INFO 13560 --- [cluster-rtt-ClusterId{value='622b47ee50c7a26b72c12cef', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:27}] to 127.0.0.1:27017
+2022-03-12 00:00:31.039  INFO 13560 --- [cluster-ClusterId{value='622b47ee50c7a26b72c12cef', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=17836100}
+2022-03-12 00:00:31.470  WARN 13560 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eventRepository' defined in racing.odds.server.app.database.repositories.EventRepository defined in @EnableMongoRepositories declared on MongoRepositoriesRegistrar.EnableMongoRepositoriesConfiguration: Cannot resolve reference to bean 'mongoTemplate' while setting bean property 'mongoOperations'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'mongoTemplate' available
+2022-03-12 00:00:31.475  INFO 13560 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-03-12 00:00:31.485  INFO 13560 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-03-12 00:00:31.500 ERROR 13560 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean named 'mongoTemplate' that could not be found.
+
+
+Action:
+
+Consider defining a bean named 'mongoTemplate' in your configuration.
+
+2022-03-12 00:01:30.313  INFO 31120 --- [main] racing.odds.server.app.App               : Starting App using Java 15.0.2 on DESKTOP-2L25P9V with PID 31120 (C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app\build\classes\java\main started by Joshua Ong in C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app)
+2022-03-12 00:01:30.316  INFO 31120 --- [main] racing.odds.server.app.App               : No active profile set, falling back to default profiles: default
+2022-03-12 00:01:30.833  INFO 31120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-03-12 00:01:30.873  INFO 31120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 1 MongoDB repository interfaces.
+2022-03-12 00:01:31.320  INFO 31120 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-12 00:01:31.329  INFO 31120 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-12 00:01:31.329  INFO 31120 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2022-03-12 00:01:31.397  INFO 31120 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-12 00:01:31.398  INFO 31120 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1040 ms
+2022-03-12 00:01:31.515  INFO 31120 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-03-12 00:01:31.572  INFO 31120 --- [cluster-ClusterId{value='622b482b62776a15fecc4fce', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:30}] to 127.0.0.1:27017
+2022-03-12 00:01:31.572  INFO 31120 --- [cluster-rtt-ClusterId{value='622b482b62776a15fecc4fce', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:29}] to 127.0.0.1:27017
+2022-03-12 00:01:31.572  INFO 31120 --- [cluster-ClusterId{value='622b482b62776a15fecc4fce', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=16292300}
+2022-03-12 00:01:31.952  WARN 31120 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eventRepository' defined in racing.odds.server.app.database.repositories.EventRepository defined in @EnableMongoRepositories declared on MongoRepositoriesRegistrar.EnableMongoRepositoriesConfiguration: Cannot resolve reference to bean 'mongoTemplate' while setting bean property 'mongoOperations'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'mongoTemplate' available
+2022-03-12 00:01:31.957  INFO 31120 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-03-12 00:01:31.966  INFO 31120 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-03-12 00:01:31.979 ERROR 31120 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean named 'mongoTemplate' that could not be found.
+
+
+Action:
+
+Consider defining a bean named 'mongoTemplate' in your configuration.
+
+2022-03-12 00:02:56.543  INFO 29660 --- [main] racing.odds.server.app.App               : Starting App using Java 15.0.2 on DESKTOP-2L25P9V with PID 29660 (C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app\build\classes\java\main started by Joshua Ong in C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app)
+2022-03-12 00:02:56.546  INFO 29660 --- [main] racing.odds.server.app.App               : No active profile set, falling back to default profiles: default
+2022-03-12 00:02:57.038  INFO 29660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-03-12 00:02:57.051  INFO 29660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 MongoDB repository interfaces.
+2022-03-12 00:02:57.520  INFO 29660 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-12 00:02:57.530  INFO 29660 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-12 00:02:57.530  INFO 29660 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2022-03-12 00:02:57.592  INFO 29660 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-12 00:02:57.592  INFO 29660 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1003 ms
+2022-03-12 00:02:57.702  INFO 29660 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-03-12 00:02:57.758  INFO 29660 --- [cluster-rtt-ClusterId{value='622b488117096d1afb6c4df9', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:32}] to 127.0.0.1:27017
+2022-03-12 00:02:57.758  INFO 29660 --- [cluster-ClusterId{value='622b488117096d1afb6c4df9', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:31}] to 127.0.0.1:27017
+2022-03-12 00:02:57.759  INFO 29660 --- [cluster-ClusterId{value='622b488117096d1afb6c4df9', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=16367300}
+2022-03-12 00:02:58.188  INFO 29660 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-12 00:02:58.194  INFO 29660 --- [main] racing.odds.server.app.App               : Started App in 2.045 seconds (JVM running for 2.387)
+2022-03-12 00:02:58.195  INFO 29660 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2022-03-12 00:02:58.197  INFO 29660 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2022-03-12 00:05:55.078  INFO 30864 --- [main] racing.odds.server.app.App               : Starting App using Java 15.0.2 on DESKTOP-2L25P9V with PID 30864 (C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app\build\classes\java\main started by Joshua Ong in C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app)
+2022-03-12 00:05:55.080  INFO 30864 --- [main] racing.odds.server.app.App               : No active profile set, falling back to default profiles: default
+2022-03-12 00:05:55.527  INFO 30864 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-03-12 00:05:55.575  INFO 30864 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 1 MongoDB repository interfaces.
+2022-03-12 00:05:56.021  INFO 30864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-12 00:05:56.031  INFO 30864 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-12 00:05:56.032  INFO 30864 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2022-03-12 00:05:56.108  INFO 30864 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-12 00:05:56.108  INFO 30864 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 985 ms
+2022-03-12 00:05:56.209  INFO 30864 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-03-12 00:05:56.264  INFO 30864 --- [cluster-ClusterId{value='622b4934eca3ef3ba1827839', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:34}] to 127.0.0.1:27017
+2022-03-12 00:05:56.264  INFO 30864 --- [cluster-rtt-ClusterId{value='622b4934eca3ef3ba1827839', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:33}] to 127.0.0.1:27017
+2022-03-12 00:05:56.265  INFO 30864 --- [cluster-ClusterId{value='622b4934eca3ef3ba1827839', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=15918400}
+2022-03-12 00:05:56.652  WARN 30864 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eventRepository' defined in racing.odds.server.app.database.repositories.EventRepository defined in @EnableMongoRepositories declared on MongoRepositoriesRegistrar.EnableMongoRepositoriesConfiguration: Cannot resolve reference to bean 'mongoTemplate' while setting bean property 'mongoOperations'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'mongoTemplate' available
+2022-03-12 00:05:56.657  INFO 30864 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-03-12 00:05:56.668  INFO 30864 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-03-12 00:05:56.684 ERROR 30864 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean named 'mongoTemplate' that could not be found.
+
+
+Action:
+
+Consider defining a bean named 'mongoTemplate' in your configuration.
+
+2022-03-12 00:06:25.209  INFO 30832 --- [main] racing.odds.server.app.App               : Starting App using Java 15.0.2 on DESKTOP-2L25P9V with PID 30832 (C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app\build\classes\java\main started by Joshua Ong in C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app)
+2022-03-12 00:06:25.212  INFO 30832 --- [main] racing.odds.server.app.App               : No active profile set, falling back to default profiles: default
+2022-03-12 00:06:25.658  INFO 30832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-03-12 00:06:25.703  INFO 30832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 1 MongoDB repository interfaces.
+2022-03-12 00:06:26.140  INFO 30832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-12 00:06:26.150  INFO 30832 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-12 00:06:26.151  INFO 30832 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2022-03-12 00:06:26.220  INFO 30832 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-12 00:06:26.221  INFO 30832 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 966 ms
+2022-03-12 00:06:26.322  INFO 30832 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-03-12 00:06:26.376  INFO 30832 --- [cluster-rtt-ClusterId{value='622b49520c08c2331ae6e97d', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:36}] to 127.0.0.1:27017
+2022-03-12 00:06:26.376  INFO 30832 --- [cluster-ClusterId{value='622b49520c08c2331ae6e97d', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:35}] to 127.0.0.1:27017
+2022-03-12 00:06:26.377  INFO 30832 --- [cluster-ClusterId{value='622b49520c08c2331ae6e97d', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=15780100}
+2022-03-12 00:06:26.758  WARN 30832 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eventRepository' defined in racing.odds.server.app.database.repositories.EventRepository defined in @EnableMongoRepositories declared on MongoRepositoriesRegistrar.EnableMongoRepositoriesConfiguration: Cannot resolve reference to bean 'mongoTemplate' while setting bean property 'mongoOperations'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'mongoTemplate' available
+2022-03-12 00:06:26.762  INFO 30832 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-03-12 00:06:26.771  INFO 30832 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-03-12 00:06:26.785 ERROR 30832 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean named 'mongoTemplate' that could not be found.
+
+
+Action:
+
+Consider defining a bean named 'mongoTemplate' in your configuration.
+
+2022-03-12 00:06:38.021  INFO 27468 --- [main] racing.odds.server.app.App               : Starting App using Java 15.0.2 on DESKTOP-2L25P9V with PID 27468 (C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app\build\classes\java\main started by Joshua Ong in C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app)
+2022-03-12 00:06:38.024  INFO 27468 --- [main] racing.odds.server.app.App               : No active profile set, falling back to default profiles: default
+2022-03-12 00:06:38.688  INFO 27468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-03-12 00:06:38.745  INFO 27468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 1 MongoDB repository interfaces.
+2022-03-12 00:06:39.235  INFO 27468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-12 00:06:39.245  INFO 27468 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-12 00:06:39.245  INFO 27468 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2022-03-12 00:06:39.323  INFO 27468 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-12 00:06:39.324  INFO 27468 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1246 ms
+2022-03-12 00:06:39.372  WARN 27468 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eventsController' defined in file [C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app\build\classes\java\main\racing\odds\server\app\routes\EventsController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.springframework.data.mongodb.core.MongoOperations' available: expected single matching bean but found 2: getMongoTemplate,getMongoOperations
+2022-03-12 00:06:39.375  INFO 27468 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-03-12 00:06:39.389  INFO 27468 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-03-12 00:06:39.413 ERROR 27468 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in racing.odds.server.app.routes.EventsController required a single bean, but 2 were found:
+	- getMongoTemplate: defined by method 'getMongoTemplate' in class path resource [racing/odds/server/app/database/DatabaseBeans.class]
+	- getMongoOperations: defined by method 'getMongoOperations' in class path resource [racing/odds/server/app/database/DatabaseBeans.class]
+
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+2022-03-12 00:10:13.781  INFO 31152 --- [main] racing.odds.server.app.App               : Starting App using Java 15.0.2 on DESKTOP-2L25P9V with PID 31152 (C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app\build\classes\java\main started by Joshua Ong in C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app)
+2022-03-12 00:10:13.784  INFO 31152 --- [main] racing.odds.server.app.App               : No active profile set, falling back to default profiles: default
+2022-03-12 00:10:14.156  INFO 31152 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-03-12 00:10:14.193  INFO 31152 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 1 MongoDB repository interfaces.
+2022-03-12 00:10:14.763  INFO 31152 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-12 00:10:14.774  INFO 31152 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-12 00:10:14.775  INFO 31152 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2022-03-12 00:10:14.849  INFO 31152 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-12 00:10:14.850  INFO 31152 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1015 ms
+2022-03-12 00:10:14.965  INFO 31152 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-03-12 00:10:15.019  INFO 31152 --- [cluster-ClusterId{value='622b4a36700586470f33e695', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:38}] to 127.0.0.1:27017
+2022-03-12 00:10:15.019  INFO 31152 --- [cluster-rtt-ClusterId{value='622b4a36700586470f33e695', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:37}] to 127.0.0.1:27017
+2022-03-12 00:10:15.020  INFO 31152 --- [cluster-ClusterId{value='622b4a36700586470f33e695', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=15908000}
+2022-03-12 00:10:15.131  WARN 31152 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eventRepository' defined in racing.odds.server.app.database.repositories.EventRepository defined in @EnableMongoRepositories declared on App: Cannot resolve reference to bean 'mongoTemplate' while setting bean property 'mongoOperations'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'mongoTemplate' available
+2022-03-12 00:10:15.134  INFO 31152 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-03-12 00:10:15.150  INFO 31152 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-03-12 00:10:15.167 ERROR 31152 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean named 'mongoTemplate' that could not be found.
+
+
+Action:
+
+Consider defining a bean named 'mongoTemplate' in your configuration.
+
+2022-03-12 00:11:31.266  INFO 13108 --- [main] racing.odds.server.app.App               : Starting App using Java 15.0.2 on DESKTOP-2L25P9V with PID 13108 (C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app\build\classes\java\main started by Joshua Ong in C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app)
+2022-03-12 00:11:31.268  INFO 13108 --- [main] racing.odds.server.app.App               : No active profile set, falling back to default profiles: default
+2022-03-12 00:11:31.724  INFO 13108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-03-12 00:11:31.770  INFO 13108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 1 MongoDB repository interfaces.
+2022-03-12 00:11:32.206  INFO 13108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-12 00:11:32.215  INFO 13108 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-12 00:11:32.216  INFO 13108 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2022-03-12 00:11:32.284  INFO 13108 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-12 00:11:32.284  INFO 13108 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 969 ms
+2022-03-12 00:11:32.388  INFO 13108 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-03-12 00:11:32.443  INFO 13108 --- [cluster-ClusterId{value='622b4a8489ae613919e2f722', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:40}] to 127.0.0.1:27017
+2022-03-12 00:11:32.443  INFO 13108 --- [cluster-rtt-ClusterId{value='622b4a8489ae613919e2f722', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:39}] to 127.0.0.1:27017
+2022-03-12 00:11:32.443  INFO 13108 --- [cluster-ClusterId{value='622b4a8489ae613919e2f722', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=15592000}
+2022-03-12 00:11:32.920  INFO 13108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-12 00:11:32.930  INFO 13108 --- [main] racing.odds.server.app.App               : Started App in 2.055 seconds (JVM running for 2.379)
+2022-03-12 00:11:32.931  INFO 13108 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2022-03-12 00:11:32.933  INFO 13108 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2022-03-12 00:12:51.431  INFO 22620 --- [main] racing.odds.server.app.App               : Starting App using Java 15.0.2 on DESKTOP-2L25P9V with PID 22620 (C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app\build\classes\java\main started by Joshua Ong in C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app)
+2022-03-12 00:12:51.433  INFO 22620 --- [main] racing.odds.server.app.App               : No active profile set, falling back to default profiles: default
+2022-03-12 00:12:51.931  INFO 22620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-03-12 00:12:51.973  INFO 22620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 1 MongoDB repository interfaces.
+2022-03-12 00:12:52.411  INFO 22620 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-12 00:12:52.421  INFO 22620 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-12 00:12:52.422  INFO 22620 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2022-03-12 00:12:52.489  INFO 22620 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-12 00:12:52.490  INFO 22620 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 992 ms
+2022-03-12 00:12:52.596  INFO 22620 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-03-12 00:12:52.652  INFO 22620 --- [cluster-ClusterId{value='622b4ad40493e822d38cd71b', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:42}] to 127.0.0.1:27017
+2022-03-12 00:12:52.652  INFO 22620 --- [cluster-rtt-ClusterId{value='622b4ad40493e822d38cd71b', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:41}] to 127.0.0.1:27017
+2022-03-12 00:12:52.653  INFO 22620 --- [cluster-ClusterId{value='622b4ad40493e822d38cd71b', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=16090900}
+2022-03-12 00:12:53.134  INFO 22620 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-12 00:12:53.141  INFO 22620 --- [main] racing.odds.server.app.App               : Started App in 2.168 seconds (JVM running for 2.461)
+2022-03-12 00:12:53.142  INFO 22620 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2022-03-12 00:12:53.143  INFO 22620 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2022-03-12 00:13:21.265  INFO 22620 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-12 00:13:21.265  INFO 22620 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-12 00:13:21.266  INFO 22620 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-12 00:13:57.306  INFO 2736 --- [main] racing.odds.server.app.App               : Starting App using Java 15.0.2 on DESKTOP-2L25P9V with PID 2736 (C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app\build\classes\java\main started by Joshua Ong in C:\Users\jxo\Desktop\CodingRepos\Personal\racing-odds\racing-odds-server\app)
+2022-03-12 00:13:57.309  INFO 2736 --- [main] racing.odds.server.app.App               : No active profile set, falling back to default profiles: default
+2022-03-12 00:13:57.794  INFO 2736 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-03-12 00:13:57.846  INFO 2736 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 1 MongoDB repository interfaces.
+2022-03-12 00:13:58.362  INFO 2736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-12 00:13:58.374  INFO 2736 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-12 00:13:58.374  INFO 2736 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2022-03-12 00:13:58.464  INFO 2736 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-12 00:13:58.465  INFO 2736 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1099 ms
+2022-03-12 00:13:58.611  INFO 2736 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-03-12 00:13:58.672  INFO 2736 --- [cluster-ClusterId{value='622b4b165b4db068ae5bb7d1', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:44}] to 127.0.0.1:27017
+2022-03-12 00:13:58.672  INFO 2736 --- [cluster-rtt-ClusterId{value='622b4b165b4db068ae5bb7d1', description='null'}-127.0.0.1:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:43}] to 127.0.0.1:27017
+2022-03-12 00:13:58.673  INFO 2736 --- [cluster-ClusterId{value='622b4b165b4db068ae5bb7d1', description='null'}-127.0.0.1:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=16765900}
+2022-03-12 00:13:59.146  INFO 2736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-12 00:13:59.152  INFO 2736 --- [main] racing.odds.server.app.App               : Started App in 2.33 seconds (JVM running for 2.64)
+2022-03-12 00:13:59.153  INFO 2736 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2022-03-12 00:13:59.155  INFO 2736 --- [main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2022-03-12 00:14:00.342  INFO 2736 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-12 00:14:00.343  INFO 2736 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-12 00:14:00.344  INFO 2736 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-12 00:14:00.407  WARN 2736 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------699825477760273077816413;charset=UTF-8' not supported]
+2022-03-12 00:14:13.568  INFO 2736 --- [http-nio-8080-exec-3] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:45}] to 127.0.0.1:27017
+2022-03-12 00:14:31.723  WARN 2736 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------859767723651749572404080;charset=UTF-8' not supported]
+2022-03-12 00:15:53.517  WARN 2736 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain;charset=UTF-8' not supported]
+2022-03-12 00:16:18.510  WARN 2736 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------304912680101610374436155;charset=UTF-8' not supported]
+2022-03-12 00:16:29.410  WARN 2736 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------620148885302199033124761;charset=UTF-8' not supported]
+2022-03-12 00:16:42.298  WARN 2736 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------359357672823138601342255;charset=UTF-8' not supported]
+2022-03-12 00:18:01.547  WARN 2736 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------143697612293144596932612;charset=UTF-8' not supported]

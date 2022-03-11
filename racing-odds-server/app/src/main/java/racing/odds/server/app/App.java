@@ -3,19 +3,30 @@
  */
 package racing.odds.server.app;
 
-import racing.odds.server.list.LinkedList;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import static racing.odds.server.utilities.StringUtils.join;
-import static racing.odds.server.utilities.StringUtils.split;
-import static racing.odds.server.app.MessageUtils.getMessage;
+import racing.odds.server.app.database.repositories.EventRepository;
 
-import org.apache.commons.text.WordUtils;
-
+@SpringBootApplication
+@RestController
+@RequestMapping(value="/api/v0")
 public class App {
+    @Value("${spring.application.name}")
+    private String name;
+    @Value("${server.port}")
+    private String port;
+
     public static void main(String[] args) {
-        LinkedList tokens;
-        tokens = split(getMessage());
-        String result = join(tokens);
-        System.out.println(WordUtils.capitalize(result));
+        SpringApplication.run(App.class, args);
     }
+
+    @RequestMapping(value="/settings")
+	public String port() {
+		return String.format("Here are some of the settings ran by the server, port: %s", this.port);
+	}
 }
