@@ -1,10 +1,16 @@
 package racing.odds.server.app.routes;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import racing.odds.server.app.database.models.Event;
 import racing.odds.server.app.database.repositories.EventRepository;
+import racing.odds.server.utilities.MapUtils;
 
 @RestController
 @RequestMapping(value="/api/v0/events")
@@ -41,8 +48,13 @@ public class EventsController {
     }
 
     @RequestMapping(method=RequestMethod.PUT, value="/{id}")
-    public Event updateEvent(@RequestBody Event event) {
-        return mongoOps.save(event);   
+    public Event updateEvent(@PathVariable String id, @RequestBody Event event) {
+        Map<String, Object> processesedEvent = MapUtils.fromObjectWoNulls(event);
+        
+        Update updateCommands = new Update();
+        processesedEvent.forEach(updateCommands::set);
+
+        return mongoOps.findAndModify(Query.query(Criteria.where("_id").is(id)), updateCommands, Event.class);
     }
   
     @RequestMapping(method=RequestMethod.DELETE, value="/{id}")

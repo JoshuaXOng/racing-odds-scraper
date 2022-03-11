@@ -1,11 +1,12 @@
 package racing.odds.server.app.database.models;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Venue {
-  @DBRef
+  @Id
   private String id;
   private String name;
 
@@ -13,6 +14,6 @@ public class Venue {
     return this.id;
   }
   public String getName() {
-    return name;
+    return this.name;
   }
 }

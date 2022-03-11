@@ -9,12 +9,12 @@ public class OddsRecord {
   @Id
   private String id;
   @DBRef
-  private String eventId;
+  private Event event;
 
   public String getId() {
     return this.id;
   }
-  public String getEventId() {
-    return eventId;
+  public Event getEventId() {
+    return this.event;
   }
 }

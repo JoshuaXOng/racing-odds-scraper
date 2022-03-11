@@ -11,7 +11,7 @@ public class Event {
   @Id
   private String id;
   @DBRef
-  private String venueId;
+  private Venue venue;
   private Date scheduledStartTime;
   private Date actualStartTime;
   private Date scheduledEndTime;
@@ -20,19 +20,19 @@ public class Event {
   public String getId() {
     return this.id;
   }
-  public String getVenueId() {
-    return venueId;
+  public Venue getVenue() {
+    return this.venue;
   }
   public Date getScheduledStartTime() {
-    return scheduledStartTime;
+    return this.scheduledStartTime;
   }
   public Date getActualStartTime() {
-    return actualStartTime;
+    return this.actualStartTime;
   }
   public Date getScheduledEndTime() {
-    return scheduledEndTime;
+    return this.scheduledEndTime;
   }
   public Date getActualEndTime() {
-    return actualEndTime;
+    return this.actualEndTime;
   }
 }

@@ -12,20 +12,20 @@ public class OddsSnapshot {
   @Id
   private String id;
   @DBRef
-  private String oddsRecordId;
+  private OddsRecord oddsRecord;
   private Date createdAt;
   private List<ContestantOddEntry> contestantsOddEntries;
 
   public String getId() {
     return this.id;
   }
-  public String getOddsRecordId() {
-    return this.oddsRecordId;
+  public OddsRecord getOddsRecord() {
+    return this.oddsRecord;
   }
   public Date getCreatedAt() {
-    return createdAt;
+    return this.createdAt;
   }
   public List<ContestantOddEntry> getContestantsOddEntries() {
-    return contestantsOddEntries;
+    return this.contestantsOddEntries;
   }
 }
