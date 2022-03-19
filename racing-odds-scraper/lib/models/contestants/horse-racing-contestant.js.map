@@ -1,0 +1,1 @@
+{"version":3,"file":"horse-racing-contestant.js","sourceRoot":"/","sources":["models/contestants/horse-racing-contestant.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAoB,MAAM,cAAc,CAAC;AAW5D,MAAM,OAAO,qBAAsB,SAAQ,UAAU;IAEnD,YAAY,EAAE,EAAE,EAAE,IAAI,EAAE,KAAK,EAA+B;QAC1D,KAAK,CAAC,EAAE,EAAE,EAAE,IAAI,EAAE,CAAC,CAAC;QACpB,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;IACrB,CAAC;CACF"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"contestant.js","sourceRoot":"/","sources":["src/models/contestants/contestant.ts"],"names":[],"mappings":"AAKA,MAAM,OAAgB,UAAU;IAI9B,YAAY,EAAE,EAAE,EAAE,IAAI,EAAoB;QACxC,IAAI,CAAC,EAAE,GAAG,EAAE,CAAC;QACb,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;IACnB,CAAC;CACF"}
