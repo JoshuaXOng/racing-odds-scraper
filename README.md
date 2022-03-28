@@ -5,3 +5,5 @@ Applications related to collecting racing odds.
 - Server for presenting data obtained by scraper 
 
 Formatting: ./gradlew goJF
+
+Launch4j
