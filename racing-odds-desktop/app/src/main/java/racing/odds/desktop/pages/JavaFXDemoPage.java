@@ -1,15 +1,15 @@
 package racing.odds.desktop.pages;
 
-import javafx.stage.Stage;
+import javafx.geometry.Orientation;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Rectangle;
-import javafx.geometry.Orientation;
+import javafx.stage.Stage;
 
 public class JavaFXDemoPage {
-  public static Scene get(Stage stage) { 
+  public static Scene get(Stage stage) {
     FlowPane layout = new FlowPane(Orientation.VERTICAL);
     layout.setHgap(20);
     layout.setVgap(20);
@@ -31,13 +31,13 @@ public class JavaFXDemoPage {
     box.setLayoutY(50);
     box.getStyleClass().add("my-rect");
 
-		Button button = new Button("Default Button");		
+    Button button = new Button("Default Button");
     button.setOnMouseReleased(e -> stage.setScene(JFoenixDemoPage.get(stage)));
 
-		((FlowPane) scene.getRoot()).getChildren().add(label);
-		((FlowPane) scene.getRoot()).getChildren().add(box);
-		((FlowPane) scene.getRoot()).getChildren().add(button);
+    ((FlowPane) scene.getRoot()).getChildren().add(label);
+    ((FlowPane) scene.getRoot()).getChildren().add(box);
+    ((FlowPane) scene.getRoot()).getChildren().add(button);
 
     return scene;
-  }  
+  }
 }
