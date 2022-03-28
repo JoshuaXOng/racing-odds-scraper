@@ -11,19 +11,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-@RequestMapping(value="/api/v0")
+@RequestMapping(value = "/api/v0")
 public class App {
-    @Value("${spring.application.name}")
-    private String name;
-    @Value("${server.port}")
-    private String port;
+  @Value("${spring.application.name}")
+  private String name;
 
-    public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
-    }
+  @Value("${server.port}")
+  private String port;
 
-    @RequestMapping(value="/settings")
-	public String port() {
-		return String.format("Here are some of the settings ran by the server, port: %s", this.port);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(App.class, args);
+  }
+
+  @RequestMapping(value = "/settings")
+  public String port() {
+    return String.format("Here are some of the settings ran by the server, port: %s", this.port);
+  }
 }

@@ -4,7 +4,7 @@
 package racing.odds.server.app.services;
 
 public class MessageUtils {
-    public static String getMessage() {
-        return "Hello      World!";
-    }
+  public static String getMessage() {
+    return "Hello      World!";
+  }
 }

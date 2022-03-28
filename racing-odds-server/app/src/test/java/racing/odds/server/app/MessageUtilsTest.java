@@ -3,14 +3,14 @@
  */
 package racing.odds.server.app;
 
-import org.junit.jupiter.api.Test;
-
-import racing.odds.server.app.services.MessageUtils;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Test;
+import racing.odds.server.app.services.MessageUtils;
+
 class MessageUtilsTest {
-    @Test void testGetMessage() {
-        assertEquals("Hello      World!", MessageUtils.getMessage());
-    }
+  @Test
+  void testGetMessage() {
+    assertEquals("Hello      World!", MessageUtils.getMessage());
+  }
 }
