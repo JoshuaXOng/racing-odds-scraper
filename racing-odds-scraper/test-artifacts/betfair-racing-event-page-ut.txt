@@ -1,0 +1,22 @@
+[
+  'G W Dixon',
+  'M J Elkins',
+  'P J Mcmullen',
+  'P J Mcmullen',
+  'Trent Lethaby',
+  'B W Barnes',
+  'Trista Dixon',
+  'B W Barnes',
+  'S R Graham',
+  'N J Mcmullen'
+]
+{
+  'G W Dixon': 'Major Generaljujon',
+  'M J Elkins': 'Four Starzzz Forsa',
+  'P J Mcmullen': 'Lombo Heaven',
+  'Trent Lethaby': 'Dikerry',
+  'B W Barnes': 'Mohs Em Down',
+  'Trista Dixon': 'Jonah Jones',
+  'S R Graham': 'Rock Bottom',
+  'N J Mcmullen': 'It Aint The Money'
+}
