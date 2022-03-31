@@ -1,4 +1,4 @@
-import { Page } from "./page";
+import { Page } from "../browsers/page";
 
 export abstract class SchedulePage extends Page {
   constructor(url: URL) {

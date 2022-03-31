@@ -1,7 +1,7 @@
 import puppeteer, { Browser as PBrowser } from "puppeteer";
 import { bookiesToUrlsMap } from "../../constants";
 import { Browser } from "./browser";
-import { BetfairSchedulePage } from "./pages/schedule-pages/betfair-schedule-page";
+import { BetfairSchedulePage } from "../pages/schedule-pages/betfair-schedule-page";
 
 // await page.setUserAgent(requestsconfig.nonHeadlessUA);  
 // await page.waitForSelector('.meeting-label');

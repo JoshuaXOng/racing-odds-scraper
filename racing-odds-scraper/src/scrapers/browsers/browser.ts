@@ -1,5 +1,5 @@
 import { Browser as PBrowser } from "puppeteer";
-import { Page } from "./pages/page";
+import { Page } from "./page";
 
 export class Browser {
   private browser: PBrowser;
@@ -47,7 +47,7 @@ export class Browser {
         if (p.url.toString() === url.toString()) return await p.page?.close();
       })
     );
-    
+
     console.log(this.pages)
     this.pages = this.pages.filter(p => p.url.toString() !== url.toString());
     console.log(this.pages)
