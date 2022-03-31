@@ -1,22 +1,21 @@
-import { Browser as PBrowser } from "puppeteer";
-import { bookiesToUrlsMap } from "../../constants";
+import puppeteer from "puppeteer";
 import { Browser } from "./browser";
 
 describe("Browser Unit Tests.", () => {
-  let pBrowser; //: PBrowser;
+//   let pBrowser: PBrowser;
 
-  beforeAll(async () => {
-    pBrowser = await puppeteer.launch({ headless: false });
-  });
+//   beforeAll(async () => {
+//     pBrowser = await launch({ headless: false });
+//   });
 
-  afterAll(async () => {
-    pBrowser.close();
-  })
+//   afterAll(async () => {
+//     pBrowser.close();
+//   })
   
-  test('Initialize Browser and open a Page.', () => {
-    console.log("++++++++++++++++++++")
-    // const browser = new Browser(pBrowser);
-    // browser.addPage(new URL("https://www.youtube.com/"));
+  test('Initialize Browser and open a Page.', async () => {
+    const pBrowser = await puppeteer.launch({ headless: true });
+    const browser = new Browser(pBrowser);
+    browser.addPage(new URL("https://www.youtube.com/"));
   });
 });
 
