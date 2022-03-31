@@ -5,10 +5,7 @@ const urls = require('./configs/urls.json');
 const requestsconfig = require('./configs/requests.json');
 const { BrowserManager } = require('./scraper/browsermanagers/browsermanager');
 
-
-
 (async () => {
-
     const browser = await puppeteer.launch({ 
         headless: false,
     });
@@ -19,7 +16,6 @@ const { BrowserManager } = require('./scraper/browsermanagers/browsermanager');
 
     const res = await bm.noOpenedTabsPerUrl();
     console.log(res);
-
 })();
 
 // (async () => {
