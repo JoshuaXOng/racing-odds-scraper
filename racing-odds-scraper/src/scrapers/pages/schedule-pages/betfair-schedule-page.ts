@@ -53,15 +53,16 @@ export class BetfairSchedulePage extends SchedulePage {
         const nextEventTime = new Number(eventsTime[i+1]?.replace(":", "") ?? -Infinity) as number;
         
         eventTimeRow.push(currentEventTime)
-        if (currentEventTime >= nextEventTime) {
+        if (currentEventTime >= nextEventTime) { // This logic/assumption is incorrect - new row's first element is not always lower than current row's second element.
           eventTimeRows.push(eventTimeRow);
           eventTimeRow = [];
-        } 
+        }
       }
       
       const venuesName = await this.venuesName();
-      if (venuesName?.length !== eventTimeRows?.length)
-        console.log("This function may be incorrect as length of venue name does not match length of event rows.");
+      if (venuesName?.length !== eventTimeRows?.length) {
+        console.log(`This function may be incorrect as length of venue name does not match length of event rows: ${venuesName?.length} vs. ${eventTimeRows?.length}`);
+      }
 
       let venuesToEventsMap = {};
       venuesName?.forEach((vn, i) => {

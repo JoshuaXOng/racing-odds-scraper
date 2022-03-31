@@ -160,13 +160,5 @@
     [Number: 2135],
     [Number: 2210]
   ],
-  'Gloucester Park': [
-    [Number: 2040],
-    [Number: 2110],
-    [Number: 2147],
-    [Number: 2222],
-    [Number: 2255],
-    [Number: 2320],
-    [Number: 2345]
-  ]
+  'Gloucester Park': undefined
 }
