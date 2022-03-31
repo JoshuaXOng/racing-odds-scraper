@@ -1,4 +1,5 @@
 import { Browser as PBrowser } from "puppeteer";
+import { puppeteerConstants } from "../scraper-constants";
 import { Page } from "./page";
 
 export class Browser {
@@ -38,6 +39,7 @@ export class Browser {
     this.pages.push(page);
     
     page.page = await this.browser.newPage();
+    page.page.setUserAgent(puppeteerConstants.userAgents.header);
     const response = await page.page.goto(page.url.toString());
     return response.ok();
   }

@@ -3,12 +3,8 @@ import { bookiesToUrlsMap } from "../../constants";
 import { Browser } from "./browser";
 import { BetfairSchedulePage } from "../pages/schedule-pages/betfair-schedule-page";
 
-// await page.setUserAgent(requestsconfig.nonHeadlessUA);  
-// await page.waitForSelector('.meeting-label');
-// const text = await page.$eval('.meeting-label', element => element.innerText);
-
 describe("Browser Unit Tests.", () => {
-  jest.setTimeout(30000);
+  jest.setTimeout(10000);
 
   let puppeteerBrowser: PBrowser;
   let browser: Browser;
