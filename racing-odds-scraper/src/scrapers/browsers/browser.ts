@@ -36,6 +36,7 @@ export class Browser {
 
   async addPage(page: Page) {
     this.pages.push(page);
+    
     page.page = await this.browser.newPage();
     const response = await page.page.goto(page.url.toString());
     return response.ok();
@@ -48,8 +49,6 @@ export class Browser {
       })
     );
 
-    console.log(this.pages)
     this.pages = this.pages.filter(p => p.url.toString() !== url.toString());
-    console.log(this.pages)
   }
 }
