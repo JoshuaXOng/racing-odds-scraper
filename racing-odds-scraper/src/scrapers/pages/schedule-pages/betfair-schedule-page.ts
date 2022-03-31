@@ -41,22 +41,22 @@ export class BetfairSchedulePage extends SchedulePage {
         `.${betfairSchedulePageConstants.racing.html.classNames.eventTime}`
       )
       
-      const eventsTime = await this.page.$$eval(
+      const eventsTime = await this.page.$$eval( // Should try more complex query selector.
         `.${betfairSchedulePageConstants.racing.html.classNames.eventTime}`, 
         elements => elements.map(e => e.innerHTML)
       );
-      
+
       let eventTimeRows: any = [];
+      let eventTimeRow: any = [];
       for (let i = 0; i < eventsTime.length; i++) {
-        let eventTimeRow: any = [];
-        const currentEventTime = parseInt(eventsTime[i]!.replace(":", ""));
-        const nextEventTime = parseInt(eventsTime[i+1]!.replace(":", ""));
-        if (currentEventTime <= nextEventTime) {
+        const currentEventTime = new Number(eventsTime[i]!.replace(":", "")) as number;
+        const nextEventTime = new Number(eventsTime[i+1]?.replace(":", "") ?? -Infinity) as number;
+        
+        eventTimeRow.push(currentEventTime)
+        if (currentEventTime >= nextEventTime) {
           eventTimeRows.push(eventTimeRow);
           eventTimeRow = [];
-        } else {
-          eventTimeRow.push(currentEventTime)
-        }
+        } 
       }
       
       const venuesName = await this.venuesName();

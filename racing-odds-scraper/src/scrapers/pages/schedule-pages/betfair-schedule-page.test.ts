@@ -1,10 +1,16 @@
+import { Console } from "console";
+import fs from "fs";
 import puppeteer, { Browser as PBrowser } from "puppeteer";
 import { bookiesToUrlsMap } from "../../../constants";
 import { Browser } from "../../browsers/browser";
 import { BetfairSchedulePage } from "./betfair-schedule-page";
 
+const bfSchedulePageLogger = new Console({
+  stdout: fs.createWriteStream("./test-artifacts/betfair-schedule-page-ut.txt")
+});
+
 describe("BetfairSchedulePage Unit Tests.", () => {
-  jest.setTimeout(15000);
+  jest.setTimeout(20000);
 
   let puppeteerBrowser: PBrowser;
   let browser: Browser;
@@ -18,8 +24,18 @@ describe("BetfairSchedulePage Unit Tests.", () => {
     const isAddPageSuccessful = await browser.addPage(bfSchedulePage);
     expect(isAddPageSuccessful).toBe(true);
   });
-
+  
   afterAll(async () => {
+    const bfSchedulePages = browser.pages.filter(p => p instanceof BetfairSchedulePage);
+    expect(bfSchedulePages.length).toBe(1);
+    const [bfSchedulePage] = bfSchedulePages as BetfairSchedulePage[];
+    
+    await bfSchedulePage!.page.setViewport({ width: 1920, height: 2500 });
+    await bfSchedulePage!.page.screenshot({ 
+      path: "./test-artifacts/betfair-schedule-page-ut.jpeg", 
+      clip: { x: 0, y: 0, width: 1920, height: 2500 } 
+    }); // There is some capture-length/delay causing blur.
+    
     await puppeteerBrowser.close();
   })
   
@@ -29,7 +45,7 @@ describe("BetfairSchedulePage Unit Tests.", () => {
     const [bfSchedulePage] = bfSchedulePages as BetfairSchedulePage[];
     
     const venuesName = await bfSchedulePage!.venuesName();
-    console.log(venuesName);
+    bfSchedulePageLogger.log(venuesName);
   });
 
   test("BetfairSchedulePage reads current horse racing venue names and their events' time.", async () => {
@@ -37,8 +53,7 @@ describe("BetfairSchedulePage Unit Tests.", () => {
     expect(bfSchedulePages.length).toBe(1);
     const [bfSchedulePage] = bfSchedulePages as BetfairSchedulePage[];
     
-    // const eventsTime = await bfSchedulePage!.venuesToEventsMap();
-    console.log(await bfSchedulePage!.venuesToEventsMap());
-    // console.log(eventsTime);
+    const venuesToEventsMap = await bfSchedulePage!.venuesToEventsMap()
+    bfSchedulePageLogger.log(venuesToEventsMap);
   });
 });
