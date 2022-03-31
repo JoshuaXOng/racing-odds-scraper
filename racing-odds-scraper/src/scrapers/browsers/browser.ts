@@ -1,7 +1,9 @@
 import { Browser as PBrowser } from "puppeteer";
+import { Page } from "./pages/page";
 
 export class Browser {
-  browser: PBrowser;
+  private browser: PBrowser;
+  pages: Page[] = [];
 
   constructor(browser: PBrowser) {
     this.browser = browser;
@@ -32,15 +34,22 @@ export class Browser {
     return urlToPagesMap;
   }
 
-  async addPage(url: URL) {
-    const page = await this.browser.newPage();
-    const response = await page.goto(url.toString());
+  async addPage(page: Page) {
+    this.pages.push(page);
+    page.page = await this.browser.newPage();
+    const response = await page.page.goto(page.url.toString());
     return response.ok();
   }
 
   async closePages(url: URL) {
-    const pages = await this.browser.pages();
-    const targetPages = pages.filter(p => p.url() === url.toString());
-    await Promise.all(targetPages.map(tp => tp.close()));
+    await Promise.all(
+      this.pages.map(async p => {
+        if (p.url.toString() === url.toString()) return await p.page?.close();
+      })
+    );
+    
+    console.log(this.pages)
+    this.pages = this.pages.filter(p => p.url.toString() !== url.toString());
+    console.log(this.pages)
   }
 }

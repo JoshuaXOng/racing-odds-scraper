@@ -1,13 +1,17 @@
 import { Page as PPage } from "puppeteer";
 
 export abstract class Page {
+  url: URL;
   page: PPage;
 
-  constructor(page: PPage) {
-    this.page = page;
+  constructor(url: URL) {
+    this.url = url;
   }
 
   async close() {
-    await this.page.close();
+    if (!this.page)
+      console.log("Page is being closed w/o an underlying page object.");
+    else
+      await this.page.close();
   }
 }
