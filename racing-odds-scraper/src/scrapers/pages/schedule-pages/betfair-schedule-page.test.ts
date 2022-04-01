@@ -44,7 +44,7 @@ describe("BetfairSchedulePage Unit Tests.", () => {
     expect(bfSchedulePages.length).toBe(1);
     const [bfSchedulePage] = bfSchedulePages as BetfairSchedulePage[];
     
-    const venuesName = await bfSchedulePage!.venuesName();
+    const venuesName = await bfSchedulePage!.venueNames();
     bfSchedulePageLogger.log(venuesName);
   });
 
@@ -53,7 +53,7 @@ describe("BetfairSchedulePage Unit Tests.", () => {
     expect(bfSchedulePages.length).toBe(1);
     const [bfSchedulePage] = bfSchedulePages as BetfairSchedulePage[];
     
-    const venuesToEventsMap = await bfSchedulePage!.venuesToEventsMap()
+    const venuesToEventsMap = await bfSchedulePage!.venueNamesToEventsMap()
     bfSchedulePageLogger.log(venuesToEventsMap);
   });
 });

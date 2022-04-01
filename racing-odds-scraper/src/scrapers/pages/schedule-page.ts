@@ -5,7 +5,9 @@ export abstract class SchedulePage extends Page {
     super(url);
   }
 
-  abstract venuesName();
+  abstract venueNames();
 
-  abstract venuesToEventsMap();
+  abstract venueNamesToEventsMap();
+
+  abstract 
 }
