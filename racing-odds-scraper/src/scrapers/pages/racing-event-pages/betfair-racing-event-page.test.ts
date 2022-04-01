@@ -45,8 +45,8 @@ describe("BetfairRacingEventPage Unit Tests.", () => {
     expect(bfRacingEventPages.length).toBe(1);
     const [bfRacingEventPage] = bfRacingEventPages as BetfairRacingEventPage[];
     
-    const contestantsName = await bfRacingEventPage!.contestantsName();
-    bfRacingEventPageLogger.log(contestantsName);
+    const contestantNames = await bfRacingEventPage!.contestantNames();
+    bfRacingEventPageLogger.log(contestantNames);
   });
 
   test("BetfairRacingEventPage reads current horses' names.", async () => {
@@ -54,7 +54,7 @@ describe("BetfairRacingEventPage Unit Tests.", () => {
     expect(bfRacingEventPages.length).toBe(1);
     const [bfRacingEventPage] = bfRacingEventPages as BetfairRacingEventPage[];
     
-    const contestantsToHorseMap = await bfRacingEventPage!.contestantsToHorseMap();
-    bfRacingEventPageLogger.log(contestantsToHorseMap);
+    const contestantNamesToHorseNamesMap = await bfRacingEventPage!.contestantNamesToHorseNamesMap();
+    bfRacingEventPageLogger.log(contestantNamesToHorseNamesMap);
   });
 });

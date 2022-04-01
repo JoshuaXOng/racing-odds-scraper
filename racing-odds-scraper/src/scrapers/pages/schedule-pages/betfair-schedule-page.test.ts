@@ -44,8 +44,8 @@ describe("BetfairSchedulePage Unit Tests.", () => {
     expect(bfSchedulePages.length).toBe(1);
     const [bfSchedulePage] = bfSchedulePages as BetfairSchedulePage[];
     
-    const venuesName = await bfSchedulePage!.venueNames();
-    bfSchedulePageLogger.log(venuesName);
+    const venueNames = await bfSchedulePage!.venueNames();
+    bfSchedulePageLogger.log(venueNames);
   });
 
   test("BetfairSchedulePage reads current horse racing venue names and their events' time.", async () => {
@@ -53,7 +53,7 @@ describe("BetfairSchedulePage Unit Tests.", () => {
     expect(bfSchedulePages.length).toBe(1);
     const [bfSchedulePage] = bfSchedulePages as BetfairSchedulePage[];
     
-    const venuesToEventsMap = await bfSchedulePage!.venueNamesToEventsMap()
-    bfSchedulePageLogger.log(venuesToEventsMap);
+    const venueNamesToEventsMap = await bfSchedulePage!.venueNamesToEventsMap()
+    bfSchedulePageLogger.log(venueNamesToEventsMap);
   });
 });

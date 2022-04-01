@@ -5,7 +5,7 @@ export abstract class EventPage extends Page {
     super(url);
   }
 
-  abstract contestantsName();
+  abstract contestantNames();
 
-  abstract contestantsToOddsMap();
+  abstract contestantNamesToOddsMap();
 }

@@ -14,7 +14,7 @@ export class BetfairRacingEventPage extends RacingEventPage {
     super(url);
   }
 
-  async contestantsName() {
+  async contestantNames() {
     if (!this.page) {
       return console.log("Page is being searched w/o an underlying page object")
     } else {
@@ -22,15 +22,15 @@ export class BetfairRacingEventPage extends RacingEventPage {
         `.${betfairRacingEventPageConstants.html.classNames.jockeyName}`
       );
 
-      const contestantsName = await this.page.$$eval(
+      const contestantNames = await this.page.$$eval(
         `.${betfairRacingEventPageConstants.html.classNames.jockeyName}`,
-        elements => elements.map(e => e.innerHTML)
+        jockeyName => jockeyName.map(e => e.innerHTML)
       );
-      return contestantsName;
+      return contestantNames;
     }
   };
 
-  async contestantsToHorseMap() {
+  async contestantNamesToHorseNamesMap() {
     if (!this.page) {
       return console.log("Page is being searched w/o an underlying page object")
     } else {
@@ -38,21 +38,21 @@ export class BetfairRacingEventPage extends RacingEventPage {
         `.${betfairRacingEventPageConstants.html.classNames.horseName}`
       );
 
-      const horsesNamePlus = await this.page.$$eval(
+      const horseNamesPlus = await this.page.$$eval(
         `.${betfairRacingEventPageConstants.html.classNames.horseName}`,
-        elements => elements.map(e => e.innerHTML)
+        horseInfoBox => horseInfoBox.map(e => e.innerHTML)
       );
-      const horsesName = horsesNamePlus.map(cnp => cnp.slice(0, cnp.indexOf("<")));
+      const horseNames = horseNamesPlus.map(cnp => cnp.slice(0, cnp.indexOf("<")));
 
-      const contestantsName = await this.contestantsName();
+      const contestantNames = await this.contestantNames();
 
-      let contestantsToHorseMap = {};
-      contestantsName?.forEach((cn, i) => {
-        contestantsToHorseMap[cn] = horsesName[i]
+      let contestantNamesToHorseNameMap = {};
+      contestantNames?.forEach((cn, i) => {
+        contestantNamesToHorseNameMap[cn] = horseNames[i]
       });
-      return contestantsToHorseMap;
+      return contestantNamesToHorseNameMap;
     }
   };
 
-  async contestantsToOddsMap() {};
+  async contestantNamesToOddsMap() {};
 }
