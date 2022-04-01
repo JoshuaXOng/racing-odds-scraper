@@ -9,5 +9,5 @@ export abstract class SchedulePage extends Page {
 
   abstract venueNamesToEventsMap();
 
-  abstract 
+  // abstract venueNamesToFilteredEventsMap(predicate: (venueName: string, eventTime: string) => boolean);
 }

@@ -55,4 +55,9 @@ export class BetfairRacingEventPage extends RacingEventPage {
   };
 
   async contestantNamesToOddsMap() {};
+
+  // hasEventStarted();
+  // isEventInPlay();
+  // isEventSuspended();
+  // hasEventEnded();
 }

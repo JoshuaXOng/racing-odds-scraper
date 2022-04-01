@@ -6,6 +6,11 @@ export abstract class EventPage extends Page {
   }
 
   abstract contestantNames();
-
+  
   abstract contestantNamesToOddsMap();
+
+  // abstract hasEventStarted();
+  // abstract isEventInPlay();
+  // abstract isEventSuspended();
+  // abstract hasEventEnded();
 }

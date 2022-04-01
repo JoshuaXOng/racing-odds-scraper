@@ -1,24 +1,26 @@
 [
-  'G W Dixon',
-  'Trista Dixon',
-  'M J Elkins',
-  'G F Dwyer',
-  'P J Mcmullen',
-  'A F J Sanderson',
-  'Leonard Cain',
-  'B W Barnes',
-  'S R Graham',
-  'N J Mcmullen'
+  'William Pike',
+  'Tommy Berry',
+  'Hugh Bowman',
+  'Brenton Avdulla',
+  'James Mcdonald',
+  'Mark Zahra',
+  'Matthew Cahill',
+  'Josh Parr',
+  'Ms Rachel King',
+  'Damian Lane',
+  'Craig Williams'
 ]
 {
-  'G W Dixon': 'Major Generaljujon',
-  'Trista Dixon': 'Jonah Jones',
-  'M J Elkins': 'Four Starzzz Forsa',
-  'G F Dwyer': 'Kingofthestars',
-  'P J Mcmullen': 'Lombo Heaven',
-  'A F J Sanderson': 'Dikerry',
-  'Leonard Cain': 'Handsome Hero',
-  'B W Barnes': 'Mohs Em Down',
-  'S R Graham': 'Rock Bottom',
-  'N J Mcmullen': 'It Aint The Money'
+  'William Pike': 'Semillion',
+  'Tommy Berry': 'Calgary Stampede',
+  'Hugh Bowman': 'Spacewalk',
+  'Brenton Avdulla': 'Nominator',
+  'James Mcdonald': 'Voldemort',
+  'Mark Zahra': 'Insurrection',
+  'Matthew Cahill': 'Bandis Boy',
+  'Josh Parr': 'Charlie Foxtrot',
+  'Ms Rachel King': 'Asteria',
+  'Damian Lane': 'Gingers Gal',
+  'Craig Williams': 'Kai Tak'
 }

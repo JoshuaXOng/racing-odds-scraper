@@ -5,9 +5,5 @@ export abstract class RacingEventPage extends EventPage {
     super(url);
   }
 
-  abstract contestantNames();
-
   abstract contestantNamesToHorseNamesMap();
-
-  abstract contestantNamesToOddsMap();
 }

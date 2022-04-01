@@ -31,10 +31,11 @@ describe("BetfairSchedulePage Unit Tests.", () => {
     const [bfSchedulePage] = bfSchedulePages as BetfairSchedulePage[];
     
     await bfSchedulePage!.page.setViewport({ width: 1920, height: 2500 });
+    await new Promise(resolve => setTimeout(resolve, 2000)); // Needed to counter un-awaitable capture-length/delay causing blur.
     await bfSchedulePage!.page.screenshot({ 
       path: "./test-artifacts/betfair-schedule-page-ut.jpeg", 
       clip: { x: 0, y: 0, width: 1920, height: 2500 } 
-    }); // There is some capture-length/delay causing blur.
+    }); 
     
     await puppeteerBrowser.close();
   })
