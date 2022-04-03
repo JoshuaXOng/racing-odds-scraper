@@ -1,4 +1,5 @@
 import { Page as PPage } from "puppeteer";
+import { NoPageError } from "./browser-errors";
 
 export abstract class Page {
   url: URL;
@@ -8,10 +9,12 @@ export abstract class Page {
     this.url = url;
   }
 
+  handleNoPage() {
+    if (!this.page) throw new NoPageError("Page is being operated against w/o an underlying page object.");
+  }
+
   async close() {
-    if (!this.page)
-      console.log("Page is being closed w/o an underlying page object.");
-    else
-      await this.page.close();
+    this.handleNoPage();
+    await this.page.close();
   }
 }
