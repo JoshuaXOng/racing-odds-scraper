@@ -48,9 +48,7 @@ export class BetfairRacingEventPage extends RacingEventPage {
       const contestantNames = await this.contestantNames();
 
       let contestantNamesToHorseNameMap = {};
-      contestantNames?.forEach((cn, i) => {
-        contestantNamesToHorseNameMap[cn] = horseNames[i]
-      });
+      contestantNames?.forEach((cn, i) => contestantNamesToHorseNameMap[cn] = horseNames[i]);
       return contestantNamesToHorseNameMap;
     }
   };
@@ -63,19 +61,27 @@ export class BetfairRacingEventPage extends RacingEventPage {
         `.${betfairRacingEventPageConstants.html.classNames.oddsTableRow}`
       );
 
-      const horseNamesPlus = await this.page.$$eval(
+      const oddsRows = await this.page.$$eval(
         `.${betfairRacingEventPageConstants.html.classNames.oddsTableRow}`,
-        oddsTableRows => oddsTableRows.map(otr => otr.innerHTML)
+        oddsTableRows => oddsTableRows.map(otr => {
+          let row: any = [];
+
+          for (let i = 1; i < otr.children.length; i++) {
+            const odds = otr.children.item(i)!;
+            row.push({
+              value: odds.children.item(0)?.children.item(0)?.children.item(0)?.innerHTML,
+              money: odds.children.item(0)?.children.item(0)?.children.item(1)?.innerHTML,
+            })
+          }
+
+          return row;
+        })
       );
-      const horseNames = horseNamesPlus.map(cnp => cnp.slice(0, cnp.indexOf("<")));
-
+        
+      const contestantNamesToOddsMap = {};
       const contestantNames = await this.contestantNames();
-
-      let contestantNamesToHorseNameMap = {};
-      contestantNames?.forEach((cn, i) => {
-        contestantNamesToHorseNameMap[cn] = horseNames[i]
-      });
-      return contestantNamesToHorseNameMap;
+      contestantNames?.forEach((cn, i) => contestantNamesToOddsMap[cn] = oddsRows[i]);
+      return contestantNamesToOddsMap;
     }
   };
 

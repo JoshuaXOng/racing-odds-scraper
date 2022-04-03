@@ -54,7 +54,6 @@ describe("BetfairRacingEventPage Unit Tests.", () => {
 
   test("BetfairRacingEventPage reads current contestants' names.", async () => {
     const bfRacingEventPages = browser.pages.filter(p => p instanceof BetfairRacingEventPage);
-    expect(bfRacingEventPages.length).toBe(1);
     const [bfRacingEventPage] = bfRacingEventPages as BetfairRacingEventPage[];
     
     const contestantNames = await bfRacingEventPage!.contestantNames();
@@ -63,10 +62,17 @@ describe("BetfairRacingEventPage Unit Tests.", () => {
 
   test("BetfairRacingEventPage reads current horses' names.", async () => {
     const bfRacingEventPages = browser.pages.filter(p => p instanceof BetfairRacingEventPage);
-    expect(bfRacingEventPages.length).toBe(1);
     const [bfRacingEventPage] = bfRacingEventPages as BetfairRacingEventPage[];
     
     const contestantNamesToHorseNamesMap = await bfRacingEventPage!.contestantNamesToHorseNamesMap();
     bfRacingEventPageLogger.log(contestantNamesToHorseNamesMap);
+  });
+  
+  test("BetfairRacingEventPage reads odds table.", async () => {
+    const bfRacingEventPages = browser.pages.filter(p => p instanceof BetfairRacingEventPage);
+    const [bfRacingEventPage] = bfRacingEventPages as BetfairRacingEventPage[];
+    
+    const contestantNamesToOddsMap = await bfRacingEventPage!.contestantNamesToOddsMap();
+    bfRacingEventPageLogger.log(contestantNamesToOddsMap);
   });
 });

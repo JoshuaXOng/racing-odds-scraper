@@ -65,9 +65,7 @@ export class BetfairSchedulePage extends SchedulePage {
         console.log(`This function may be incorrect as length of venue names does not match length of event groups: ${venueNames?.length} vs. ${venueGroupedEvents?.length}`);
       
       let venueNamesToEventsMap = {};
-      venueNames?.forEach((vn, i) => {
-        venueNamesToEventsMap[vn] = venueGroupedEvents[i]
-      });
+      venueNames?.forEach((vn, i) => venueNamesToEventsMap[vn] = venueGroupedEvents[i]);
       return venueNamesToEventsMap;
     }
   };
