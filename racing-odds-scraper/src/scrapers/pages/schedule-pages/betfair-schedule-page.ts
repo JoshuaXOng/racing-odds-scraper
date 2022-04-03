@@ -29,7 +29,7 @@ export class BetfairSchedulePage extends SchedulePage {
       
       const venueNames = await this.page.$$eval(
         `.${betfairSchedulePageConstants.racing.html.classNames.venueName}`, 
-        elements => elements.map(e => e.innerHTML)
+        venueNames => venueNames.map(vn => vn.innerHTML)
       );
       return venueNames;
     }

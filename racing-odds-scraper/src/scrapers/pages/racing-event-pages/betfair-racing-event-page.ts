@@ -5,6 +5,7 @@ const betfairRacingEventPageConstants = {
     classNames: {
       jockeyName: "jockey-name",
       horseName: "runner-name",
+      oddsTableRow: "runner-line",
     }
   }
 }
@@ -24,7 +25,7 @@ export class BetfairRacingEventPage extends RacingEventPage {
 
       const contestantNames = await this.page.$$eval(
         `.${betfairRacingEventPageConstants.html.classNames.jockeyName}`,
-        jockeyName => jockeyName.map(e => e.innerHTML)
+        jockeyNames => jockeyNames.map(jn => jn.innerHTML)
       );
       return contestantNames;
     }
@@ -40,7 +41,31 @@ export class BetfairRacingEventPage extends RacingEventPage {
 
       const horseNamesPlus = await this.page.$$eval(
         `.${betfairRacingEventPageConstants.html.classNames.horseName}`,
-        horseInfoBox => horseInfoBox.map(e => e.innerHTML)
+        horseInfoBoxs => horseInfoBoxs.map(hib => hib.innerHTML)
+      );
+      const horseNames = horseNamesPlus.map(hnp => hnp.slice(0, hnp.indexOf("<")));
+
+      const contestantNames = await this.contestantNames();
+
+      let contestantNamesToHorseNameMap = {};
+      contestantNames?.forEach((cn, i) => {
+        contestantNamesToHorseNameMap[cn] = horseNames[i]
+      });
+      return contestantNamesToHorseNameMap;
+    }
+  };
+
+  async contestantNamesToOddsMap() {
+    if (!this.page) {
+      return console.log("Page is being searched w/o an underlying page object")
+    } else {
+      await this.page.waitForSelector(
+        `.${betfairRacingEventPageConstants.html.classNames.oddsTableRow}`
+      );
+
+      const horseNamesPlus = await this.page.$$eval(
+        `.${betfairRacingEventPageConstants.html.classNames.oddsTableRow}`,
+        oddsTableRows => oddsTableRows.map(otr => otr.innerHTML)
       );
       const horseNames = horseNamesPlus.map(cnp => cnp.slice(0, cnp.indexOf("<")));
 
@@ -54,10 +79,17 @@ export class BetfairRacingEventPage extends RacingEventPage {
     }
   };
 
-  async contestantNamesToOddsMap() {};
+  async hasEventStarted() {
 
-  // hasEventStarted();
-  // isEventInPlay();
-  // isEventSuspended();
-  // hasEventEnded();
+  };
+  async isEventInPlay() {
+
+  };
+  async isEventSuspended() {
+
+  };
+  async hasEventEnded() {
+
+  };
+  // can bet
 }

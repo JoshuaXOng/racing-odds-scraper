@@ -1,189 +1,106 @@
 [
-  'Randwick',      'Bendigo',
-  'Morphettville', 'Eagle Farm',
-  'Goulburn',      'Ararat',
-  'Gunnedah',      'Gold Coast',
-  'Kilcoy',        'Alice Springs',
-  'Ascot',         'Kalgoorlie',
-  'Melton',        'Redcliffe',
-  'Toowoomba',     'Menangle',
-  'Mount Gambier', 'Northam'
+  'Gundagai',
+  'Gawler',
+  'Armidale',
+  'Mudgee',
+  'Sunshine Coast',
+  'Hamilton',
+  'Marburg',
+  'Pinjarra',
+  'Bridgetown',
+  'Launceston'
 ]
 {
-  Randwick: [
-    { link: 'horse-racing/market/1.196918053', time: '12:10' },
-    { link: 'horse-racing/market/1.196918055', time: '12:45' },
-    { link: 'horse-racing/market/1.196918057', time: '13:20' },
-    { link: 'horse-racing/market/1.196918059', time: '13:55' },
-    { link: 'horse-racing/market/1.196918061', time: '14:35' },
-    { link: 'horse-racing/market/1.196886517', time: '15:15' },
-    { link: 'horse-racing/market/1.196886520', time: '15:55' },
-    { link: 'horse-racing/market/1.196886523', time: '16:35' },
-    { link: 'horse-racing/market/1.196886526', time: '17:15' },
-    { link: 'horse-racing/market/1.196918071', time: '17:50' }
+  Gundagai: [
+    { link: 'horse-racing/market/1.197021415', time: '13:10' },
+    { link: 'horse-racing/market/1.197021417', time: '13:50' },
+    { link: 'horse-racing/market/1.197021419', time: '14:30' },
+    { link: 'horse-racing/market/1.197021421', time: '15:05' },
+    { link: 'horse-racing/market/1.197021423', time: '15:45' },
+    { link: 'horse-racing/market/1.197021425', time: '16:25' },
+    { link: 'horse-racing/market/1.197021427', time: '17:00' },
+    { link: 'horse-racing/market/1.197021429', time: '17:35' }
   ],
-  Bendigo: [
-    { link: 'horse-racing/market/1.196918520', time: '12:25' },
-    { link: 'horse-racing/market/1.196918525', time: '13:00' },
-    { link: 'horse-racing/market/1.196918530', time: '13:35' },
-    { link: 'horse-racing/market/1.196918535', time: '14:15' },
-    { link: 'horse-racing/market/1.196918540', time: '14:55' },
-    { link: 'horse-racing/market/1.196918545', time: '15:35' },
-    { link: 'horse-racing/market/1.196918550', time: '16:15' },
-    { link: 'horse-racing/market/1.196918555', time: '16:50' },
-    { link: 'horse-racing/market/1.196918560', time: '17:30' }
+  Gawler: [
+    { link: 'horse-racing/market/1.197021162', time: '13:15' },
+    { link: 'horse-racing/market/1.197021167', time: '13:55' },
+    { link: 'horse-racing/market/1.197021172', time: '14:35' },
+    { link: 'horse-racing/market/1.197021177', time: '15:10' },
+    { link: 'horse-racing/market/1.197021182', time: '15:50' },
+    { link: 'horse-racing/market/1.197021187', time: '16:20' },
+    { link: 'horse-racing/market/1.197021192', time: '16:52' },
+    { link: 'horse-racing/market/1.197021197', time: '17:30' }
   ],
-  Morphettville: [
-    { link: 'horse-racing/market/1.196917918', time: '12:37' },
-    { link: 'horse-racing/market/1.196917923', time: '13:12' },
-    { link: 'horse-racing/market/1.196917928', time: '13:47' },
-    { link: 'horse-racing/market/1.196917933', time: '14:27' },
-    { link: 'horse-racing/market/1.196917938', time: '15:07' },
-    { link: 'horse-racing/market/1.196917943', time: '15:47' },
-    { link: 'horse-racing/market/1.196917948', time: '16:27' },
-    { link: 'horse-racing/market/1.196917953', time: '17:03' },
-    { link: 'horse-racing/market/1.196917958', time: '17:44' }
+  Armidale: [
+    { link: 'horse-racing/market/1.197021071', time: '13:17' },
+    { link: 'horse-racing/market/1.197021073', time: '13:59' },
+    { link: 'horse-racing/market/1.197021075', time: '14:40' },
+    { link: 'horse-racing/market/1.197021077', time: '15:19' },
+    { link: 'horse-racing/market/1.197021079', time: '15:49' }
   ],
-  'Eagle Farm': [
-    { link: 'horse-racing/market/1.196918025', time: '12:53' },
-    { link: 'horse-racing/market/1.196918028', time: '13:28' },
-    { link: 'horse-racing/market/1.196918031', time: '14:05' },
-    { link: 'horse-racing/market/1.196918034', time: '14:45' },
-    { link: 'horse-racing/market/1.196918037', time: '15:27' },
-    { link: 'horse-racing/market/1.196918040', time: '16:07' },
-    { link: 'horse-racing/market/1.196918043', time: '16:43' },
-    { link: 'horse-racing/market/1.196918046', time: '17:23' },
-    { link: 'horse-racing/market/1.196918049', time: '18:00' }
+  Mudgee: [
+    { link: 'horse-racing/market/1.197027276', time: '13:25' },
+    { link: 'horse-racing/market/1.197027278', time: '14:05' },
+    { link: 'horse-racing/market/1.197027280', time: '14:45' },
+    { link: 'horse-racing/market/1.197027282', time: '15:25' },
+    { link: 'horse-racing/market/1.197027284', time: '15:59' },
+    { link: 'horse-racing/market/1.197027286', time: '16:40' },
+    { link: 'horse-racing/market/1.197027288', time: '17:15' }
   ],
-  Goulburn: [
-    { link: 'horse-racing/market/1.196969269', time: '13:05' },
-    { link: 'horse-racing/market/1.196969271', time: '13:40' },
-    { link: 'horse-racing/market/1.196969273', time: '14:20' },
-    { link: 'horse-racing/market/1.196969275', time: '15:00' },
-    { link: 'horse-racing/market/1.196969277', time: '15:40' },
-    { link: 'horse-racing/market/1.196969279', time: '16:20' },
-    { link: 'horse-racing/market/1.196969281', time: '16:55' },
-    { link: 'horse-racing/market/1.196969283', time: '17:35' }
+  'Sunshine Coast': [
+    { link: 'horse-racing/market/1.197021523', time: '13:35' },
+    { link: 'horse-racing/market/1.197021526', time: '14:15' },
+    { link: 'horse-racing/market/1.197021529', time: '14:55' },
+    { link: 'horse-racing/market/1.197021532', time: '15:35' },
+    { link: 'horse-racing/market/1.197021535', time: '16:07' }
   ],
-  Ararat: [
-    { link: 'horse-racing/market/1.196968096', time: '13:16' },
-    { link: 'horse-racing/market/1.196968099', time: '13:51' },
-    { link: 'horse-racing/market/1.196968102', time: '14:31' },
-    { link: 'horse-racing/market/1.196968105', time: '15:11' },
-    { link: 'horse-racing/market/1.196968108', time: '15:51' },
-    { link: 'horse-racing/market/1.196968111', time: '16:31' },
-    { link: 'horse-racing/market/1.196968114', time: '17:07' }
+  Hamilton: [
+    { link: 'horse-racing/market/1.197021028', time: '13:40' },
+    { link: 'horse-racing/market/1.197021031', time: '14:20' },
+    { link: 'horse-racing/market/1.197021034', time: '15:00' },
+    { link: 'horse-racing/market/1.197021037', time: '15:40' },
+    { link: 'horse-racing/market/1.197021040', time: '16:10' },
+    { link: 'horse-racing/market/1.197021043', time: '16:45' },
+    { link: 'horse-racing/market/1.197021046', time: '17:20' }
   ],
-  Gunnedah: [
-    { link: 'horse-racing/market/1.196968996', time: '13:31' },
-    { link: 'horse-racing/market/1.196968998', time: '14:10' },
-    { link: 'horse-racing/market/1.196969000', time: '14:50' },
-    { link: 'horse-racing/market/1.196969002', time: '15:30' },
-    { link: 'horse-racing/market/1.196969004', time: '16:10' },
-    { link: 'horse-racing/market/1.196969006', time: '16:46' },
-    { link: 'horse-racing/market/1.196969008', time: '17:26' }
+  Marburg: [
+    { link: 'horse-racing/market/1.197026883', time: '13:42' },
+    { link: 'horse-racing/market/1.197026885', time: '14:09' },
+    { link: 'horse-racing/market/1.197026887', time: '14:49' },
+    { link: 'horse-racing/market/1.197026889', time: '15:29' },
+    { link: 'horse-racing/market/1.197026891', time: '16:05' },
+    { link: 'horse-racing/market/1.197026893', time: '16:45' },
+    { link: 'horse-racing/market/1.197026895', time: '17:24' }
   ],
-  'Gold Coast': [
-    { link: 'horse-racing/market/1.196968549', time: '13:44' },
-    { link: 'horse-racing/market/1.196968551', time: '14:24' },
-    { link: 'horse-racing/market/1.196968553', time: '15:04' },
-    { link: 'horse-racing/market/1.196968555', time: '15:44' },
-    { link: 'horse-racing/market/1.196968557', time: '16:24' },
-    { link: 'horse-racing/market/1.196968559', time: '16:59' },
-    { link: 'horse-racing/market/1.196968561', time: '17:40' }
+  Pinjarra: [
+    { link: 'horse-racing/market/1.197021228', time: '14:40' },
+    { link: 'horse-racing/market/1.197021231', time: '15:20' },
+    { link: 'horse-racing/market/1.197021234', time: '15:55' },
+    { link: 'horse-racing/market/1.197021237', time: '16:30' },
+    { link: 'horse-racing/market/1.197021240', time: '17:10' },
+    { link: 'horse-racing/market/1.197021243', time: '17:50' },
+    { link: 'horse-racing/market/1.197021246', time: '18:25' },
+    { link: 'horse-racing/market/1.197021249', time: '19:00' },
+    { link: 'horse-racing/market/1.197021252', time: '19:35' }
   ],
-  Kilcoy: [
-    { link: 'horse-racing/market/1.196967307', time: '13:57' },
-    { link: 'horse-racing/market/1.196967309', time: '14:37' },
-    { link: 'horse-racing/market/1.196967311', time: '15:17' },
-    { link: 'horse-racing/market/1.196967313', time: '15:57' },
-    { link: 'horse-racing/market/1.196967315', time: '16:37' },
-    { link: 'horse-racing/market/1.196967317', time: '17:12' }
+  Bridgetown: [
+    { link: 'horse-racing/market/1.197026897', time: '15:04' },
+    { link: 'horse-racing/market/1.197026899', time: '15:40' },
+    { link: 'horse-racing/market/1.197026901', time: '16:14' },
+    { link: 'horse-racing/market/1.197026903', time: '16:55' },
+    { link: 'horse-racing/market/1.197026905', time: '17:35' },
+    { link: 'horse-racing/market/1.197026907', time: '18:15' },
+    { link: 'horse-racing/market/1.197026909', time: '18:50' }
   ],
-  'Alice Springs': [
-    { link: 'horse-racing/market/1.196969657', time: '14:17' },
-    { link: 'horse-racing/market/1.196969659', time: '14:57' },
-    { link: 'horse-racing/market/1.196969661', time: '15:37' },
-    { link: 'horse-racing/market/1.196969663', time: '16:17' },
-    { link: 'horse-racing/market/1.196969665', time: '16:57' },
-    { link: 'horse-racing/market/1.196969667', time: '17:37' },
-    { link: 'horse-racing/market/1.196969669', time: '18:10' },
-    { link: 'horse-racing/market/1.196969671', time: '18:46' }
-  ],
-  Ascot: [
-    { link: 'horse-racing/market/1.196921101', time: '15:22' },
-    { link: 'horse-racing/market/1.196921104', time: '16:02' },
-    { link: 'horse-racing/market/1.196921107', time: '16:39' },
-    { link: 'horse-racing/market/1.196921110', time: '17:19' },
-    { link: 'horse-racing/market/1.196921113', time: '17:55' },
-    { link: 'horse-racing/market/1.196921116', time: '18:35' },
-    { link: 'horse-racing/market/1.196921119', time: '19:14' },
-    { link: 'horse-racing/market/1.196921122', time: '19:50' },
-    { link: 'horse-racing/market/1.196921125', time: '20:25' }
-  ],
-  Kalgoorlie: [
-    { link: 'horse-racing/market/1.196967319', time: '16:25' },
-    { link: 'horse-racing/market/1.196967321', time: '17:05' },
-    { link: 'horse-racing/market/1.196967323', time: '17:45' },
-    { link: 'horse-racing/market/1.196967325', time: '18:25' },
-    { link: 'horse-racing/market/1.196967327', time: '18:56' },
-    { link: 'horse-racing/market/1.196967329', time: '19:36' },
-    { link: 'horse-racing/market/1.196967331', time: '20:10' }
-  ],
-  Melton: [
-    { link: 'horse-racing/market/1.196969748', time: '18:04' },
-    { link: 'horse-racing/market/1.196969751', time: '18:30' },
-    { link: 'horse-racing/market/1.196969754', time: '19:00' },
-    { link: 'horse-racing/market/1.196969757', time: '19:33' },
-    { link: 'horse-racing/market/1.196969760', time: '20:12' },
-    { link: 'horse-racing/market/1.196969763', time: '20:47' },
-    { link: 'horse-racing/market/1.196969766', time: '21:20' },
-    { link: 'horse-racing/market/1.196969769', time: '21:52' },
-    { link: 'horse-racing/market/1.196969772', time: '22:22' }
-  ],
-  Redcliffe: [
-    { link: 'horse-racing/market/1.196975160', time: '18:13' },
-    { link: 'horse-racing/market/1.196975163', time: '18:41' },
-    { link: 'horse-racing/market/1.196975166', time: '19:09' },
-    { link: 'horse-racing/market/1.196975169', time: '19:40' },
-    { link: 'horse-racing/market/1.196975172', time: '20:17' },
-    { link: 'horse-racing/market/1.196975175', time: '20:55' },
-    { link: 'horse-racing/market/1.196975178', time: '21:27' },
-    { link: 'horse-racing/market/1.196975181', time: '22:00' }
-  ],
-  Toowoomba: [
-    { link: 'horse-racing/market/1.196969775', time: '18:18' },
-    { link: 'horse-racing/market/1.196969778', time: '18:50' },
-    { link: 'horse-racing/market/1.196969781', time: '19:29' },
-    { link: 'horse-racing/market/1.196969784', time: '20:05' },
-    { link: 'horse-racing/market/1.196969787', time: '20:44' },
-    { link: 'horse-racing/market/1.196969790', time: '21:17' },
-    { link: 'horse-racing/market/1.196969793', time: '21:48' }
-  ],
-  Menangle: [
-    { link: 'horse-racing/market/1.196969709', time: '18:22' },
-    { link: 'horse-racing/market/1.196969711', time: '18:53' },
-    { link: 'horse-racing/market/1.196969713', time: '19:20' },
-    { link: 'horse-racing/market/1.196969715', time: '19:53' },
-    { link: 'horse-racing/market/1.196969717', time: '20:28' },
-    { link: 'horse-racing/market/1.196969719', time: '21:03' },
-    { link: 'horse-racing/market/1.196969721', time: '21:32' },
-    { link: 'horse-racing/market/1.196969723', time: '22:07' }
-  ],
-  'Mount Gambier': [
-    { link: 'horse-racing/market/1.196975192', time: '19:26' },
-    { link: 'horse-racing/market/1.196975194', time: '20:00' },
-    { link: 'horse-racing/market/1.196975196', time: '20:36' },
-    { link: 'horse-racing/market/1.196975198', time: '21:08' },
-    { link: 'horse-racing/market/1.196975200', time: '21:37' },
-    { link: 'horse-racing/market/1.196975202', time: '22:15' },
-    { link: 'horse-racing/market/1.196975204', time: '22:45' }
-  ],
-  Northam: [
-    { link: 'horse-racing/market/1.196975058', time: '21:44' },
-    { link: 'horse-racing/market/1.196975060', time: '22:12' },
-    { link: 'horse-racing/market/1.196975062', time: '22:37' },
-    { link: 'horse-racing/market/1.196975064', time: '23:13' },
-    { link: 'horse-racing/market/1.196975066', time: '23:45' }
+  Launceston: [
+    { link: 'horse-racing/market/1.197028759', time: '17:59' },
+    { link: 'horse-racing/market/1.197028761', time: '18:32' },
+    { link: 'horse-racing/market/1.197028763', time: '19:07' },
+    { link: 'horse-racing/market/1.197028765', time: '19:42' },
+    { link: 'horse-racing/market/1.197028767', time: '20:20' },
+    { link: 'horse-racing/market/1.197028769', time: '20:46' },
+    { link: 'horse-racing/market/1.197028771', time: '21:12' },
+    { link: 'horse-racing/market/1.197028773', time: '21:43' },
+    { link: 'horse-racing/market/1.197028775', time: '22:14' }
   ]
 }

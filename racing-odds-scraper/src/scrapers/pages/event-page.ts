@@ -9,8 +9,8 @@ export abstract class EventPage extends Page {
   
   abstract contestantNamesToOddsMap();
 
-  // abstract hasEventStarted();
-  // abstract isEventInPlay();
-  // abstract isEventSuspended();
-  // abstract hasEventEnded();
+  abstract hasEventStarted();
+  abstract isEventInPlay();
+  abstract isEventSuspended();
+  abstract hasEventEnded();
 }
