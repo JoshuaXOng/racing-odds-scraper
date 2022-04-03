@@ -20,9 +20,9 @@ describe("Browser Unit Tests.", () => {
   test("Initialize Browser and open Betfair's Horse Racing Schedule Page.", async () => {
     browser = new Browser(puppeteerBrowser);
 
-    const bfHRacingScheduleUrl = new URL(bookiesToUrlsMap.betfair.racing);
-    const bfSchedulePage = new BetfairSchedulePage(bfHRacingScheduleUrl);
-    const isAddPageSuccessful = await browser.addPage(bfSchedulePage);
+    const racingScheduleUrl = new URL(bookiesToUrlsMap.betfair.racing);
+    const schedulePage = new BetfairSchedulePage(racingScheduleUrl);
+    const isAddPageSuccessful = await browser.addPage(schedulePage);
     expect(isAddPageSuccessful).toBe(true);
   });
 
