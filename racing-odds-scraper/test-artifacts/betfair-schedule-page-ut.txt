@@ -1,18 +1,17 @@
 [
   'Hamilton',
-  'Marburg',
   'Gundagai',
   'Gawler',
   'Armidale',
-  'Mudgee',
-  'Sunshine Coast',
   'Pinjarra',
+  'Mudgee',
+  'Marburg',
+  'Sunshine Coast',
   'Bridgetown',
   'Launceston'
 ]
 {
   Hamilton: [
-    { link: 'horse-racing/market/1.197021028', time: '13:40' },
     { link: 'horse-racing/market/1.197021031', time: '14:20' },
     { link: 'horse-racing/market/1.197021034', time: '15:00' },
     { link: 'horse-racing/market/1.197021037', time: '15:40' },
@@ -20,17 +19,7 @@
     { link: 'horse-racing/market/1.197021043', time: '16:45' },
     { link: 'horse-racing/market/1.197021046', time: '17:20' }
   ],
-  Marburg: [
-    { link: 'horse-racing/market/1.197026883', time: '13:42' },
-    { link: 'horse-racing/market/1.197026885', time: '14:09' },
-    { link: 'horse-racing/market/1.197026887', time: '14:49' },
-    { link: 'horse-racing/market/1.197026889', time: '15:29' },
-    { link: 'horse-racing/market/1.197026891', time: '16:05' },
-    { link: 'horse-racing/market/1.197026893', time: '16:45' },
-    { link: 'horse-racing/market/1.197026895', time: '17:24' }
-  ],
   Gundagai: [
-    { link: 'horse-racing/market/1.197021417', time: '13:50' },
     { link: 'horse-racing/market/1.197021419', time: '14:30' },
     { link: 'horse-racing/market/1.197021421', time: '15:05' },
     { link: 'horse-racing/market/1.197021423', time: '15:45' },
@@ -39,7 +28,6 @@
     { link: 'horse-racing/market/1.197021429', time: '17:35' }
   ],
   Gawler: [
-    { link: 'horse-racing/market/1.197021167', time: '13:55' },
     { link: 'horse-racing/market/1.197021172', time: '14:35' },
     { link: 'horse-racing/market/1.197021177', time: '15:10' },
     { link: 'horse-racing/market/1.197021182', time: '15:50' },
@@ -48,24 +36,9 @@
     { link: 'horse-racing/market/1.197021197', time: '17:30' }
   ],
   Armidale: [
-    { link: 'horse-racing/market/1.197021073', time: '13:59' },
     { link: 'horse-racing/market/1.197021075', time: '14:40' },
     { link: 'horse-racing/market/1.197021077', time: '15:19' },
     { link: 'horse-racing/market/1.197021079', time: '15:49' }
-  ],
-  Mudgee: [
-    { link: 'horse-racing/market/1.197027278', time: '14:05' },
-    { link: 'horse-racing/market/1.197027280', time: '14:45' },
-    { link: 'horse-racing/market/1.197027282', time: '15:25' },
-    { link: 'horse-racing/market/1.197027284', time: '15:59' },
-    { link: 'horse-racing/market/1.197027286', time: '16:40' },
-    { link: 'horse-racing/market/1.197027288', time: '17:15' }
-  ],
-  'Sunshine Coast': [
-    { link: 'horse-racing/market/1.197021526', time: '14:15' },
-    { link: 'horse-racing/market/1.197021529', time: '14:55' },
-    { link: 'horse-racing/market/1.197021532', time: '15:35' },
-    { link: 'horse-racing/market/1.197021535', time: '16:07' }
   ],
   Pinjarra: [
     { link: 'horse-racing/market/1.197021228', time: '14:40' },
@@ -77,6 +50,25 @@
     { link: 'horse-racing/market/1.197021246', time: '18:25' },
     { link: 'horse-racing/market/1.197021249', time: '19:00' },
     { link: 'horse-racing/market/1.197021252', time: '19:35' }
+  ],
+  Mudgee: [
+    { link: 'horse-racing/market/1.197027280', time: '14:45' },
+    { link: 'horse-racing/market/1.197027282', time: '15:25' },
+    { link: 'horse-racing/market/1.197027284', time: '15:59' },
+    { link: 'horse-racing/market/1.197027286', time: '16:40' },
+    { link: 'horse-racing/market/1.197027288', time: '17:15' }
+  ],
+  Marburg: [
+    { link: 'horse-racing/market/1.197026887', time: '14:49' },
+    { link: 'horse-racing/market/1.197026889', time: '15:29' },
+    { link: 'horse-racing/market/1.197026891', time: '16:05' },
+    { link: 'horse-racing/market/1.197026893', time: '16:45' },
+    { link: 'horse-racing/market/1.197026895', time: '17:24' }
+  ],
+  'Sunshine Coast': [
+    { link: 'horse-racing/market/1.197021529', time: '14:55' },
+    { link: 'horse-racing/market/1.197021532', time: '15:35' },
+    { link: 'horse-racing/market/1.197021535', time: '16:07' }
   ],
   Bridgetown: [
     { link: 'horse-racing/market/1.197026897', time: '15:04' },
