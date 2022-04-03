@@ -91,10 +91,6 @@ export class BetfairRacingEventPage extends RacingEventPage {
     }
   };
 
-  async hasEventStarted() {
-    return this.isEventStatus(status => status === betfairRacingEventPageConstants.html.text.inPlay);
-  };
-
   async isEventInPlay() {
     return this.isEventStatus(status => status === betfairRacingEventPageConstants.html.text.inPlay);
   };
