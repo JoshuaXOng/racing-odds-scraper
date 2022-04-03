@@ -64,18 +64,23 @@ describe("BetfairRacingEventPage Unit Tests.", () => {
     bfRacingEventPageLogger.log(contestantNamesToOddsMap);
   });
 
+  test("BetfairRacingEventPage reads if event has started.", async () => {
+    const hasEventStarted = await racingEventPage!.hasEventStarted();
+    bfRacingEventPageLogger.log(`hasEventStarted: ${hasEventStarted}`);
+  });
+
   test("BetfairRacingEventPage reads in-play status.", async () => {
     const isEventInPlay = await racingEventPage!.isEventInPlay();
-    bfRacingEventPageLogger.log(isEventInPlay);
+    bfRacingEventPageLogger.log(`isEventInPlay: ${isEventInPlay}`);
   });
 
   test("BetfairRacingEventPage reads suspended alert.", async () => {
     const isEventSuspended = await racingEventPage!.isEventSuspended();
-    bfRacingEventPageLogger.log(isEventSuspended);
+    bfRacingEventPageLogger.log(`isEventSuspended: ${isEventSuspended}`);
   });
 
   test("BetfairRacingEventPage reads ended status.", async () => {
     const hasEventEnded = await racingEventPage!.hasEventEnded();
-    bfRacingEventPageLogger.log(hasEventEnded);
+    bfRacingEventPageLogger.log(`hasEventEnded: ${hasEventEnded}`);
   });
 });
