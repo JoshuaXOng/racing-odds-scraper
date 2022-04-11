@@ -1,9 +1,5 @@
-[ 'Pinjarra', 'Redcliffe' ]
+[ 'Redcliffe', 'Pinjarra' ]
 {
-  Pinjarra: [
-    { link: 'horse-racing/market/1.197438837', time: '18:10' },
-    { link: 'horse-racing/market/1.197438839', time: '18:43' }
-  ],
   Redcliffe: [
     { link: 'horse-racing/market/1.197439511', time: '18:27' },
     { link: 'horse-racing/market/1.197439513', time: '18:59' },
@@ -12,5 +8,6 @@
     { link: 'horse-racing/market/1.197439519', time: '20:29' },
     { link: 'horse-racing/market/1.197439521', time: '20:57' },
     { link: 'horse-racing/market/1.197439523', time: '21:25' }
-  ]
+  ],
+  Pinjarra: [ { link: 'horse-racing/market/1.197438839', time: '18:43' } ]
 }

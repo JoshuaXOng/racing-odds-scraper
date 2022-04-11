@@ -1,91 +1,88 @@
 [
-  'A C Lewis',
-  'C D Voak',
-  'D M Roberts',
-  'Emily Suvaljko',
-  'R J Young',
-  'D B Miller',
-  'K J Harper',
-  'G E Hall Jnr',
-  'C B Playle'
+  'P J Mcmullen',
+  'Leonard Cain',
+  'N M Dawson',
+  'E S Bailey',
+  'M J Elkins',
+  'Angus Garrard',
+  'Chloe Butler',
+  'G W Dixon'
 ]
 {
-  'A C Lewis': 'Our Shooting Star',
-  'C D Voak': 'Miss Harlequin',
-  'D M Roberts': 'Mufasa',
-  'Emily Suvaljko': 'Over Armed',
-  'R J Young': 'Jill Mach',
-  'D B Miller': 'Jiving Jolt',
-  'K J Harper': 'Sippinonjack',
-  'G E Hall Jnr': 'The Verandah',
-  'C B Playle': 'Celebrity Chef'
+  'P J Mcmullen': 'Ima Beach Babe',
+  'Leonard Cain': 'Gosling In Flight',
+  'N M Dawson': 'Bold Cowboy',
+  'E S Bailey': 'Swinging George',
+  'M J Elkins': 'Toro Delago',
+  'Angus Garrard': 'Rocknholme',
+  'Chloe Butler': 'Jackbkwik',
+  'G W Dixon': 'Rainbow Jet'
 }
 {
-  'A C Lewis': [
-    { value: '1.29', money: '$103' },
-    { value: '1.3', money: '$128' },
-    { value: '1.31', money: '$94' },
-    { value: '1.33', money: '$81' },
-    { value: '1.34', money: '$135' },
+  'P J Mcmullen': [
+    { value: '0', money: '$0' },
+    { value: '3.55', money: '$82' },
+    { value: '4', money: '$25' },
+    { value: '6.2', money: '$59' },
+    { value: '6.4', money: '$27' },
+    { value: '7.4', money: '$50' }
+  ],
+  'Leonard Cain': [
+    { value: '5.5', money: '$22' },
+    { value: '5.6', money: '$28' },
+    { value: '5.8', money: '$41' },
+    { value: '13', money: '$42' },
+    { value: '14.5', money: '$27' },
     { value: '0', money: '$0' }
   ],
-  'C D Voak': [
+  'N M Dawson': [
     { value: '0', money: '$0' },
-    { value: '32', money: '$18' },
-    { value: '48', money: '$38' },
-    { value: '1000', money: '$16' },
-    { value: '0', money: '$0' },
+    { value: '10', money: '$24' },
+    { value: '12.5', money: '$46' },
+    { value: '120', money: '$37' },
+    { value: '170', money: '$23' },
     { value: '0', money: '$0' }
   ],
-  'D M Roberts': [
-    { value: '5.3', money: '$19' },
-    { value: '5.4', money: '$29' },
-    { value: '5.6', money: '$30' },
-    { value: '6.4', money: '$28' },
-    { value: '6.8', money: '$49' },
-    { value: '0', money: '$0' }
-  ],
-  'Emily Suvaljko': [
+  'E S Bailey': [
     { value: '0', money: '$0' },
-    { value: '18.5', money: '$28' },
-    { value: '26', money: '$56' },
-    { value: '1000', money: '$34' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'R J Young': [
-    { value: '0', money: '$0' },
-    { value: '16.5', money: '$31' },
-    { value: '22', money: '$58' },
-    { value: '1000', money: '$33' },
+    { value: '18', money: '$23' },
+    { value: '21', money: '$40' },
+    { value: '1000', money: '$25' },
     { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'D B Miller': [
+  'M J Elkins': [
     { value: '0', money: '$0' },
-    { value: '21', money: '$28' },
-    { value: '28', money: '$51' },
-    { value: '1000', money: '$26' },
+    { value: '22', money: '$33' },
+    { value: '27', money: '$36' },
+    { value: '1000', money: '$22' },
     { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'K J Harper': [
+  'Angus Garrard': [
     { value: '0', money: '$0' },
-    { value: '20', money: '$28' },
-    { value: '28', money: '$53' },
-    { value: '550', money: '$36' },
-    { value: '1000', money: '$5' },
+    { value: '4.1', money: '$39' },
+    { value: '4.5', money: '$48' },
+    { value: '8.8', money: '$37' },
+    { value: '9.8', money: '$20' },
     { value: '0', money: '$0' }
   ],
-  'G E Hall Jnr': [
-    { value: '0', money: '$0' },
-    { value: '13.5', money: '$18' },
-    { value: '17.5', money: '$43' },
-    { value: '70', money: '$49' },
-    { value: '390', money: '$23' },
+  'Chloe Butler': [
+    { value: '2.8', money: '$55' },
+    { value: '2.82', money: '$64' },
+    { value: '3.2', money: '$56' },
+    { value: '3.95', money: '$63' },
+    { value: '4.1', money: '$42' },
     { value: '0', money: '$0' }
   ],
-  'C B Playle': []
+  'G W Dixon': [
+    { value: '0', money: '$0' },
+    { value: '3.95', money: '$33' },
+    { value: '4', money: '$61' },
+    { value: '8.8', money: '$30' },
+    { value: '9', money: '$32' },
+    { value: '9.6', money: '$25' }
+  ]
 }
 isEventInPlay: false
 isEventSuspended: false

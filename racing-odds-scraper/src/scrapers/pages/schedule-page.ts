@@ -1,12 +1,14 @@
 import { Page } from "../browsers/page";
-import { Schedule } from "../scraper-types";
+import { EventSchedule } from "../scraper-types";
 
 export abstract class SchedulePage extends Page {
+  abstract sourceBookieName: string;
+  
   constructor(sourceUrl: URL) {
     super(sourceUrl);
   }
 
   abstract getVenueNames();
 
-  abstract getVenueNamesToEvents(): Promise<Schedule>;
+  abstract getVenueNamesToEvents(): Promise<EventSchedule>;
 }

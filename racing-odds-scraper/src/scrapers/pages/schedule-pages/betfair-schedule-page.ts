@@ -15,6 +15,8 @@ const betfairSchedulePageConstants = {
 }
 
 export class BetfairSchedulePage extends SchedulePage {
+  sourceBookieName = "betfair";
+
   constructor(sourceUrl: URL) {
     super(sourceUrl);
   }

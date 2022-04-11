@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer";
 import { Browser } from "./browsers/browser";
 import { SchedulePage } from "./pages/schedule-page";
-import { Schedule } from "./scraper-types";
+import { EventSchedule } from "./scraper-types";
 
 type Limits = {
   allowedCountries: string[],
@@ -25,7 +25,7 @@ export class Scheduler {
     isStrict: false,
   };
   
-  soupedSchedules: { [key: string]: Schedule };
+  soupedSchedules: { [key: string]: EventSchedule };
   
   async initBrowser() {
     this.mainBrowser = new Browser(await puppeteer.launch());
@@ -50,7 +50,7 @@ export class Scheduler {
     const desiredPollIntervalInMs = this.desiredPollIntervalInSec * 1000;
     setInterval(async () => {
       const unformattedSoupSchedules = this.sourceSchedulePages.map(async ssp => {
-        return { [ssp.sourceUrl.toString()]: await ssp.getVenueNamesToEvents() };
+        return { [ssp.sourceBookieName]: await ssp.getVenueNamesToEvents() };
       });
       this.soupedSchedules = (await Promise.all(unformattedSoupSchedules)).reduce((ss, uss) => ({ ...ss, ...uss }), {});
     }, desiredPollIntervalInMs)
