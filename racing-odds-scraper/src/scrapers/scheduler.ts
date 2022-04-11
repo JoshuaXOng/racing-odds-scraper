@@ -47,12 +47,17 @@ export class Scheduler {
 
     this.sourceSchedulePages.push(schedulePage);
   
-    const desiredPollIntervalInMs = this.desiredPollIntervalInSec * 1000;
-    setInterval(async () => {
+    const updateSoup = async () => {
       const unformattedSoupSchedules = this.sourceSchedulePages.map(async ssp => {
         return { [ssp.sourceBookieName]: await ssp.getVenueNamesToEvents() };
       });
       this.soupedSchedules = (await Promise.all(unformattedSoupSchedules)).reduce((ss, uss) => ({ ...ss, ...uss }), {});
+    }
+
+    updateSoup();
+    const desiredPollIntervalInMs = this.desiredPollIntervalInSec * 1000;
+    setInterval(async () => {
+      updateSoup();
     }, desiredPollIntervalInMs)
   }
 }
