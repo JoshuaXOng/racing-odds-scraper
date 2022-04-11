@@ -15,32 +15,32 @@ const betfairSchedulePageConstants = {
 }
 
 export class BetfairSchedulePage extends SchedulePage {
-  constructor(url: URL) {
-    super(url);
+  constructor(sourceUrl: URL) {
+    super(sourceUrl);
   }
 
-  async venueNames() {
-    this.handleNoPage();
+  async getVenueNames() {
+    this.handleNoDriverPage();
 
-    await this.page.waitForSelector(
+    await this.driverPage.waitForSelector(
       `.${betfairSchedulePageConstants.racing.html.classNames.venueName}`
     )
     
-    const venueNames = await this.page.$$eval(
+    const venueNames = await this.driverPage.$$eval(
       `.${betfairSchedulePageConstants.racing.html.classNames.venueName}`, 
       venueNames => venueNames.map(vn => vn.innerHTML)
     );
     return venueNames;
   };
 
-  async venueNamesToEventsMap() {
-    this.handleNoPage();
+  async getVenueNamesToEvents() {
+    this.handleNoDriverPage();
 
-    await this.page.waitForSelector(
+    await this.driverPage.waitForSelector(
       `.${betfairSchedulePageConstants.racing.html.classNames.eventBoxTime}`
     )
 
-    const venueGroupedEvents = await this.page.$$eval( 
+    const venueGroupedEvents = await this.driverPage.$$eval( 
       `.${betfairSchedulePageConstants.racing.html.classNames.eventBoxRow}`, 
       eventBoxRows => eventBoxRows.map(ebr => {
         let events: any = [];
@@ -57,12 +57,12 @@ export class BetfairSchedulePage extends SchedulePage {
       })
     );
     
-    const venueNames = await this.venueNames();
+    const venueNames = await this.getVenueNames();
     if (venueNames?.length !== venueGroupedEvents?.length) 
       console.log(`This function may be incorrect as length of venue names does not match length of event groups: ${venueNames?.length} vs. ${venueGroupedEvents?.length}`);
     
-    let venueNamesToEventsMap = {};
-    venueNames?.forEach((vn, i) => venueNamesToEventsMap[vn] = venueGroupedEvents[i]);
-    return venueNamesToEventsMap;
+    let venueNamesToEvents = {};
+    venueNames?.forEach((vn, i) => venueNamesToEvents[vn] = venueGroupedEvents[i]);
+    return venueNamesToEvents;
   };
 }

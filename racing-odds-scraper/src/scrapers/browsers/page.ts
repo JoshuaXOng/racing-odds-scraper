@@ -2,19 +2,19 @@ import { Page as PPage } from "puppeteer";
 import { NoPageError } from "./browser-errors";
 
 export abstract class Page {
-  url: URL;
-  page: PPage;
+  sourceUrl: URL;
+  driverPage: PPage;
 
-  constructor(url: URL) {
-    this.url = url;
+  constructor(sourceUrl: URL) {
+    this.sourceUrl = sourceUrl;
   }
 
-  handleNoPage() {
-    if (!this.page) throw new NoPageError("Page is being operated against w/o an underlying page object.");
+  handleNoDriverPage() {
+    if (!this.driverPage) throw new NoPageError("Page is being operated against w/o an underlying page object.");
   }
 
   async close() {
-    this.handleNoPage();
-    await this.page.close();
+    this.handleNoDriverPage();
+    await this.driverPage.close();
   }
 }

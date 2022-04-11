@@ -6,19 +6,19 @@ import { BetfairSchedulePage } from "../pages/schedule-pages/betfair-schedule-pa
 describe("Browser Unit Tests.", () => {
   jest.setTimeout(10000);
 
-  let puppeteerBrowser: PBrowser;
+  let driverBrowser: PBrowser;
   let browser: Browser;
 
   beforeAll(async () => {
-    puppeteerBrowser = await puppeteer.launch({ headless: true });
+    driverBrowser = await puppeteer.launch({ headless: true });
   });
 
   afterAll(async () => {
-    await puppeteerBrowser.close();
+    await driverBrowser.close();
   })
   
   test("Initialize Browser and open Betfair's Horse Racing Schedule Page.", async () => {
-    browser = new Browser(puppeteerBrowser);
+    browser = new Browser(driverBrowser);
 
     const racingScheduleUrl = new URL(bookiesToUrls.betfair.racing);
     const schedulePage = new BetfairSchedulePage(racingScheduleUrl);
@@ -27,7 +27,7 @@ describe("Browser Unit Tests.", () => {
   });
 
   test("Browser returns currect number of tabs open.", async () => {
-    const numOpenedPages = await browser.numOpenedPages();
+    const numOpenedPages = await browser.getNumOpenedPages();
     expect(numOpenedPages).toBe(2);
   })
 
@@ -37,16 +37,16 @@ describe("Browser Unit Tests.", () => {
     const isAddPageSuccessful = await browser.addPage(bfSchedulePage);
     expect(isAddPageSuccessful).toBe(true);
     
-    const urlsToNumOpenedTabs = await browser.numOpenedPagesPerUrl();
+    const urlsToNumOpenedTabs = await browser.getNumOpenedPagesPerUrl();
     expect(Object.keys(urlsToNumOpenedTabs).length).toBe(2);
     expect(urlsToNumOpenedTabs[bookiesToUrls.betfair.racing]).toBe(2);
   })
 
   test("Browser closes all pages of a certain url.", async () => {
-    let numOpenedPages = await browser.numOpenedPages();
+    let numOpenedPages = await browser.getNumOpenedPages();
     expect(numOpenedPages).toBe(3);
     await browser.closePages(new URL(bookiesToUrls.betfair.racing));
-    numOpenedPages = await browser.numOpenedPages();
+    numOpenedPages = await browser.getNumOpenedPages();
     expect(numOpenedPages).toBe(1);
   })
 });

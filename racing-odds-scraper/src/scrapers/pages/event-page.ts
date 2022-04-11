@@ -1,15 +1,15 @@
 import { Page } from "../browsers/page";
 
 export abstract class EventPage extends Page {
-  constructor(url: URL) {
-    super(url);
+  constructor(sourceUrl: URL) {
+    super(sourceUrl);
   }
 
-  abstract contestantNames();
+  abstract getContestantNames();
   
-  abstract contestantNamesToOddsMap();
+  abstract getContestantNamesToOdds();
 
-  abstract isEventInPlay();
-  abstract isEventSuspended();
-  abstract hasEventEnded();
+  abstract getIsEventInPlay();
+  abstract getIsEventSuspended();
+  abstract getHasEventEnded();
 }

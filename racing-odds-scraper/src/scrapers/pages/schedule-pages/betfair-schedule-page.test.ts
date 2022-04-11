@@ -12,13 +12,13 @@ const bfSchedulePageLogger = new Console({
 describe("BetfairSchedulePage Unit Tests.", () => {
   jest.setTimeout(20000);
 
-  let puppeteerBrowser: PBrowser;
+  let driverBrowser: PBrowser;
   let browser: Browser;
   let scheduleEventPage: BetfairSchedulePage;
 
   beforeAll(async () => {
-    puppeteerBrowser = await puppeteer.launch({ headless: true });
-    browser = new Browser(puppeteerBrowser);
+    driverBrowser = await puppeteer.launch({ headless: true });
+    browser = new Browser(driverBrowser);
     
     const racingScheduleUrl = new URL(bookiesToUrls.betfair.racing);
     scheduleEventPage = new BetfairSchedulePage(racingScheduleUrl);
@@ -27,23 +27,23 @@ describe("BetfairSchedulePage Unit Tests.", () => {
   });
   
   afterAll(async () => {
-    await scheduleEventPage!.page.setViewport({ width: 1920, height: 1500 });
+    await scheduleEventPage!.driverPage.setViewport({ width: 1920, height: 1500 });
     await new Promise(resolve => setTimeout(resolve, 1000));
-    await scheduleEventPage!.page.screenshot({ 
+    await scheduleEventPage!.driverPage.screenshot({ 
       path: "./test-artifacts/betfair-schedule-page-ut.jpeg", 
       clip: { x: 0, y: 0, width: 1920, height: 1500 } 
     }); 
     
-    await puppeteerBrowser.close();
+    await driverBrowser.close();
   })
   
   test("BetfairSchedulePage reads current horse racing venue names.", async () => {    
-    const venueNames = await scheduleEventPage!.venueNames();
+    const venueNames = await scheduleEventPage!.getVenueNames();
     bfSchedulePageLogger.log(venueNames);
   });
 
   test("BetfairSchedulePage reads current horse racing venue names and their events' time.", async () => {    
-    const venueNamesToEventsMap = await scheduleEventPage!.venueNamesToEventsMap()
-    bfSchedulePageLogger.log(venueNamesToEventsMap);
+    const venueNamesToEvents = await scheduleEventPage!.getVenueNamesToEvents()
+    bfSchedulePageLogger.log(venueNamesToEvents);
   });
 });

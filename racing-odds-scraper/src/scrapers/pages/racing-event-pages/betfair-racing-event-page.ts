@@ -17,52 +17,52 @@ const betfairRacingEventPageConstants = {
 }
 
 export class BetfairRacingEventPage extends RacingEventPage {
-  constructor(url: URL) {
-    super(url);
+  constructor(sourceUrl: URL) {
+    super(sourceUrl);
   }
 
-  async contestantNames() {
-    this.handleNoPage();
+  async getContestantNames() {
+    this.handleNoDriverPage();
     
-    await this.page.waitForSelector(
+    await this.driverPage.waitForSelector(
       `.${betfairRacingEventPageConstants.html.classNames.jockeyName}`
     );
 
-    const contestantNames = await this.page.$$eval(
+    const contestantNames = await this.driverPage.$$eval(
       `.${betfairRacingEventPageConstants.html.classNames.jockeyName}`,
       jockeyNames => jockeyNames.map(jn => jn.innerHTML)
     );
     return contestantNames;
   };
 
-  async contestantNamesToHorseNamesMap() {
-    this.handleNoPage();
+  async getContestantNamesToHorseNames() {
+    this.handleNoDriverPage();
 
-    await this.page.waitForSelector(
+    await this.driverPage.waitForSelector(
       `.${betfairRacingEventPageConstants.html.classNames.horseName}`
     );
 
-    const horseNamesPlus = await this.page.$$eval(
+    const horseNamesPlus = await this.driverPage.$$eval(
       `.${betfairRacingEventPageConstants.html.classNames.horseName}`,
       horseInfoBoxs => horseInfoBoxs.map(hib => hib.innerHTML)
     );
     const horseNames = horseNamesPlus.map(hnp => hnp.slice(0, hnp.indexOf("<")));
 
-    const contestantNames = await this.contestantNames();
+    const contestantNames = await this.getContestantNames();
 
     let contestantNamesToHorseNameMap = {};
     contestantNames?.forEach((cn, i) => contestantNamesToHorseNameMap[cn] = horseNames[i]);
     return contestantNamesToHorseNameMap;
   };
 
-  async contestantNamesToOddsMap() {
-    this.handleNoPage();
+  async getContestantNamesToOdds() {
+    this.handleNoDriverPage();
 
-    await this.page.waitForSelector(
+    await this.driverPage.waitForSelector(
       `.${betfairRacingEventPageConstants.html.classNames.oddsTableRow}`
     );
 
-    const oddsRows = await this.page.$$eval(
+    const oddsRows = await this.driverPage.$$eval(
       `.${betfairRacingEventPageConstants.html.classNames.oddsTableRow}`,
       oddsTableRows => oddsTableRows.map(otr => {
         let row: any = [];
@@ -79,24 +79,20 @@ export class BetfairRacingEventPage extends RacingEventPage {
       })
     );
       
-    const contestantNamesToOddsMap = {};
-    const contestantNames = await this.contestantNames();
-    contestantNames?.forEach((cn, i) => contestantNamesToOddsMap[cn] = oddsRows[i]);
-    return contestantNamesToOddsMap;
+    const contestantNamesToOdds = {};
+    const contestantNames = await this.getContestantNames();
+    contestantNames?.forEach((cn, i) => contestantNamesToOdds[cn] = oddsRows[i]);
+    return contestantNamesToOdds;
   };
 
-  async isEventInPlay() {
-    return this.isEventStatus(status => status === betfairRacingEventPageConstants.html.text.inPlay);
+  async getIsEventInPlay() {
+    return this.getIsEventStatus(status => status === betfairRacingEventPageConstants.html.text.inPlay);
   };
 
-  async isEventSuspended() {
-    this.handleNoPage();
+  async getIsEventSuspended() {
+    this.handleNoDriverPage();
 
-    await this.page.waitForSelector(
-      `.${betfairRacingEventPageConstants.html.classNames.activeSuspendedAlerts}`
-    );
-
-    const activeSuspAlerts = await this.page.$$eval(
+    const activeSuspAlerts = await this.driverPage.$$eval(
       `.${betfairRacingEventPageConstants.html.classNames.activeSuspendedAlerts}`,
       activeSuspAlerts => activeSuspAlerts.map(asa => (asa as HTMLElement)),
     );
@@ -104,18 +100,18 @@ export class BetfairRacingEventPage extends RacingEventPage {
     return activeSuspAlerts.length === 1;
   };
 
-  async hasEventEnded() {
-    return this.isEventStatus(status => status === betfairRacingEventPageConstants.html.text.closed);
+  async getHasEventEnded() {
+    return this.getIsEventStatus(status => status === betfairRacingEventPageConstants.html.text.closed);
   };
 
-  private async isEventStatus(predicate: (status: string) => boolean) {
-    this.handleNoPage();
+  private async getIsEventStatus(predicate: (status: string) => boolean) {
+    this.handleNoDriverPage();
 
-    await this.page.waitForSelector(
+    await this.driverPage.waitForSelector(
       `.${betfairRacingEventPageConstants.html.classNames.status}`
     );
 
-    const [status] = await this.page.$$eval(
+    const [status] = await this.driverPage.$$eval(
       `.${betfairRacingEventPageConstants.html.classNames.status}`,
       statuses => statuses.map(s => s.innerHTML),
     );

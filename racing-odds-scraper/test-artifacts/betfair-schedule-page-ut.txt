@@ -1,85 +1,10 @@
-[
-  'Birdsville',
-  'Pinjarra',
-  'Globe Derby',
-  'Swan Hill',
-  'Grafton',
-  'Bankstown',
-  'Tamworth',
-  'Horsham',
-  'Redcliffe'
-]
+[ 'Pinjarra', 'Redcliffe' ]
 {
-  Birdsville: [
-    {
-      link: 'horse-racing/market/1.197439112',
-      time: '<svg class="icon"><use xlink:href="/resources/eds/bundle/images/sprite-bf-todays-racing_5047_.svg#icons-inplay" data-ng-href="/resources/eds/bundle/images/sprite-bf-todays-racing_5047_.svg#icons-inplay"></use></svg> '
-    },
-    { link: 'horse-racing/market/1.197439115', time: '14:57' },
-    { link: 'horse-racing/market/1.197439118', time: '15:38' },
-    { link: 'horse-racing/market/1.197439121', time: '16:13' },
-    { link: 'horse-racing/market/1.197439124', time: '16:48' }
-  ],
   Pinjarra: [
-    {
-      link: 'horse-racing/market/1.197438823',
-      time: '<svg class="icon"><use xlink:href="/resources/eds/bundle/images/sprite-bf-todays-racing_5047_.svg#icons-inplay" data-ng-href="/resources/eds/bundle/images/sprite-bf-todays-racing_5047_.svg#icons-inplay"></use></svg> '
-    },
-    { link: 'horse-racing/market/1.197438825', time: '14:45' },
-    { link: 'horse-racing/market/1.197438827', time: '15:20' },
-    { link: 'horse-racing/market/1.197438829', time: '15:55' },
-    { link: 'horse-racing/market/1.197438831', time: '16:33' },
-    { link: 'horse-racing/market/1.197438833', time: '17:10' },
-    { link: 'horse-racing/market/1.197438835', time: '17:42' },
     { link: 'horse-racing/market/1.197438837', time: '18:10' },
     { link: 'horse-racing/market/1.197438839', time: '18:43' }
   ],
-  'Globe Derby': [
-    { link: 'horse-racing/market/1.197439403', time: '14:25' },
-    { link: 'horse-racing/market/1.197439405', time: '15:03' },
-    { link: 'horse-racing/market/1.197439407', time: '15:42' },
-    { link: 'horse-racing/market/1.197439409', time: '16:17' },
-    { link: 'horse-racing/market/1.197439411', time: '16:52' },
-    { link: 'horse-racing/market/1.197439413', time: '17:31' }
-  ],
-  'Swan Hill': [
-    { link: 'horse-racing/market/1.197389840', time: '14:30' },
-    { link: 'horse-racing/market/1.197389843', time: '15:00' },
-    { link: 'horse-racing/market/1.197389846', time: '15:30' },
-    { link: 'horse-racing/market/1.197389849', time: '16:00' },
-    { link: 'horse-racing/market/1.197389852', time: '16:30' },
-    { link: 'horse-racing/market/1.197389855', time: '17:00' }
-  ],
-  Grafton: [
-    { link: 'horse-racing/market/1.197444189', time: '14:35' },
-    { link: 'horse-racing/market/1.197444191', time: '15:10' },
-    { link: 'horse-racing/market/1.197444193', time: '15:47' },
-    { link: 'horse-racing/market/1.197444195', time: '16:22' },
-    { link: 'horse-racing/market/1.197444197', time: '16:57' }
-  ],
-  Bankstown: [
-    { link: 'horse-racing/market/1.197441142', time: '14:38' },
-    { link: 'horse-racing/market/1.197441144', time: '15:13' },
-    { link: 'horse-racing/market/1.197441146', time: '15:50' },
-    { link: 'horse-racing/market/1.197441148', time: '16:25' },
-    { link: 'horse-racing/market/1.197441150', time: '17:03' }
-  ],
-  Tamworth: [
-    { link: 'horse-racing/market/1.197441177', time: '14:50' },
-    { link: 'horse-racing/market/1.197441179', time: '15:25' },
-    { link: 'horse-racing/market/1.197441181', time: '16:05' },
-    { link: 'horse-racing/market/1.197441183', time: '16:40' },
-    { link: 'horse-racing/market/1.197441185', time: '17:15' }
-  ],
-  Horsham: [
-    { link: 'horse-racing/market/1.197439705', time: '14:53' },
-    { link: 'horse-racing/market/1.197439707', time: '15:33' },
-    { link: 'horse-racing/market/1.197439709', time: '16:08' },
-    { link: 'horse-racing/market/1.197439711', time: '16:43' },
-    { link: 'horse-racing/market/1.197439713', time: '17:22' }
-  ],
   Redcliffe: [
-    { link: 'horse-racing/market/1.197439509', time: '17:50' },
     { link: 'horse-racing/market/1.197439511', time: '18:27' },
     { link: 'horse-racing/market/1.197439513', time: '18:59' },
     { link: 'horse-racing/market/1.197439515', time: '19:27' },

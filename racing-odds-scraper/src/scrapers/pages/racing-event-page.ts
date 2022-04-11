@@ -1,9 +1,9 @@
 import { EventPage } from "./event-page";
 
 export abstract class RacingEventPage extends EventPage {
-  constructor(url: URL) {
-    super(url);
+  constructor(sourceUrl: URL) {
+    super(sourceUrl);
   }
 
-  abstract contestantNamesToHorseNamesMap();
+  abstract getContestantNamesToHorseNames();
 }
