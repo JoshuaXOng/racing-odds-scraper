@@ -1,7 +1,7 @@
 import { Console } from "console";
 import fs from "fs";
 import puppeteer, { Browser as PBrowser } from "puppeteer";
-import { bookiesToUrlsMap } from "../../../constants";
+import { bookiesToUrls } from "../../../constants";
 import { Browser } from "../../browsers/browser";
 import { BetfairSchedulePage } from "./betfair-schedule-page";
 
@@ -20,7 +20,7 @@ describe("BetfairSchedulePage Unit Tests.", () => {
     puppeteerBrowser = await puppeteer.launch({ headless: true });
     browser = new Browser(puppeteerBrowser);
     
-    const racingScheduleUrl = new URL(bookiesToUrlsMap.betfair.racing);
+    const racingScheduleUrl = new URL(bookiesToUrls.betfair.racing);
     scheduleEventPage = new BetfairSchedulePage(racingScheduleUrl);
     const isAddPageSuccessful = await browser.addPage(scheduleEventPage);
     expect(isAddPageSuccessful).toBe(true);

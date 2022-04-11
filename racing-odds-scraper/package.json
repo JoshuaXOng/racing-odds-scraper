@@ -7,8 +7,8 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "start": "node src/index.ts",
-    "stage": "node src/stage.ts",
+    "start": "ts-node src/index.ts",
+    "stage": "ts-node src/stage.ts",
     "test": "jest"
   },
   "keywords": [],

@@ -1,4 +1,4 @@
-export const bookiesToUrlsMap = {
+export const bookiesToUrls = {
   betfair: {
     index: "https://www.betfair.com.au",
     landing: "https://www.betfair.com.au/exchange/plus/",
