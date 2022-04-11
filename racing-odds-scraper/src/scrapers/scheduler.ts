@@ -12,7 +12,7 @@ type Limits = {
 
 export class Scheduler {
   private mainBrowser: Browser;
-  private sourceSchedulePage: SchedulePage;
+  private sourceSchedulePages: SchedulePage[] = [];
   
   desiredPollIntervalInSec = 5;
   readingLimits: Limits = {
@@ -24,26 +24,35 @@ export class Scheduler {
     },
     isStrict: false,
   };
-
-  schedule: Schedule;
   
-  async setupAndRun(schedulePage: SchedulePage) {
+  soupedSchedules: { [key: string]: Schedule };
+  
+  async initBrowser() {
     this.mainBrowser = new Browser(await puppeteer.launch());
+  }
 
-    this.sourceSchedulePage = schedulePage;
-    const addPageResult = await this.mainBrowser.addPage(this.sourceSchedulePage);
+  async addSourcePage(schedulePage: SchedulePage) {
+    if (!this.mainBrowser)
+      throw new Error("Have to init browser before running.");
+    
+    const isSourceDoubleUp = this.sourceSchedulePages.reduce((_, ssp) => schedulePage instanceof ssp.constructor, false);
+    if (isSourceDoubleUp) {
+      return console.log("Scheduler was given a duplicate source page.");
+    }
 
+    const addPageResult = await this.mainBrowser.addPage(schedulePage);
     if (!addPageResult) {
       throw new Error("Setup failed as page could not be added to browser.");
     }
-    
+
+    this.sourceSchedulePages.push(schedulePage);
+  
     const desiredPollIntervalInMs = this.desiredPollIntervalInSec * 1000;
     setInterval(async () => {
-      this.schedule = await this.sourceSchedulePage.venueNamesToEventsMap();
+      const unformattedSoupSchedules = this.sourceSchedulePages.map(async ssp => {
+        return { [ssp.url.toString()]: await ssp.venueNamesToEventsMap() };
+      });
+      this.soupedSchedules = (await Promise.all(unformattedSoupSchedules)).reduce((ss, uss) => ({ ...ss, ...uss }), {});
     }, desiredPollIntervalInMs)
-  }
-
-  pollUpcomingEvents() {
-    // console.log(this.testi)
   }
 }
