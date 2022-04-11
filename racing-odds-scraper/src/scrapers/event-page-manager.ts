@@ -12,8 +12,9 @@ export class EventPageManager {
   }
 
   addEventPage(eventName: string, bookieName: string, eventPage: EventPage) {
-    if (!this.coveredEvents[eventName])
+    if (!this.coveredEvents[eventName]) {
       console.log("A new event key was inserted into event page manager.");
       this.coveredEvents[eventName] = {};
     }
+  }
 }
