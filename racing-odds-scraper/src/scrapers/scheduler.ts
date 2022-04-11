@@ -1,6 +1,7 @@
 import puppeteer from "puppeteer";
 import { Browser } from "./browsers/browser";
 import { SchedulePage } from "./pages/schedule-page";
+import { Schedule } from "./scraper-types";
 
 type Limits = {
   allowedCountries: string[],
@@ -13,8 +14,7 @@ export class Scheduler {
   private mainBrowser: Browser;
   private sourceSchedulePage: SchedulePage;
   
-  // desiredPollIntervalInSec = 60 * 60;
-  desiredPollIntervalInSec = 1;
+  desiredPollIntervalInSec = 5;
   readingLimits: Limits = {
     allowedCountries: [],
     allowedVenues: [],
@@ -25,7 +25,7 @@ export class Scheduler {
     isStrict: false,
   };
 
-  testi: any[] = [];
+  schedule: Schedule;
   
   async setupAndRun(schedulePage: SchedulePage) {
     this.mainBrowser = new Browser(await puppeteer.launch());
@@ -36,15 +36,14 @@ export class Scheduler {
     if (!addPageResult) {
       throw new Error("Setup failed as page could not be added to browser.");
     }
-    console.log("333")
-    // const desiredPollIntervalInMs = this.desiredPollIntervalInSec * 1000;
+    
+    const desiredPollIntervalInMs = this.desiredPollIntervalInSec * 1000;
     setInterval(async () => {
-      console.log(await this.sourceSchedulePage.venueNamesToEventsMap())
-    }, 1)
-    console.log("333")
+      this.schedule = await this.sourceSchedulePage.venueNamesToEventsMap();
+    }, desiredPollIntervalInMs)
   }
 
   pollUpcomingEvents() {
-    console.log(this.testi)
+    // console.log(this.testi)
   }
 }

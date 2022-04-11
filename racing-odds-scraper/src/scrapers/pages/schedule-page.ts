@@ -1,4 +1,5 @@
 import { Page } from "../browsers/page";
+import { Schedule } from "../scraper-types";
 
 export abstract class SchedulePage extends Page {
   constructor(url: URL) {
@@ -7,7 +8,7 @@ export abstract class SchedulePage extends Page {
 
   abstract venueNames();
 
-  abstract venueNamesToEventsMap();
+  abstract venueNamesToEventsMap(): Promise<Schedule>;
 
   // abstract venueNamesToFilteredEventsMap(predicate: (venueName: string, eventTime: string) => boolean);
 }
