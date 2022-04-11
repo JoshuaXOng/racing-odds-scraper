@@ -7,7 +7,7 @@ const betfairRacingEventPageConstants = {
       horseName: "runner-name",
       oddsTableRow: "runner-line",
       status: "market-status-label",
-      suspendedAlertContainer: "suspended-overlay-container",
+      activeSuspendedAlerts: "suspended-overlay-active",
     },
     text: {
       inPlay: "In-Play",
@@ -93,11 +93,11 @@ export class BetfairRacingEventPage extends RacingEventPage {
     this.handleNoPage();
 
     await this.page.waitForSelector(
-      `.${betfairRacingEventPageConstants.html.classNames.suspendedAlertContainer}`
+      `.${betfairRacingEventPageConstants.html.classNames.activeSuspendedAlerts}`
     );
 
     const activeSuspAlerts = await this.page.$$eval(
-      `.suspended-overlay-active`,
+      `.${betfairRacingEventPageConstants.html.classNames.activeSuspendedAlerts}`,
       activeSuspAlerts => activeSuspAlerts.map(asa => (asa as HTMLElement)),
     );
 
