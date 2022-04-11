@@ -7,7 +7,7 @@ const betfairRacingEventPageConstants = {
       horseName: "runner-name",
       oddsTableRow: "runner-line",
       status: "market-status-label",
-      suspendedAlert: "suspended-label",
+      suspendedAlertContainer: "suspended-overlay-container",
     },
     text: {
       inPlay: "In-Play",
@@ -93,15 +93,15 @@ export class BetfairRacingEventPage extends RacingEventPage {
     this.handleNoPage();
 
     await this.page.waitForSelector(
-      `.${betfairRacingEventPageConstants.html.classNames.suspendedAlert}`
+      `.${betfairRacingEventPageConstants.html.classNames.suspendedAlertContainer}`
     );
 
-    const suspendedAlerts = await this.page.$$eval(
-      `.${betfairRacingEventPageConstants.html.classNames.suspendedAlert}`,
-      suspendedAlerts => suspendedAlerts.map(sa => sa.innerHTML)
+    const activeSuspAlerts = await this.page.$$eval(
+      `.suspended-overlay-active`,
+      activeSuspAlerts => activeSuspAlerts.map(asa => (asa as HTMLElement)),
     );
-    
-    return suspendedAlerts.length === 1;
+
+    return activeSuspAlerts.length === 1;
   };
 
   async hasEventEnded() {

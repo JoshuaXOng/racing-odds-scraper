@@ -1,129 +1,99 @@
 [
-  'Kayleb Williams',
-  'N B Ford',
-  'B L Miller',
-  'Conor Crook',
-  'Ryan Backhouse',
-  'Tiarna Ford',
-  'Jacob Duggan',
-  'M Yole',
-  'T E Rattray',
-  'Charlie Castles',
-  'Jordan Chibnall',
-  'D B P Ford'
+  'A C Lewis',
+  'D B Miller',
+  'C D Voak',
+  'G M Johnson',
+  'N M Johns',
+  'Emily Suvaljko',
+  'D J Harper',
+  'Lauren Harper',
+  'F E Bennett'
 ]
 {
-  'Kayleb Williams': 'Spikey Boy',
-  'N B Ford': 'Grizzly Montana',
-  'B L Miller': 'Hez Razor Sharp',
-  'Conor Crook': 'The Dude',
-  'Ryan Backhouse': 'Exciter',
-  'Tiarna Ford': 'Foregone Conclusion',
-  'Jacob Duggan': 'John Richard',
-  'M Yole': 'Midnight In Memphis',
-  'T E Rattray': 'Aussie Rock',
-  'Charlie Castles': 'Major Lester',
-  'Jordan Chibnall': 'Captain Cosmonaut',
-  'D B P Ford': 'Kerala Star'
+  'A C Lewis': 'Betty Bootz Off',
+  'D B Miller': 'Kell Road Kid',
+  'C D Voak': 'Son Of A Whiz',
+  'G M Johnson': 'One Bid Buys',
+  'N M Johns': 'Dark Secret',
+  'Emily Suvaljko': 'Stay Focused',
+  'D J Harper': 'Peachee',
+  'Lauren Harper': 'Malabar Spur',
+  'F E Bennett': 'No Republic'
 }
 {
-  'Kayleb Williams': [
+  'A C Lewis': [
     { value: '0', money: '$0' },
-    { value: '7.8', money: '$18' },
-    { value: '10.5', money: '$41' },
-    { value: '120', money: '$37' },
-    { value: '880', money: '$14' },
-    { value: '0', money: '$0' }
-  ],
-  'N B Ford': [
+    { value: '2', money: '$27' },
+    { value: '2.42', money: '$41' },
     { value: '0', money: '$0' },
-    { value: '2.18', money: '$95' },
-    { value: '2.44', money: '$41' },
-    { value: '3.8', money: '$45' },
-    { value: '4.3', money: '$50' },
-    { value: '5.5', money: '$54' }
-  ],
-  'B L Miller': [
-    { value: '0', money: '$0' },
-    { value: '9.2', money: '$25' },
-    { value: '9.8', money: '$46' },
-    { value: '32', money: '$27' },
-    { value: '900', money: '$34' },
-    { value: '0', money: '$0' }
-  ],
-  'Conor Crook': [
-    { value: '0', money: '$0' },
-    { value: '5.5', money: '$46' },
-    { value: '5.8', money: '$50' },
-    { value: '13.5', money: '$26' },
-    { value: '16', money: '$25' },
-    { value: '19', money: '$38' }
-  ],
-  'Ryan Backhouse': [
-    { value: '0', money: '$0' },
-    { value: '10', money: '$21' },
-    { value: '12.5', money: '$35' },
-    { value: '170', money: '$39' },
-    { value: '900', money: '$16' },
-    { value: '0', money: '$0' }
-  ],
-  'Tiarna Ford': [
-    { value: '0', money: '$0' },
-    { value: '13.5', money: '$20' },
-    { value: '20', money: '$49' },
-    { value: '900', money: '$32' },
     { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'Jacob Duggan': [
+  'D B Miller': [
+    { value: '1.26', money: '$21' },
+    { value: '1.3', money: '$128' },
+    { value: '1.38', money: '$27' },
     { value: '0', money: '$0' },
-    { value: '14', money: '$27' },
-    { value: '16.5', money: '$45' },
-    { value: '920', money: '$31' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'M Yole': [
-    { value: '0', money: '$0' },
-    { value: '9.2', money: '$53' },
-    { value: '19', money: '$28' },
-    { value: '900', money: '$27' },
     { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'T E Rattray': [
+  'C D Voak': [
     { value: '0', money: '$0' },
-    { value: '8.6', money: '$44' },
-    { value: '9.2', money: '$37' },
-    { value: '300', money: '$43' },
-    { value: '940', money: '$17' },
+    { value: '1.19', money: '$43' },
+    { value: '1.26', money: '$27' },
+    { value: '370', money: '$17' },
+    { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'Charlie Castles': [
+  'G M Johnson': [
     { value: '0', money: '$0' },
-    { value: '5.2', money: '$20' },
-    { value: '5.3', money: '$42' },
-    { value: '12.5', money: '$41' },
-    { value: '16', money: '$17' },
+    { value: '1.3', money: '$128' },
+    { value: '1.38', money: '$47' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'Jordan Chibnall': [
+  'N M Johns': [
     { value: '0', money: '$0' },
-    { value: '8.2', money: '$23' },
-    { value: '8.6', money: '$37' },
-    { value: '28', money: '$45' },
-    { value: '780', money: '$21' },
+    { value: '2.02', money: '$22' },
+    { value: '3', money: '$40' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'D B P Ford': [
-    { value: '7', money: '$21' },
-    { value: '7.4', money: '$27' },
-    { value: '7.8', money: '$33' },
-    { value: '22', money: '$46' },
-    { value: '780', money: '$26' },
+  'Emily Suvaljko': [
+    { value: '0', money: '$0' },
+    { value: '1.53', money: '$38' },
+    { value: '5.6', money: '$64' },
+    { value: '890', money: '$14' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'D J Harper': [
+    { value: '0', money: '$0' },
+    { value: '1.45', money: '$108' },
+    { value: '1.53', money: '$46' },
+    { value: '890', money: '$18' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'Lauren Harper': [
+    { value: '0', money: '$0' },
+    { value: '2.22', money: '$22' },
+    { value: '3.05', money: '$39' },
+    { value: '950', money: '$12' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'F E Bennett': [
+    { value: '0', money: '$0' },
+    { value: '2', money: '$37' },
+    { value: '2.42', money: '$39' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ]
 }
-isEventInPlay: false
+isEventInPlay: true
 isEventSuspended: true
 hasEventEnded: false
