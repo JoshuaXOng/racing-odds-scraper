@@ -1,3 +1,7 @@
 .login-page {
   -fx-background-color: #A7C7E7;
 }
+
+.login-page__alert {
+  -fx-fill: transparent;
+}

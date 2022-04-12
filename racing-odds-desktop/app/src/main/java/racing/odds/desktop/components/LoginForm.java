@@ -6,6 +6,11 @@ import java.util.function.Consumer;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import racing.odds.desktop.DataStore;
+import racing.odds.desktop.Utils;
+import racing.odds.desktop.pages.JavaFXDemoPage;
+import racing.odds.desktop.services.DemoAPI;
 
 public class LoginForm {
   String username;
@@ -14,6 +19,10 @@ public class LoginForm {
   public VBox get(Consumer<ArrayList<String>> onSubmit) {
     VBox container = new VBox(20);
     container.setAlignment(Pos.CENTER);
+
+    Text submitAlert = new Text("Credentials have failed!");
+    submitAlert.getStyleClass().add("login-page__alert");
+    container.getChildren().add(submitAlert);
 
     container
         .getChildren()
@@ -40,6 +49,14 @@ public class LoginForm {
 
     submitButton.setOnMouseReleased(
         e -> {
+          try {
+            DataStore.authToken = DemoAPI.getAuthToken(this.username, this.password);
+            DataStore.mainStage.setScene(JavaFXDemoPage.get());
+          } catch (Exception exception) {
+            submitAlert.getStyleClass().remove("login-page__alert");
+            Utils.setTimeout(() -> { submitAlert.getStyleClass().add("login-page__alert"); }, 5000);
+          }
+          
           onSubmit.accept(new ArrayList<String>(Arrays.asList(this.username, this.password)));
         });
 

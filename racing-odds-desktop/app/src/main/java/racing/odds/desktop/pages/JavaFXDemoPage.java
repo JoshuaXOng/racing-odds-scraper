@@ -6,10 +6,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
+import racing.odds.desktop.DataStore;
 
 public class JavaFXDemoPage {
-  public static Scene get(Stage stage) {
+  public static Scene get() {
     FlowPane layout = new FlowPane(Orientation.VERTICAL);
     layout.setHgap(20);
     layout.setVgap(20);
@@ -32,7 +32,7 @@ public class JavaFXDemoPage {
     box.getStyleClass().add("my-rect");
 
     Button button = new Button("Default Button");
-    button.setOnMouseReleased(e -> stage.setScene(JFoenixDemoPage.get(stage)));
+    button.setOnMouseReleased(e -> DataStore.mainStage.setScene(JFoenixDemoPage.get()));
 
     ((FlowPane) scene.getRoot()).getChildren().add(label);
     ((FlowPane) scene.getRoot()).getChildren().add(box);

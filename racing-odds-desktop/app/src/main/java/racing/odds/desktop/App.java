@@ -12,7 +12,9 @@ public class App extends Application {
 
   @Override
   public void start(Stage stage) {
-    Scene initialPage = LoginPage.get(stage);
+    DataStore.mainStage = stage;
+
+    Scene initialPage = (new LoginPage()).get();
     initialPage.getStylesheets().add("css/jfoenix-components.css");
     initialPage.getStylesheets().add("css/jxo-custom.css");
 

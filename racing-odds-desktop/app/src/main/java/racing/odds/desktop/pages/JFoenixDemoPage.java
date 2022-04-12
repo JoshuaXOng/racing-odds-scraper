@@ -4,10 +4,10 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXToggleButton;
 import javafx.scene.Scene;
 import javafx.scene.layout.FlowPane;
-import javafx.stage.Stage;
+import racing.odds.desktop.DataStore;
 
 public class JFoenixDemoPage {
-  public static Scene get(Stage stage) {
+  public static Scene get() {
     FlowPane layout = new FlowPane();
     layout.setHgap(20);
     layout.setVgap(20);
@@ -18,7 +18,7 @@ public class JFoenixDemoPage {
 
     JFXButton button = new JFXButton("Raised JFX Button");
     button.getStyleClass().add("button-raised");
-    button.setOnMouseReleased(e -> stage.setScene(JavaFXDemoPage.get(stage)));
+    button.setOnMouseReleased(e -> DataStore.mainStage.setScene(JavaFXDemoPage.get()));
 
     JFXToggleButton toggleButton = new JFXToggleButton();
     toggleButton.setText("JFX Toggle Button");
