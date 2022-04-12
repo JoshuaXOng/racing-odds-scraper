@@ -14,7 +14,27 @@ server.get('/api/schedules/', async (_, reply) => {
 	return reply.send(scheduler.soupedSchedules);
 });
 
+server.get('/api/schedules/up-coming/', async (_, reply) => {
+	return reply.send(scheduler.getUpcomingEventLinks());
+});
+
 server.get('/api/events/', async (_, reply) => {
+	return reply.send(eventPageManager.soupedEvents);
+});
+
+/** Open up event pages for events 1 minute out (e.g.). */
+server.get('/api/events/post/', async (_, reply) => {
+	const endIndex = scheduler.getUpcomingEventLinks().length - 1;
+	const link = scheduler.getUpcomingEventLinks()[endIndex];
+	
+	if (!link) return reply.status(500).send("500 Error.");
+
+	await eventPageManager.addEventPage(new BetfairRacingEventPage(new URL(link)));
+	return reply.send();
+});
+
+/** Close all finished event pages. */
+server.get('/api/events/delete/', async (_, reply) => {
 	return reply.send(eventPageManager.soupedEvents);
 });
 
@@ -26,7 +46,6 @@ server.get('/api/events/', async (_, reply) => {
 
 	eventPageManager = new EventPageManager();
 	await eventPageManager.initBrowser();
-	await eventPageManager.addEventPage(new BetfairRacingEventPage(new URL("https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197485361")));
 	await eventPageManager.startSoupingEvents();
 
 	await server.listen(3000);

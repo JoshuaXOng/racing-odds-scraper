@@ -15,7 +15,7 @@ export class Scheduler {
   private sourceSchedulePages: SchedulePage[] = [];
 
   private isSouping = false;
-  desiredPollIntervalInSec = 5;
+  desiredPollIntervalInSec = 30;
 
   readingLimits: Limits = {
     allowedCountries: [],
@@ -27,7 +27,7 @@ export class Scheduler {
     isStrict: false,
   };
   
-  soupedSchedules: { [key: string]: EventSchedule };
+  soupedSchedules: { [key: string]: EventSchedule } = {};
   
   async initBrowser() {
     this.mainBrowser = new Browser(await puppeteer.launch());
@@ -68,5 +68,24 @@ export class Scheduler {
     }, desiredPollIntervalInMs)
 
     this.isSouping = true;
+  }
+
+  getUpcomingEventLinks() {
+    const oneHrInFut = new Date();
+    const formattedOneMinInFut = parseInt(`${(oneHrInFut.getHours() + 1 + 1)}${(oneHrInFut.getMinutes())}`);
+    
+    let links: string[] = [];
+    for (const hostKey in this.soupedSchedules) {
+      for (const venueKey in this.soupedSchedules[hostKey]) { 
+        for (const event of this.soupedSchedules[hostKey]![venueKey]!) {
+          const eventTime = parseInt(event.time.replace(":", ""));
+          if (eventTime < formattedOneMinInFut) { 
+            links.push(event.link);
+          }
+        }
+      }
+    }
+
+    return links;
   }
 }

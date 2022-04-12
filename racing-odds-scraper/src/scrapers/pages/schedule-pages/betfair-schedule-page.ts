@@ -1,3 +1,4 @@
+import { bookiesToUrls } from "../../../constants";
 import { SchedulePage } from "../schedule-page";
 
 const betfairSchedulePageConstants = {
@@ -56,6 +57,10 @@ export class BetfairSchedulePage extends SchedulePage {
         return events;
       })
     );
+
+    venueGroupedEvents.forEach((vge, vgeIndex) => vge.forEach((ve, veIndex) => {
+      venueGroupedEvents[vgeIndex][veIndex].link = bookiesToUrls.betfair.market + ve.link
+    }))
     
     const venueNames = await this.getVenueNames();
     if (venueNames?.length !== venueGroupedEvents?.length) 
