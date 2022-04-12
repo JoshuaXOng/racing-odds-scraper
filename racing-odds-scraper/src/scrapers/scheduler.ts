@@ -16,7 +16,7 @@ export class Scheduler {
 
   private isSouping = false;
   desiredPollIntervalInSec = 5;
-  
+
   readingLimits: Limits = {
     allowedCountries: [],
     allowedVenues: [],
@@ -51,7 +51,7 @@ export class Scheduler {
   }
 
   async startSoupingSources() {
-    if (!this.isSouping) 
+    if (this.isSouping) 
       throw new Error("Scheduler is already souping.");
 
     const updateSoup = async () => {

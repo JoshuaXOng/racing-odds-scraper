@@ -36,12 +36,12 @@ export class EventPageManager {
   }
 
   async startSoupingEvents() { 
-    if (!this.isSouping) 
+    if (this.isSouping) 
       throw new Error("Scheduler is already souping.");
 
     const updateSoup = async () => {
       this.coveredEventPages.forEach(async cep => {
-        const cepEventName = cep.getEventName();
+        const cepEventName = await cep.getEventName();
 
         const coveredEventNames = Object.keys(this.soupedEvents);
         fuse.setCollection(coveredEventNames);
@@ -53,9 +53,9 @@ export class EventPageManager {
           console.log("Potential miss-shot in event page manager key insertion.")
         }
 
-        if (!this.soupedEvents[cep.getEventName()])
-          this.soupedEvents[cep.getEventName()] = {};
-        this.soupedEvents[cep.getEventName()]![cep.sourceUrl.hostname] = cep.getContestantNamesToOdds();
+        if (!this.soupedEvents[cepEventName])
+          this.soupedEvents[cepEventName] = {};
+        this.soupedEvents[cepEventName]![cep.sourceUrl.hostname] = await cep.getContestantNamesToOdds();
       });
     }
 

@@ -49,6 +49,11 @@ describe("BetfairRacingEventPage Unit Tests.", () => {
     await driverBrowser.close();
   })
 
+  test("BetfairRacingEventPage reads event name.", async () => {
+    const eventName = await racingEventPage!.getEventName();
+    bfRacingEventPageLogger.log(eventName);
+  });
+
   test("BetfairRacingEventPage reads current contestants' names.", async () => {
     const contestantNames = await racingEventPage!.getContestantNames();
     bfRacingEventPageLogger.log(contestantNames);

@@ -1,3 +1,4 @@
+albion 12:11
 [
   'p j mcmullen',
   'j d cremin',
@@ -18,59 +19,59 @@
 }
 {
   'p j mcmullen': [
-    { value: '2.2', money: '$148' },
-    { value: '2.3', money: '$68' },
-    { value: '2.4', money: '$69' },
-    { value: '5.8', money: '$63' },
-    { value: '7.6', money: '$37' },
-    { value: '9.6', money: '$42' }
+    { value: '2.1', money: '$91' },
+    { value: '2.12', money: '$38' },
+    { value: '2.26', money: '$37' },
+    { value: '2.78', money: '$139' },
+    { value: '2.82', money: '$68' },
+    { value: '0', money: '$0' }
   ],
   'j d cremin': [
-    { value: '3.15', money: '$82' },
-    { value: '3.4', money: '$37' },
-    { value: '3.65', money: '$37' },
-    { value: '10.5', money: '$26' },
-    { value: '21', money: '$35' },
-    { value: '900', money: '$11' }
+    { value: '0', money: '$0' },
+    { value: '3.7', money: '$43' },
+    { value: '4.5', money: '$52' },
+    { value: '7.8', money: '$32' },
+    { value: '9.2', money: '$42' },
+    { value: '10.5', money: '$21' }
   ],
   'a f j sanderson': [
-    { value: '3.15', money: '$82' },
-    { value: '3.4', money: '$37' },
-    { value: '3.65', money: '$37' },
-    { value: '10.5', money: '$26' },
-    { value: '21', money: '$35' },
-    { value: '900', money: '$11' }
+    { value: '4.1', money: '$60' },
+    { value: '4.5', money: '$39' },
+    { value: '4.8', money: '$43' },
+    { value: '10.5', money: '$37' },
+    { value: '16', money: '$26' },
+    { value: '0', money: '$0' }
   ],
   'lachie manzelmann': [
     { value: '0', money: '$0' },
-    { value: '9.4', money: '$42' },
-    { value: '11', money: '$53' },
-    { value: '0', money: '$0' },
+    { value: '13', money: '$49' },
+    { value: '18.5', money: '$28' },
+    { value: '990', money: '$29' },
     { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
   'g f dwyer': [
     { value: '0', money: '$0' },
-    { value: '5.3', money: '$41' },
-    { value: '5.8', money: '$77' },
-    { value: '900', money: '$15' },
-    { value: '0', money: '$0' },
+    { value: '8', money: '$40' },
+    { value: '10', money: '$52' },
+    { value: '34', money: '$45' },
+    { value: '44', money: '$21' },
     { value: '0', money: '$0' }
   ],
   'c a petroff': [
-    { value: '0', money: '$0' },
-    { value: '5', money: '$44' },
-    { value: '5.5', money: '$39' },
-    { value: '900', money: '$33' },
-    { value: '0', money: '$0' },
+    { value: '6.4', money: '$42' },
+    { value: '7', money: '$27' },
+    { value: '7.6', money: '$29' },
+    { value: '24', money: '$53' },
+    { value: '28', money: '$34' },
     { value: '0', money: '$0' }
   ],
   'alan donohoe': [
     { value: '0', money: '$0' },
-    { value: '5', money: '$44' },
-    { value: '5.5', money: '$39' },
-    { value: '900', money: '$33' },
-    { value: '0', money: '$0' },
+    { value: '5.9', money: '$61' },
+    { value: '6.6', money: '$35' },
+    { value: '17', money: '$57' },
+    { value: '24', money: '$21' },
     { value: '0', money: '$0' }
   ]
 }

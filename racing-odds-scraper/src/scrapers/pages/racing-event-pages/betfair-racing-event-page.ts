@@ -3,7 +3,7 @@ import { RacingEventPage } from "../racing-event-page";
 const betfairRacingEventPageConstants = {
   html: {
     classNames: {
-      eventName: "event-name",
+      eventName: "venue-name",
       jockeyName: "jockey-name",
       horseName: "runner-name",
       oddsTableRow: "runner-line",
