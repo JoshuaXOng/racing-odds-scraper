@@ -13,8 +13,10 @@ type Limits = {
 export class Scheduler {
   private mainBrowser: Browser;
   private sourceSchedulePages: SchedulePage[] = [];
-  
+
+  private isSouping = false;
   desiredPollIntervalInSec = 5;
+  
   readingLimits: Limits = {
     allowedCountries: [],
     allowedVenues: [],
@@ -46,10 +48,15 @@ export class Scheduler {
     }
 
     this.sourceSchedulePages.push(schedulePage);
-  
+  }
+
+  async startSoupingSources() {
+    if (!this.isSouping) 
+      throw new Error("Scheduler is already souping.");
+
     const updateSoup = async () => {
       const unformattedSoupSchedules = this.sourceSchedulePages.map(async ssp => {
-        return { [ssp.sourceBookieName]: await ssp.getVenueNamesToEvents() };
+        return { [ssp.sourceUrl.hostname]: await ssp.getVenueNamesToEvents() };
       });
       this.soupedSchedules = (await Promise.all(unformattedSoupSchedules)).reduce((ss, uss) => ({ ...ss, ...uss }), {});
     }
@@ -59,5 +66,7 @@ export class Scheduler {
     setInterval(async () => {
       updateSoup();
     }, desiredPollIntervalInMs)
+
+    this.isSouping = true;
   }
 }

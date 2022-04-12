@@ -1,87 +1,77 @@
 [
-  'P J Mcmullen',
-  'Leonard Cain',
-  'N M Dawson',
-  'E S Bailey',
-  'M J Elkins',
-  'Angus Garrard',
-  'Chloe Butler',
-  'G W Dixon'
+  'p j mcmullen',
+  'j d cremin',
+  'a f j sanderson',
+  'lachie manzelmann',
+  'g f dwyer',
+  'c a petroff',
+  'alan donohoe'
 ]
 {
-  'P J Mcmullen': 'Ima Beach Babe',
-  'Leonard Cain': 'Gosling In Flight',
-  'N M Dawson': 'Bold Cowboy',
-  'E S Bailey': 'Swinging George',
-  'M J Elkins': 'Toro Delago',
-  'Angus Garrard': 'Rocknholme',
-  'Chloe Butler': 'Jackbkwik',
-  'G W Dixon': 'Rainbow Jet'
+  'p j mcmullen': 'you no ill be late',
+  'j d cremin': 'hattie',
+  'a f j sanderson': 'jaccka watch',
+  'lachie manzelmann': 'valley ess jay',
+  'g f dwyer': 'aldebaran selena',
+  'c a petroff': 'kapai',
+  'alan donohoe': 'down under rors'
 }
 {
-  'P J Mcmullen': [
-    { value: '0', money: '$0' },
-    { value: '3.55', money: '$82' },
-    { value: '4', money: '$25' },
-    { value: '6.2', money: '$59' },
-    { value: '6.4', money: '$27' },
-    { value: '7.4', money: '$50' }
+  'p j mcmullen': [
+    { value: '2.2', money: '$148' },
+    { value: '2.3', money: '$68' },
+    { value: '2.4', money: '$69' },
+    { value: '5.8', money: '$63' },
+    { value: '7.6', money: '$37' },
+    { value: '9.6', money: '$42' }
   ],
-  'Leonard Cain': [
-    { value: '5.5', money: '$22' },
-    { value: '5.6', money: '$28' },
-    { value: '5.8', money: '$41' },
-    { value: '13', money: '$42' },
-    { value: '14.5', money: '$27' },
-    { value: '0', money: '$0' }
+  'j d cremin': [
+    { value: '3.15', money: '$82' },
+    { value: '3.4', money: '$37' },
+    { value: '3.65', money: '$37' },
+    { value: '10.5', money: '$26' },
+    { value: '21', money: '$35' },
+    { value: '900', money: '$11' }
   ],
-  'N M Dawson': [
-    { value: '0', money: '$0' },
-    { value: '10', money: '$24' },
-    { value: '12.5', money: '$46' },
-    { value: '120', money: '$37' },
-    { value: '170', money: '$23' },
-    { value: '0', money: '$0' }
+  'a f j sanderson': [
+    { value: '3.15', money: '$82' },
+    { value: '3.4', money: '$37' },
+    { value: '3.65', money: '$37' },
+    { value: '10.5', money: '$26' },
+    { value: '21', money: '$35' },
+    { value: '900', money: '$11' }
   ],
-  'E S Bailey': [
+  'lachie manzelmann': [
     { value: '0', money: '$0' },
-    { value: '18', money: '$23' },
-    { value: '21', money: '$40' },
-    { value: '1000', money: '$25' },
+    { value: '9.4', money: '$42' },
+    { value: '11', money: '$53' },
     { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'M J Elkins': [
-    { value: '0', money: '$0' },
-    { value: '22', money: '$33' },
-    { value: '27', money: '$36' },
-    { value: '1000', money: '$22' },
     { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'Angus Garrard': [
+  'g f dwyer': [
     { value: '0', money: '$0' },
-    { value: '4.1', money: '$39' },
-    { value: '4.5', money: '$48' },
-    { value: '8.8', money: '$37' },
-    { value: '9.8', money: '$20' },
+    { value: '5.3', money: '$41' },
+    { value: '5.8', money: '$77' },
+    { value: '900', money: '$15' },
+    { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'Chloe Butler': [
-    { value: '2.8', money: '$55' },
-    { value: '2.82', money: '$64' },
-    { value: '3.2', money: '$56' },
-    { value: '3.95', money: '$63' },
-    { value: '4.1', money: '$42' },
+  'c a petroff': [
+    { value: '0', money: '$0' },
+    { value: '5', money: '$44' },
+    { value: '5.5', money: '$39' },
+    { value: '900', money: '$33' },
+    { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'G W Dixon': [
+  'alan donohoe': [
     { value: '0', money: '$0' },
-    { value: '3.95', money: '$33' },
-    { value: '4', money: '$61' },
-    { value: '8.8', money: '$30' },
-    { value: '9', money: '$32' },
-    { value: '9.6', money: '$25' }
+    { value: '5', money: '$44' },
+    { value: '5.5', money: '$39' },
+    { value: '900', money: '$33' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
   ]
 }
 isEventInPlay: false

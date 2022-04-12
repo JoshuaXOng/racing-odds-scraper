@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "fastify": "^3.28.0",
+    "fuse.js": "^6.5.3",
     "puppeteer": "^13.5.1",
     "uuid": "^8.3.2"
   },

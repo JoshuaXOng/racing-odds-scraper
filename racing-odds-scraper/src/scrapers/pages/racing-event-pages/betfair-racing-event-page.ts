@@ -3,6 +3,7 @@ import { RacingEventPage } from "../racing-event-page";
 const betfairRacingEventPageConstants = {
   html: {
     classNames: {
+      eventName: "event-name",
       jockeyName: "jockey-name",
       horseName: "runner-name",
       oddsTableRow: "runner-line",
@@ -21,6 +22,25 @@ export class BetfairRacingEventPage extends RacingEventPage {
     super(sourceUrl);
   }
 
+  async getEventName() {
+    this.handleNoDriverPage();
+
+    await this.driverPage.waitForSelector(
+      `.${betfairRacingEventPageConstants.html.classNames.eventName}`
+    );
+
+    const [eventName] = await this.driverPage.$$eval(
+      `.${betfairRacingEventPageConstants.html.classNames.eventName}`,
+      eventNames => eventNames.map(en => en.innerHTML.toLowerCase())
+    );
+
+    if (!eventName) 
+      throw new Error("Could not find event name.");
+
+    const fraggedEventName = eventName.split(" ");
+    return `${fraggedEventName[1]} ${fraggedEventName[0]}`;
+  }
+
   async getContestantNames() {
     this.handleNoDriverPage();
     
@@ -30,7 +50,7 @@ export class BetfairRacingEventPage extends RacingEventPage {
 
     const contestantNames = await this.driverPage.$$eval(
       `.${betfairRacingEventPageConstants.html.classNames.jockeyName}`,
-      jockeyNames => jockeyNames.map(jn => jn.innerHTML)
+      jockeyNames => jockeyNames.map(jn => jn.innerHTML.toLowerCase())
     );
     return contestantNames;
   };
@@ -46,7 +66,7 @@ export class BetfairRacingEventPage extends RacingEventPage {
       `.${betfairRacingEventPageConstants.html.classNames.horseName}`,
       horseInfoBoxs => horseInfoBoxs.map(hib => hib.innerHTML)
     );
-    const horseNames = horseNamesPlus.map(hnp => hnp.slice(0, hnp.indexOf("<")));
+    const horseNames = horseNamesPlus.map(hnp => hnp.slice(0, hnp.indexOf("<")).toLowerCase());
 
     const contestantNames = await this.getContestantNames();
 

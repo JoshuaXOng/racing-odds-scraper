@@ -15,8 +15,6 @@ const betfairSchedulePageConstants = {
 }
 
 export class BetfairSchedulePage extends SchedulePage {
-  sourceBookieName = "betfair";
-
   constructor(sourceUrl: URL) {
     super(sourceUrl);
   }
@@ -30,7 +28,7 @@ export class BetfairSchedulePage extends SchedulePage {
     
     const venueNames = await this.driverPage.$$eval(
       `.${betfairSchedulePageConstants.racing.html.classNames.venueName}`, 
-      venueNames => venueNames.map(vn => vn.innerHTML)
+      venueNames => venueNames.map(vn => vn.innerHTML.toLowerCase())
     );
     return venueNames;
   };

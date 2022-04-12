@@ -5,6 +5,8 @@ export abstract class EventPage extends Page {
     super(sourceUrl);
   }
 
+  abstract getEventName();
+
   abstract getContestantNames();
   
   abstract getContestantNamesToOdds();
