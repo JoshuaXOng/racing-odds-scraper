@@ -4,8 +4,8 @@ import io.github.cdimascio.dotenv.Dotenv;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.net.http.HttpRequest.BodyPublishers;
+import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 
 public class DemoAPI {
@@ -17,7 +17,10 @@ public class DemoAPI {
     HttpResponse<String> response =
         DemoAPI.httpClient.send(
             HttpRequest.newBuilder()
-                .POST(BodyPublishers.ofString(String.format("{ \"userName\": \"%s\", \"password\": \"%s\" }", username, password)))
+                .POST(
+                    BodyPublishers.ofString(
+                        String.format(
+                            "{ \"userName\": \"%s\", \"password\": \"%s\" }", username, password)))
                 .uri(new URI(DemoAPI.dotenv.get("API_AUTH_TOKEN_EP")))
                 .header("accept", "application/json")
                 .header("Authorization", DemoAPI.dotenv.get("API_KEY"))
