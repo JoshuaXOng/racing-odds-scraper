@@ -3,7 +3,6 @@ package racing.odds.desktop;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import racing.odds.desktop.pages.*;
 
 public class App extends Application {
@@ -18,7 +17,7 @@ public class App extends Application {
     initialPage.getStylesheets().add("css/jxo-custom.css");
 
     stage.setScene(initialPage);
-  
+
     stage.show();
   }
 }

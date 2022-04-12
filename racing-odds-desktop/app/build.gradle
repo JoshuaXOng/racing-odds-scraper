@@ -24,6 +24,7 @@ dependencies {
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:30.1.1-jre'
     implementation 'com.jfoenix:jfoenix:9.0.10'
+    implementation 'io.github.cdimascio:java-dotenv:5.2.2'
 }
 
 application {
