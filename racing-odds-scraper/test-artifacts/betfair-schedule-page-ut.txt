@@ -1,82 +1,14 @@
 [
-  'doomben',
-  'hawkesbury',
   'geelong',
+  'doomben',
   'port lincoln',
+  'hawkesbury',
   'pinjarra',
   'mildura',
   'redcliffe',
   'bathurst'
 ]
 {
-  doomben: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546435',
-      time: '202204131233'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546438',
-      time: '202204131308'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546441',
-      time: '202204131343'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546444',
-      time: '202204131418'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546447',
-      time: '202204131453'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546450',
-      time: '202204131528'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546453',
-      time: '202204131603'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546456',
-      time: '202204131638'
-    }
-  ],
-  hawkesbury: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197544413',
-      time: '202204131250'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197544416',
-      time: '202204131325'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197544419',
-      time: '202204131400'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197544422',
-      time: '202204131435'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197544425',
-      time: '202204131510'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197544428',
-      time: '202204131545'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197544431',
-      time: '202204131620'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197544434',
-      time: '202204131655'
-    }
-  ],
   geelong: [
     {
       link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197543805',
@@ -111,6 +43,36 @@
       time: '202204131705'
     }
   ],
+  doomben: [
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546438',
+      time: '202204131308'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546441',
+      time: '202204131343'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546444',
+      time: '202204131418'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546447',
+      time: '202204131453'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546450',
+      time: '202204131528'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546453',
+      time: '202204131603'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546456',
+      time: '202204131638'
+    }
+  ],
   'port lincoln': [
     {
       link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546276',
@@ -143,6 +105,36 @@
     {
       link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197546318',
       time: '202204131720'
+    }
+  ],
+  hawkesbury: [
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197544416',
+      time: '202204131325'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197544419',
+      time: '202204131400'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197544422',
+      time: '202204131435'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197544425',
+      time: '202204131510'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197544428',
+      time: '202204131545'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197544431',
+      time: '202204131620'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197544434',
+      time: '202204131655'
     }
   ],
   pinjarra: [

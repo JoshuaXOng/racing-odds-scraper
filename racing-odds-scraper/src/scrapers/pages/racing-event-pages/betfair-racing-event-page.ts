@@ -37,8 +37,13 @@ export class BetfairRacingEventPage extends RacingEventPage {
     if (!eventName) 
       throw new Error("Could not find event name.");
 
-    const fraggedEventName = eventName.split(" ");
-    return `${fraggedEventName[1]} ${fraggedEventName[0]}`;
+    const [eventStartTimeHHMm, ...fraggedEventName] = eventName.split(" ");
+
+    const now = new Date();
+    const nowYYYY = now.getFullYear().toString();
+    const nowMM = (now.getMonth() + 1).toString().padStart(2, "0");
+    const nowDD = now.getDate().toString().padStart(2, "0");    
+    return `${fraggedEventName.slice(0, fraggedEventName.length-1).join(" ")} ${nowYYYY}${nowMM}${nowDD}${eventStartTimeHHMm!.replace(":", "")}`;
   }
 
   async getContestantNames() {

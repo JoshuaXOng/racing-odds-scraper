@@ -15,7 +15,7 @@ server.get('/api/schedules/', async (_, reply) => {
 });
 
 server.get('/api/up-coming-events/links/', async (_, reply) => {
-	return reply.send(scheduler.getUpcomingEventLinks(4, 0));
+	return reply.send(scheduler.getUpcomingEventLinks(0, scheduler.upcomingThresholdInMin));
 });
 
 server.get('/api/souped-events/', async (_, reply) => {

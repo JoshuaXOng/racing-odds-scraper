@@ -55,7 +55,7 @@ export class BetfairSchedulePage extends SchedulePage {
           const closestAncestor = eventBox.children.item(0);
           events.push({
             link: closestAncestor?.getAttribute("href"),
-            time: `${nowYYYY}${nowMM}${nowDD}${closestAncestor?.children.item(0)?.innerHTML.replace(":", "")}`
+            time: `${nowYYYY}${nowMM}${nowDD}${closestAncestor?.children.item(closestAncestor?.children.length-1)?.innerHTML.replace(":", "")}`
           })
         }
 

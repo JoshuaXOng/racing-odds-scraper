@@ -18,7 +18,7 @@ export class EventPageManager implements SchedulerObserver {
   soupedEvents: { [key: string]: { [key: string]: any } } = {};
 
   async initBrowser() {
-    this.mainBrowser = new Browser(await puppeteer.launch());
+    this.mainBrowser = new Browser(await puppeteer.launch({ headless: false }));
   }
 
   async addEventPage(eventPage: EventPage) {
@@ -58,28 +58,52 @@ export class EventPageManager implements SchedulerObserver {
         if (!this.soupedEvents[cepEventName])
           this.soupedEvents[cepEventName] = {};
         this.soupedEvents[cepEventName]![cep.sourceUrl.hostname] = await cep.getContestantNamesToOdds();
+
+        //
+        // Tab clean up.
+        // - Two timers that use a driver page and close it cannot co-exist
+        // - Serial nature will race-condition and bloop out
+        //        
+
+        const cepLength = this.coveredEventPages.length;
+    
+        for (let index = 0; index < cepLength; index++) {
+          const sourcePage = this.coveredEventPages[cepLength-index-1];
+          const canClose = await sourcePage?.getHasEventEnded();
+          if (canClose) {
+            this.coveredEventPages.splice(cepLength-index-1, 1);
+            await sourcePage!.close();
+          }
+        }
       });
     }
 
-    updateSoup();
+    await updateSoup();
     const desiredPollIntervalInMs = this.desiredPollIntervalInSec * 1000;
     setInterval(async () => {
-      updateSoup();
+      await updateSoup();
     }, desiredPollIntervalInMs)
+    
+    // setInterval(async () => {
+    //   await this.closeFinishedEventPages();
+    // }, 1000 * 5);
 
     this.isSouping = true;
   }
 
-  async closeFinishedEventPages() {
-    const cepLength = this.coveredEventPages.length;
-
-    for (let index = 0; index < cepLength; index++) {
-      const sourcePage = this.coveredEventPages[cepLength-index-1];
-      const canClose = sourcePage?.getHasEventEnded();
-      if (canClose)
-        delete this.coveredEventPages[cepLength-index-1]
-    }
-  }
+  // private async closeFinishedEventPages() {
+  //   const cepLength = this.coveredEventPages.length;
+    
+  //   for (let index = 0; index < cepLength; index++) {
+  //     // const sourcePage = this.coveredEventPages[cepLength-index-1];
+  //     // const canClose = await sourcePage?.getHasEventEnded();
+  //     if (true) {
+  //       const [a] = this.coveredEventPages.splice(cepLength-index-1, 1);
+  //       await new Promise(r => setTimeout(r, 10000));
+  //       await a!.close();
+  //     }
+  //   }
+  // }
 
   //
   // SchedulerObserver Implementation.

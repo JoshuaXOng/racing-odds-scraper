@@ -15,7 +15,8 @@ export class Scheduler {
   private sourceSchedulePages: SchedulePage[] = [];
 
   private isSouping = false;
-  desiredPollIntervalInSec = 1 * 60 * 60;
+  desiredPollIntervalInSec = 60 * 5;
+  upcomingThresholdInMin = 10;
 
   readingLimits: Limits = {
     allowedCountries: [],
@@ -32,7 +33,7 @@ export class Scheduler {
   private schedulerObservers: SchedulerObserver[] = [];
   
   async initBrowser() {
-    this.mainBrowser = new Browser(await puppeteer.launch());
+    this.mainBrowser = new Browser(await puppeteer.launch({ headless: false }));
   }
 
   async addSourcePage(schedulePage: SchedulePage) {
@@ -62,14 +63,14 @@ export class Scheduler {
       });
       this.soupedSchedules = (await Promise.all(unformattedSoupSchedules)).reduce((ss, uss) => ({ ...ss, ...uss }), {});
 
-      const upcomingEventLinks = this.getUpcomingEventLinks(0, 30);
+      const upcomingEventLinks = this.getUpcomingEventLinks(0, this.upcomingThresholdInMin);
       this.schedulerObservers.forEach(so => so.onScheduleSouped(upcomingEventLinks));
     }
 
-    updateSoup();
+    await updateSoup();
     const desiredPollIntervalInMs = this.desiredPollIntervalInSec * 1000;
     setInterval(async () => {
-      updateSoup();
+      await updateSoup();
     }, desiredPollIntervalInMs)
 
     this.isSouping = true;
@@ -79,11 +80,11 @@ export class Scheduler {
     const future = new Date();
     future.setHours(future.getHours() + hoursAhead);
     future.setMinutes(future.getMinutes() + minutesAhead);
-
+    
     const futureYYYY = `${future.getFullYear()}`;
     const futureMM = `${future.getMonth() + 1}`.padStart(2, "0");
     const futureDD = `${future.getDate()}`.padStart(2, "0");
-    const futureHH = `${future.getHours() + 1}`.padStart(2, "0");
+    const futureHH = `${future.getHours()}`.padStart(2, "0");
     const futureMm = `${future.getMinutes()}`.padStart(2, "0");
     const formattedFuture = parseInt(`${futureYYYY}${futureMM}${futureDD}${futureHH}${futureMm}`);
 
@@ -103,7 +104,7 @@ export class Scheduler {
   addScheduleObserver(observer: SchedulerObserver) {
     this.schedulerObservers.push(observer);
 
-    const upcomingEventLinks = this.getUpcomingEventLinks(0, 30);
+    const upcomingEventLinks = this.getUpcomingEventLinks(0, this.upcomingThresholdInMin);
     observer.onAddedToScheduleObservers(upcomingEventLinks);
   }
 }

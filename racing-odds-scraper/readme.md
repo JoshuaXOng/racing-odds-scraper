@@ -5,3 +5,4 @@ Arhhhhh:
   - Add self closing functionality to pages (w/ a potential delay)
   - Pages should self poll
   - YYYYMMDDHHSS
+  - Bf seemingly does not update in race
