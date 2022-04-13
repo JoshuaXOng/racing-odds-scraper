@@ -15,7 +15,7 @@ export class Scheduler {
   private sourceSchedulePages: SchedulePage[] = [];
 
   private isSouping = false;
-  desiredPollIntervalInSec = 30;
+  desiredPollIntervalInSec = 1 * 60 * 60;
 
   readingLimits: Limits = {
     allowedCountries: [],
@@ -28,6 +28,8 @@ export class Scheduler {
   };
   
   soupedSchedules: { [key: string]: EventSchedule } = {};
+
+  private schedulerObservers: SchedulerObserver[] = [];
   
   async initBrowser() {
     this.mainBrowser = new Browser(await puppeteer.launch());
@@ -59,6 +61,9 @@ export class Scheduler {
         return { [ssp.sourceUrl.hostname]: await ssp.getVenueNamesToEvents() };
       });
       this.soupedSchedules = (await Promise.all(unformattedSoupSchedules)).reduce((ss, uss) => ({ ...ss, ...uss }), {});
+
+      const upcomingEventLinks = this.getUpcomingEventLinks(0, 30);
+      this.schedulerObservers.forEach(so => so.onScheduleSouped(upcomingEventLinks));
     }
 
     updateSoup();
@@ -70,22 +75,40 @@ export class Scheduler {
     this.isSouping = true;
   }
 
-  getUpcomingEventLinks() {
-    const oneHrInFut = new Date();
-    const formattedOneMinInFut = parseInt(`${(oneHrInFut.getHours() + 1 + 1)}${(oneHrInFut.getMinutes())}`);
-    
-    let links: string[] = [];
+  getUpcomingEventLinks(hoursAhead: number, minutesAhead: number) {
+    const future = new Date();
+    future.setHours(future.getHours() + hoursAhead);
+    future.setMinutes(future.getMinutes() + minutesAhead);
+
+    const futureYYYY = `${future.getFullYear()}`;
+    const futureMM = `${future.getMonth() + 1}`.padStart(2, "0");
+    const futureDD = `${future.getDate()}`.padStart(2, "0");
+    const futureHH = `${future.getHours() + 1}`.padStart(2, "0");
+    const futureMm = `${future.getMinutes()}`.padStart(2, "0");
+    const formattedFuture = parseInt(`${futureYYYY}${futureMM}${futureDD}${futureHH}${futureMm}`);
+
+    let eventLinks: string[] = [];
     for (const hostKey in this.soupedSchedules) {
       for (const venueKey in this.soupedSchedules[hostKey]) { 
         for (const event of this.soupedSchedules[hostKey]![venueKey]!) {
-          const eventTime = parseInt(event.time.replace(":", ""));
-          if (eventTime < formattedOneMinInFut) { 
-            links.push(event.link);
-          }
+          if (parseInt(event.time) < formattedFuture)
+            eventLinks.push(event.link);
         }
       }
     }
 
-    return links;
+    return eventLinks;
   }
+
+  addScheduleObserver(observer: SchedulerObserver) {
+    this.schedulerObservers.push(observer);
+
+    const upcomingEventLinks = this.getUpcomingEventLinks(0, 30);
+    observer.onAddedToScheduleObservers(upcomingEventLinks);
+  }
+}
+
+export interface SchedulerObserver {
+  onAddedToScheduleObservers(eventLinks: string[]); 
+  onScheduleSouped(eventLinks: string[]);
 }

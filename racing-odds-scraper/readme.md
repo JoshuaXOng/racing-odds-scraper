@@ -4,3 +4,4 @@ Arhhhhh:
   - Filter out green icon in bf schedule links (appears before event start)
   - Add self closing functionality to pages (w/ a potential delay)
   - Pages should self poll
+  - YYYYMMDDHHSS

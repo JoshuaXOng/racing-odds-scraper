@@ -44,13 +44,18 @@ export class BetfairSchedulePage extends SchedulePage {
     const venueGroupedEvents = await this.driverPage.$$eval( 
       `.${betfairSchedulePageConstants.racing.html.classNames.eventBoxRow}`, 
       eventBoxRows => eventBoxRows.map(ebr => {
+        const now = new Date();
+        const nowYYYY = now.getFullYear().toString();
+        const nowMM = (now.getMonth() + 1).toString().padStart(2, "0");
+        const nowDD = now.getDate().toString().padStart(2, "0");
+        
         let events: any = [];
-
         for (let i = 0; i < ebr.children.length; i++) {
-          const box = ebr.children.item(i)!;
+          const eventBox = ebr.children.item(i)!;
+          const closestAncestor = eventBox.children.item(0);
           events.push({
-            link: box.children.item(0)?.getAttribute("href"),
-            time: box.children.item(0)?.children.item(0)?.innerHTML
+            link: closestAncestor?.getAttribute("href"),
+            time: `${nowYYYY}${nowMM}${nowDD}${closestAncestor?.children.item(0)?.innerHTML.replace(":", "")}`
           })
         }
 

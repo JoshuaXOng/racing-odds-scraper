@@ -1,77 +1,97 @@
-albion 12:11
+doomben 12:33
 [
-  'p j mcmullen',
-  'j d cremin',
-  'a f j sanderson',
-  'lachie manzelmann',
-  'g f dwyer',
-  'c a petroff',
-  'alan donohoe'
+  'james orman',
+  'beau appo',
+  'brad stewart',
+  'justin huxtable',
+  'jim byrne',
+  'samantha collett',
+  'kyle wilson-taylor',
+  'larry cassidy',
+  'michael hellyer'
 ]
 {
-  'p j mcmullen': 'you no ill be late',
-  'j d cremin': 'hattie',
-  'a f j sanderson': 'jaccka watch',
-  'lachie manzelmann': 'valley ess jay',
-  'g f dwyer': 'aldebaran selena',
-  'c a petroff': 'kapai',
-  'alan donohoe': 'down under rors'
+  'james orman': 'blazen boots',
+  'beau appo': 'enunciation',
+  'brad stewart': 'zipjak',
+  'justin huxtable': 'capital girl',
+  'jim byrne': 'cirencester',
+  'samantha collett': 'prickly poppy',
+  'kyle wilson-taylor': 'swear on a promise',
+  'larry cassidy': 'vancity',
+  'michael hellyer': 'witch day'
 }
 {
-  'p j mcmullen': [
-    { value: '2.1', money: '$91' },
-    { value: '2.12', money: '$38' },
-    { value: '2.26', money: '$37' },
-    { value: '2.78', money: '$139' },
-    { value: '2.82', money: '$68' },
+  'james orman': [
+    { value: '0', money: '$0' },
+    { value: '2.7', money: '$56' },
+    { value: '2.88', money: '$61' },
+    { value: '3.95', money: '$43' },
+    { value: '4', money: '$203' },
+    { value: '4.4', money: '$61' }
+  ],
+  'beau appo': [
+    { value: '0', money: '$0' },
+    { value: '8.8', money: '$26' },
+    { value: '9', money: '$41' },
+    { value: '18', money: '$43' },
+    { value: '19', money: '$50' },
     { value: '0', money: '$0' }
   ],
-  'j d cremin': [
+  'brad stewart': [
     { value: '0', money: '$0' },
-    { value: '3.7', money: '$43' },
-    { value: '4.5', money: '$52' },
-    { value: '7.8', money: '$32' },
-    { value: '9.2', money: '$42' },
-    { value: '10.5', money: '$21' }
+    { value: '5.7', money: '$45' },
+    { value: '5.8', money: '$39' },
+    { value: '10.5', money: '$61' },
+    { value: '13', money: '$28' },
+    { value: '17', money: '$25' }
   ],
-  'a f j sanderson': [
-    { value: '4.1', money: '$60' },
-    { value: '4.5', money: '$39' },
-    { value: '4.8', money: '$43' },
-    { value: '10.5', money: '$37' },
-    { value: '16', money: '$26' },
+  'justin huxtable': [
+    { value: '4.5', money: '$125' },
+    { value: '4.6', money: '$29' },
+    { value: '5.2', money: '$64' },
+    { value: '9.4', money: '$40' },
+    { value: '10', money: '$26' },
     { value: '0', money: '$0' }
   ],
-  'lachie manzelmann': [
+  'jim byrne': [
     { value: '0', money: '$0' },
-    { value: '13', money: '$49' },
-    { value: '18.5', money: '$28' },
-    { value: '990', money: '$29' },
+    { value: '15.5', money: '$32' },
+    { value: '17', money: '$43' },
+    { value: '200', money: '$56' },
+    { value: '1000', money: '$8' },
+    { value: '0', money: '$0' }
+  ],
+  'samantha collett': [
+    { value: '5.6', money: '$43' },
+    { value: '6.4', money: '$35' },
+    { value: '6.6', money: '$26' },
+    { value: '16', money: '$50' },
+    { value: '18.5', money: '$23' },
+    { value: '0', money: '$0' }
+  ],
+  'kyle wilson-taylor': [
+    { value: '4.2', money: '$64' },
+    { value: '4.8', money: '$34' },
+    { value: '4.9', money: '$35' },
+    { value: '7.8', money: '$38' },
+    { value: '10', money: '$42' },
+    { value: '0', money: '$0' }
+  ],
+  'larry cassidy': [
+    { value: '0', money: '$0' },
+    { value: '30', money: '$29' },
+    { value: '40', money: '$44' },
+    { value: '990', money: '$18' },
     { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'g f dwyer': [
+  'michael hellyer': [
     { value: '0', money: '$0' },
-    { value: '8', money: '$40' },
-    { value: '10', money: '$52' },
-    { value: '34', money: '$45' },
-    { value: '44', money: '$21' },
-    { value: '0', money: '$0' }
-  ],
-  'c a petroff': [
-    { value: '6.4', money: '$42' },
-    { value: '7', money: '$27' },
-    { value: '7.6', money: '$29' },
-    { value: '24', money: '$53' },
-    { value: '28', money: '$34' },
-    { value: '0', money: '$0' }
-  ],
-  'alan donohoe': [
+    { value: '26', money: '$26' },
+    { value: '32', money: '$40' },
+    { value: '990', money: '$19' },
     { value: '0', money: '$0' },
-    { value: '5.9', money: '$61' },
-    { value: '6.6', money: '$35' },
-    { value: '17', money: '$57' },
-    { value: '24', money: '$21' },
     { value: '0', money: '$0' }
   ]
 }

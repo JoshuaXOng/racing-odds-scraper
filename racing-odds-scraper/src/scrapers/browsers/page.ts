@@ -13,6 +13,10 @@ export abstract class Page {
     if (!this.driverPage) throw new NoPageError("Page is being operated against w/o an underlying page object.");
   }
 
+  async getCurrentDate() {
+    return await this.driverPage.evaluate(() => new Date());
+  }
+
   async close() {
     this.handleNoDriverPage();
     await this.driverPage.close();

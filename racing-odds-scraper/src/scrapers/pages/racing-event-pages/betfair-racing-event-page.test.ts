@@ -10,7 +10,7 @@ const bfRacingEventPageLogger = new Console({
   stdout: fs.createWriteStream("./test-artifacts/betfair-racing-event-page-ut.txt")
 });
 
-let arbitraryBfRacingEventPageUrl = "https://www.betfair.com.au/exchange/plus/";
+let arbitraryBfRacingEventPageUrl = "";
 
 describe("BetfairRacingEventPage Unit Tests.", () => {
   jest.setTimeout(20000);

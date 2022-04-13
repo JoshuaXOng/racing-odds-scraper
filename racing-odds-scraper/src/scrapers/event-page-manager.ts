@@ -2,11 +2,13 @@ import Fuse from "fuse.js";
 import puppeteer from "puppeteer";
 import { Browser } from "./browsers/browser";
 import { EventPage } from "./pages/event-page";
+import { RacingEventPageFactory } from "./pages/event-page-factories";
+import { SchedulerObserver } from "./scheduler";
 
 const initialFuzeCollection: string[] = [];
 const fuse = new Fuse(initialFuzeCollection, { shouldSort: true, includeScore: true });
 
-export class EventPageManager {
+export class EventPageManager implements SchedulerObserver {
   private mainBrowser: Browser;
 
   private isSouping = false;
@@ -68,9 +70,38 @@ export class EventPageManager {
     this.isSouping = true;
   }
 
-  // async scrapeEventPage(eventName: string, bookieName: string) {
-  //   this.coveredEvents[eventName]![bookieName].
-  // }
+  async closeFinishedEventPages() {
+    const cepLength = this.coveredEventPages.length;
 
-  // async closedFinishedPages () {}
+    for (let index = 0; index < cepLength; index++) {
+      const sourcePage = this.coveredEventPages[cepLength-index-1];
+      const canClose = sourcePage?.getHasEventEnded();
+      if (canClose)
+        delete this.coveredEventPages[cepLength-index-1]
+    }
+  }
+
+  //
+  // SchedulerObserver Implementation.
+  //
+
+  async onAddedToScheduleObservers(eventLinks: string[]) {
+    const newEventLinks = this.filterNewEventLinks(eventLinks);
+    await Promise.all(newEventLinks.map(nel => this.addEventPage((new RacingEventPageFactory()).createEventPage(new URL(nel)))));
+  }
+
+  async onScheduleSouped(eventLinks: string[]) {
+    const newEventLinks = this.filterNewEventLinks(eventLinks);
+    await Promise.all(newEventLinks.map(nel => this.addEventPage((new RacingEventPageFactory()).createEventPage(new URL(nel)))));
+  }
+
+  private filterNewEventLinks(eventLinks: string[]) {
+    const coveredEventLinks = this.coveredEventPages.map(cep => cep.sourceUrl.toString());
+    const newEventLinks = eventLinks.filter(el => !coveredEventLinks.includes(el));
+    return newEventLinks;
+  }
+}
+
+export interface EventObserver {
+
 }

@@ -112,6 +112,10 @@ export class BetfairRacingEventPage extends RacingEventPage {
   async getIsEventSuspended() {
     this.handleNoDriverPage();
 
+    await this.driverPage.waitForSelector(
+      `.${betfairRacingEventPageConstants.html.classNames.eventName}`
+    );
+
     const activeSuspAlerts = await this.driverPage.$$eval(
       `.${betfairRacingEventPageConstants.html.classNames.activeSuspendedAlerts}`,
       activeSuspAlerts => activeSuspAlerts.map(asa => (asa as HTMLElement)),
