@@ -84,26 +84,8 @@ export class EventPageManager implements SchedulerObserver {
       await updateSoup();
     }, desiredPollIntervalInMs)
     
-    // setInterval(async () => {
-    //   await this.closeFinishedEventPages();
-    // }, 1000 * 5);
-
     this.isSouping = true;
   }
-
-  // private async closeFinishedEventPages() {
-  //   const cepLength = this.coveredEventPages.length;
-    
-  //   for (let index = 0; index < cepLength; index++) {
-  //     // const sourcePage = this.coveredEventPages[cepLength-index-1];
-  //     // const canClose = await sourcePage?.getHasEventEnded();
-  //     if (true) {
-  //       const [a] = this.coveredEventPages.splice(cepLength-index-1, 1);
-  //       await new Promise(r => setTimeout(r, 10000));
-  //       await a!.close();
-  //     }
-  //   }
-  // }
 
   //
   // SchedulerObserver Implementation.
