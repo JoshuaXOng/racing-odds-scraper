@@ -9,29 +9,29 @@ let eventPageManager: EventPageManager;
 
 const server = fastify({ logger: true });
 
-server.get('/api/schedules/', async (_, reply) => {
-	return reply.send(scheduler.soupedSchedules);
+server.get("/api/schedules/", async (_, reply) => {
+  return reply.send(scheduler.soupedSchedules);
 });
 
-server.get('/api/up-coming-events/links/', async (_, reply) => {
-	return reply.send(scheduler.getUpcomingEventLinks(0, scheduler.upcomingThresholdInMin));
+server.get("/api/up-coming-events/links/", async (_, reply) => {
+  return reply.send(scheduler.getUpcomingEventLinks(0, scheduler.upcomingThresholdInMin));
 });
 
-server.get('/api/souped-events/', async (_, reply) => {
-	return reply.send(eventPageManager.soupedEvents);
+server.get("/api/souped-events/", async (_, reply) => {
+  return reply.send(eventPageManager.soupedEvents);
 });
 
 (async () => {
-	scheduler = new Scheduler();
-	await scheduler.initBrowser();
-	await scheduler.addSourcePage(new BetfairSchedulePage(new URL(bookiesToUrls.betfair.racing)));
-	await scheduler.startSoupingSources();
+  scheduler = new Scheduler();
+  await scheduler.initBrowser();
+  await scheduler.addSourcePage(new BetfairSchedulePage(new URL(bookiesToUrls.betfair.racing)));
+  await scheduler.startSoupingSources();
 
-	eventPageManager = new EventPageManager();
-	await eventPageManager.initBrowser();
-	await eventPageManager.startSoupingEvents();
+  eventPageManager = new EventPageManager();
+  await eventPageManager.initBrowser();
+  await eventPageManager.startSoupingEvents();
 
-	scheduler.addScheduleObserver(eventPageManager);
+  scheduler.addScheduleObserver(eventPageManager);
 
-	await server.listen(3000);
+  await server.listen(3000);
 })();

@@ -1,5 +1,3 @@
 import { Output } from "src/scrapers/output";
 
-export class OutputFile extends Output {
-
-}
+export class OutputFile extends Output {}

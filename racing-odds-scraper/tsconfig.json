@@ -1,30 +1,32 @@
 {
   "compilerOptions": {
-    "lib": [
-      "ESNext",
-      "dom"
-    ], 
-    "outDir": "lib", 
-    "removeComments": true, 
-    "target": "ES6", 
-    "baseUrl": "./", 
-    "esModuleInterop": true, 
-    "moduleResolution": "node", 
-    "paths": {}, 
-    "sourceMap": true, 
-    "sourceRoot": "/", 
-    "alwaysStrict": true, 
-    "allowUnreachableCode": false, 
-    "noImplicitAny": false, 
-    "strictNullChecks": true, 
+    "lib": ["ESNext", "dom"],
+    "outDir": "lib",
+    "removeComments": true,
+    "target": "ES6",
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "paths": {},
+    "sourceMap": true,
+    "sourceRoot": "/",
+    "alwaysStrict": true,
+    "allowUnreachableCode": false,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
     "noImplicitReturns": true,
-    "noUncheckedIndexedAccess": true, 
-    "noUnusedLocals": true, 
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "experimentalDecorators": true,
+    "experimentalDecorators": true
   },
-  "include": ["./**/*.ts", "src/scrapers/browsers/browser.test.ts", "src/scrapers/browsers/browser.test.dtds", "test.test.js", "jest.config.js", "src/stage.ts"],
-  "exclude": [
-    "node_modules/**/*"
-  ]
+  "include": [
+    "./**/*.ts",
+    "src/scrapers/browsers/browser.test.ts",
+    "src/scrapers/browsers/browser.test.dtds",
+    "test.test.js",
+    "jest.config.js",
+    "src/stage.ts"
+  ],
+  "exclude": ["node_modules/**/*"]
 }

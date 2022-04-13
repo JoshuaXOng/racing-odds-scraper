@@ -1,6 +1,6 @@
 export type ContestantParams = {
   name: string;
-}
+};
 
 export class Contestant {
   name: string;

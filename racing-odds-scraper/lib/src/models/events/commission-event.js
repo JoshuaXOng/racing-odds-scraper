@@ -1,9 +1,6 @@
 export class Commission {
-    toDecimal() { }
-    ;
-    toPercentage() { }
-    ;
+  toDecimal() {}
+  toPercentage() {}
 }
-export class CommisionEvent extends Event {
-}
+export class CommisionEvent extends Event {}
 //# sourceMappingURL=commission-event.js.map

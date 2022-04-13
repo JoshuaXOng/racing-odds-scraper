@@ -7,7 +7,7 @@ import { BetfairRacingEventPage } from "./betfair-racing-event-page";
 import { BetfairSchedulePage } from "../schedule-pages/betfair-schedule-page";
 
 const bfRacingEventPageLogger = new Console({
-  stdout: fs.createWriteStream("./test-artifacts/betfair-racing-event-page-ut.txt")
+  stdout: fs.createWriteStream("./test-artifacts/betfair-racing-event-page-ut.txt"),
 });
 
 let arbitraryBfRacingEventPageUrl = "";
@@ -27,27 +27,27 @@ describe("BetfairRacingEventPage Unit Tests.", () => {
     const schedulePage = new BetfairSchedulePage(racingScheduleUrl);
     const isSpAddPageSuccessful = await browser.addPage(schedulePage);
     expect(isSpAddPageSuccessful).toBe(true);
-    
-    const venueNamesToEventsMap = await schedulePage.getVenueNamesToEvents() as {};
+
+    const venueNamesToEventsMap = (await schedulePage.getVenueNamesToEvents()) as {};
     const venueName = Object.keys(venueNamesToEventsMap)[0] as string;
     arbitraryBfRacingEventPageUrl += venueNamesToEventsMap[venueName][0].link;
-    
+
     const racingEventPageUrl = new URL(arbitraryBfRacingEventPageUrl);
     racingEventPage = new BetfairRacingEventPage(racingEventPageUrl);
     const isRepAddPageSuccessful = await browser.addPage(racingEventPage);
     expect(isRepAddPageSuccessful).toBe(true);
   });
-  
+
   afterAll(async () => {
     await racingEventPage!.driverPage.setViewport({ width: 1920, height: 1080 });
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    await racingEventPage!.driverPage.screenshot({ 
-      path: "./test-artifacts/betfair-racing-event-page-ut.jpeg", 
-      clip: { x: 0, y: 0, width: 1920, height: 1080 } 
-    }); 
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await racingEventPage!.driverPage.screenshot({
+      path: "./test-artifacts/betfair-racing-event-page-ut.jpeg",
+      clip: { x: 0, y: 0, width: 1920, height: 1080 },
+    });
+
     await driverBrowser.close();
-  })
+  });
 
   test("BetfairRacingEventPage reads event name.", async () => {
     const eventName = await racingEventPage!.getEventName();
@@ -63,7 +63,7 @@ describe("BetfairRacingEventPage Unit Tests.", () => {
     const contestantNamesToHorseNames = await racingEventPage!.getContestantNamesToHorseNames();
     bfRacingEventPageLogger.log(contestantNamesToHorseNames);
   });
-  
+
   test("BetfairRacingEventPage reads odds table.", async () => {
     const contestantNamesToOdds = await racingEventPage!.getContestantNamesToOdds();
     bfRacingEventPageLogger.log(contestantNamesToOdds);

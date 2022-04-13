@@ -9,6 +9,9 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "stage": "ts-node src/stage.ts",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prettify": "prettier . --check",
+    "prettify:fix": "prettier . --write",
     "test": "jest"
   },
   "keywords": [],
@@ -28,7 +31,11 @@
     "@types/jest": "^27.4.1",
     "@types/puppeteer": "^5.4.5",
     "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint": "^8.13.0",
     "jest": "^27.5.1",
+    "prettier": "2.6.2",
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.2"

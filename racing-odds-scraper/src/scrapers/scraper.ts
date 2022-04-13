@@ -6,7 +6,7 @@ export abstract class Scraper {
   protected mainBrowser: Browser;
 
   protected isSouping = false;
-  
+
   async initBrowser() {
     this.mainBrowser = new Browser(await puppeteer.launch());
   }

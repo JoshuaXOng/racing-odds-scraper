@@ -2,7 +2,7 @@ import { Contestant, ContestantParams } from "./contestant";
 
 type RacingContestantParams = ContestantParams & {
   horseName: string;
-}
+};
 
 export class RacingContestant extends Contestant {
   horseName: string;

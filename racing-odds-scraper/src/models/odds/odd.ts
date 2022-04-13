@@ -1,4 +1,4 @@
 export class Odd {
-  oddsValue: string;
+  decimalValue: string;
   availableMoney: string;
 }

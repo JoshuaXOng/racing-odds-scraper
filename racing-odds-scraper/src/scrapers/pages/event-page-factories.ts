@@ -9,7 +9,7 @@ export interface EventPageFactory {
 export class RacingEventPageFactory implements EventPageFactory {
   createEventPage(sourceUrl: URL) {
     switch (sourceUrl.hostname) {
-      case (new URL(bookiesToUrls.betfair.index).hostname):
+      case new URL(bookiesToUrls.betfair.index).hostname:
         return new BetfairRacingEventPage(sourceUrl);
       default:
         throw new Error("There ain't no bookie event page type matching that host name.");

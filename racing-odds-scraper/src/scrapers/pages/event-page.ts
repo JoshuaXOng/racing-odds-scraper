@@ -8,7 +8,7 @@ export abstract class EventPage extends Page {
   abstract getEventName();
 
   abstract getContestantNames();
-  
+
   abstract getContestantNamesToOdds();
 
   abstract getIsEventInPlay();

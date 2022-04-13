@@ -1,3 +1,1 @@
-export abstract class Output {
-  
-}
+export abstract class Output {}

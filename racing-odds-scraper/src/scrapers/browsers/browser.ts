@@ -20,24 +20,22 @@ export class Browser {
 
   async getOpenedPageUrls() {
     const pages = await this.driverBrowser.pages();
-    return pages.map(page => page.url());
+    return pages.map((page) => page.url());
   }
 
   async getNumOpenedPagesPerUrl() {
     const urls = await this.getOpenedPageUrls();
     let urlsToPages = {};
-    urls.forEach(u => {
-      if (!Object.keys(urlsToPages).includes(u))
-        urlsToPages = { ...urlsToPages, [u]: 1 };
-      else
-        urlsToPages[u] += 1;
+    urls.forEach((u) => {
+      if (!Object.keys(urlsToPages).includes(u)) urlsToPages = { ...urlsToPages, [u]: 1 };
+      else urlsToPages[u] += 1;
     });
     return urlsToPages;
   }
 
   async addPage(page: Page) {
     this.pages.push(page);
-    
+
     page.driverPage = await this.driverBrowser.newPage();
     page.driverPage.setUserAgent(puppeteerConstants.userAgents.header);
     const response = await page.driverPage.goto(page.sourceUrl.toString());
@@ -46,11 +44,11 @@ export class Browser {
 
   async closePages(url: URL) {
     await Promise.all(
-      this.pages.map(async p => {
+      this.pages.map(async (p) => {
         if (p.sourceUrl.toString() === url.toString()) return await p.driverPage?.close();
       })
     );
 
-    this.pages = this.pages.filter(p => p.sourceUrl.toString() !== url.toString());
+    this.pages = this.pages.filter((p) => p.sourceUrl.toString() !== url.toString());
   }
 }
