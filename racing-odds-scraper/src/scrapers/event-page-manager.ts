@@ -15,7 +15,7 @@ export class EventPageManager implements SchedulerObserver {
   desiredPollIntervalInSec = 5;
 
   coveredEventPages: EventPage[] = [];
-  soupedEvents: { [key: string]: { [key: string]: any } } = {};
+  soupedEvents: { [key: string]: { [key: string]: { [key: string]: ({ value: string; money: string })[] } } } = {};
 
   async initBrowser() {
     this.mainBrowser = new Browser(await puppeteer.launch());
@@ -36,50 +36,50 @@ export class EventPageManager implements SchedulerObserver {
     if (this.isSouping) 
       throw new Error("Scheduler is already souping.");
 
-    const updateSoup = async () => {
-      this.coveredEventPages.forEach(async cep => {
-        const cepEventName = await cep.getEventName();
-
-        const coveredEventNames = Object.keys(this.soupedEvents);
-        fuse.setCollection(coveredEventNames);
-        const bestEventMatchScore = fuse.search(cepEventName)[0]?.score;
-        if (
-          !coveredEventNames.includes(cepEventName) &&
-          bestEventMatchScore && bestEventMatchScore < 0.20
-        ) {
-          console.log("Potential miss-shot in event page manager key insertion.")
-        }
-
-        if (!this.soupedEvents[cepEventName])
-          this.soupedEvents[cepEventName] = {};
-        this.soupedEvents[cepEventName]![cep.sourceUrl.hostname] = await cep.getContestantNamesToOdds();
-
-        //
-        // Tab clean up.
-        // - Two timers that use a driver page and close it cannot co-exist
-        // - Serial nature will race-condition and bloop out
-        //        
-
-        const cepLength = this.coveredEventPages.length;
-    
-        for (let index = 0; index < cepLength; index++) {
-          const sourcePage = this.coveredEventPages[cepLength-index-1];
-          const canClose = await sourcePage?.getHasEventEnded();
-          if (canClose) {
-            this.coveredEventPages.splice(cepLength-index-1, 1);
-            await sourcePage!.close();
-          }
-        }
-      });
-    }
-
-    await updateSoup();
+    await this.updateSoup();
     const desiredPollIntervalInMs = this.desiredPollIntervalInSec * 1000;
     setInterval(async () => {
-      await updateSoup();
+      await this.updateSoup();
     }, desiredPollIntervalInMs)
     
     this.isSouping = true;
+  }
+
+  private async updateSoup() {
+    this.coveredEventPages.forEach(async cep => {
+      const cepEventName = await cep.getEventName();
+
+      const coveredEventNames = Object.keys(this.soupedEvents);
+      fuse.setCollection(coveredEventNames);
+      const bestEventMatchScore = fuse.search(cepEventName)[0]?.score;
+      if (
+        !coveredEventNames.includes(cepEventName) &&
+        bestEventMatchScore && bestEventMatchScore < 0.20
+      ) {
+        console.log("Potential miss-shot in event page manager key insertion.")
+      }
+
+      if (!this.soupedEvents[cepEventName])
+        this.soupedEvents[cepEventName] = {};
+      this.soupedEvents[cepEventName]![cep.sourceUrl.hostname] = await cep.getContestantNamesToOdds();
+
+      //
+      // Tab clean up.
+      // - Two timers that use a driver page and close it cannot co-exist
+      // - Serial nature will race-condition and bloop out
+      //        
+
+      const cepLength = this.coveredEventPages.length;
+  
+      for (let index = 0; index < cepLength; index++) {
+        const sourcePage = this.coveredEventPages[cepLength-index-1];
+        const canClose = await sourcePage?.getHasEventEnded();
+        if (canClose) {
+          this.coveredEventPages.splice(cepLength-index-1, 1);
+          await sourcePage!.close();
+        }
+      }
+    });
   }
 
   //

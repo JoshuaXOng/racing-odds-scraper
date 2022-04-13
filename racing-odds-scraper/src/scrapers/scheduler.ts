@@ -57,20 +57,10 @@ export class Scheduler {
     if (this.isSouping) 
       throw new Error("Scheduler is already souping.");
 
-    const updateSoup = async () => {
-      const unformattedSoupSchedules = this.sourceSchedulePages.map(async ssp => {
-        return { [ssp.sourceUrl.hostname]: await ssp.getVenueNamesToEvents() };
-      });
-      this.soupedSchedules = (await Promise.all(unformattedSoupSchedules)).reduce((ss, uss) => ({ ...ss, ...uss }), {});
-
-      const upcomingEventLinks = this.getUpcomingEventLinks(0, this.upcomingThresholdInMin);
-      this.schedulerObservers.forEach(async so => await so.onScheduleSouped(upcomingEventLinks));
-    }
-
-    await updateSoup();
+    await this.updateSoup();
     const desiredPollIntervalInMs = this.desiredPollIntervalInSec * 1000;
     setInterval(async () => {
-      await updateSoup();
+      await this.updateSoup();
     }, desiredPollIntervalInMs)
 
     this.isSouping = true;
@@ -106,6 +96,16 @@ export class Scheduler {
 
     const upcomingEventLinks = this.getUpcomingEventLinks(0, this.upcomingThresholdInMin);
     observer.onAddedToScheduleObservers(upcomingEventLinks);
+  }
+
+  private async updateSoup() {
+    const unformattedSoupSchedules = this.sourceSchedulePages.map(async ssp => {
+      return { [ssp.sourceUrl.hostname]: await ssp.getVenueNamesToEvents() };
+    });
+    this.soupedSchedules = (await Promise.all(unformattedSoupSchedules)).reduce((ss, uss) => ({ ...ss, ...uss }), {});
+
+    const upcomingEventLinks = this.getUpcomingEventLinks(0, this.upcomingThresholdInMin);
+    this.schedulerObservers.forEach(async so => await so.onScheduleSouped(upcomingEventLinks));
   }
 }
 
