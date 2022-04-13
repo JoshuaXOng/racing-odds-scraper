@@ -1,14 +1,11 @@
 export type ContestantParams = {
-  id: string;
   name: string;
 }
 
-export abstract class Contestant {
-  id: string;
+export class Contestant {
   name: string;
 
-  constructor({ id, name }: ContestantParams) {
-    this.id = id;
+  constructor({ name }: ContestantParams) {
     this.name = name;
   }
 }
