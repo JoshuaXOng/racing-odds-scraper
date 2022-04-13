@@ -18,17 +18,12 @@ export class EventPageManager implements SchedulerObserver {
   soupedEvents: { [key: string]: { [key: string]: any } } = {};
 
   async initBrowser() {
-    this.mainBrowser = new Browser(await puppeteer.launch({ headless: false }));
+    this.mainBrowser = new Browser(await puppeteer.launch());
   }
 
   async addEventPage(eventPage: EventPage) {
     if (!this.mainBrowser)
       throw new Error("Have to init browser before running.");
-    
-    const isEventDoubleUp = this.coveredEventPages.reduce((_, cep) => eventPage instanceof cep.constructor, false);
-    if (isEventDoubleUp) {
-      return console.log("Scheduler was given a duplicate event page.");
-    }
 
     const isAddPageSucc = await this.mainBrowser.addPage(eventPage);
     if (!isAddPageSucc)

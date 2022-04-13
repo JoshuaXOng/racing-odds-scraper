@@ -1,7 +1,6 @@
 import fastify from "fastify";
 import { bookiesToUrls } from "./constants";
 import { EventPageManager } from "./scrapers/event-page-manager";
-// import { BetfairRacingEventPage } from "./scrapers/pages/racing-event-pages/betfair-racing-event-page";
 import { BetfairSchedulePage } from "./scrapers/pages/schedule-pages/betfair-schedule-page";
 import { Scheduler } from "./scrapers/scheduler";
 

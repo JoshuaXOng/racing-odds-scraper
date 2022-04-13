@@ -15,6 +15,7 @@
   "author": "Joshua Ong",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "fastify": "^3.28.0",
     "fuse.js": "^6.5.3",
     "puppeteer": "^13.5.1",

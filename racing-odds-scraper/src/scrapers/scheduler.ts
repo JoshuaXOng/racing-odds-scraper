@@ -15,7 +15,7 @@ export class Scheduler {
   private sourceSchedulePages: SchedulePage[] = [];
 
   private isSouping = false;
-  desiredPollIntervalInSec = 60 * 5;
+  desiredPollIntervalInSec = 5;
   upcomingThresholdInMin = 10;
 
   readingLimits: Limits = {
@@ -33,7 +33,7 @@ export class Scheduler {
   private schedulerObservers: SchedulerObserver[] = [];
   
   async initBrowser() {
-    this.mainBrowser = new Browser(await puppeteer.launch({ headless: false }));
+    this.mainBrowser = new Browser(await puppeteer.launch());
   }
 
   async addSourcePage(schedulePage: SchedulePage) {
@@ -64,7 +64,7 @@ export class Scheduler {
       this.soupedSchedules = (await Promise.all(unformattedSoupSchedules)).reduce((ss, uss) => ({ ...ss, ...uss }), {});
 
       const upcomingEventLinks = this.getUpcomingEventLinks(0, this.upcomingThresholdInMin);
-      this.schedulerObservers.forEach(so => so.onScheduleSouped(upcomingEventLinks));
+      this.schedulerObservers.forEach(async so => await so.onScheduleSouped(upcomingEventLinks));
     }
 
     await updateSoup();
