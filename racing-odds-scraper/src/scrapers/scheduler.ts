@@ -16,7 +16,7 @@ export class Scheduler {
 
   private isSouping = false;
   private desiredPollIntervalInSec = 5;
-  upcomingThresholdInMin = 10 * 6;
+  upcomingThresholdInMin = 30;
 
   readingLimits: Limits = {
     allowedCountries: [],

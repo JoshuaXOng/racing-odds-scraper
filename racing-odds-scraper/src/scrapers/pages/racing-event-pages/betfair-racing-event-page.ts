@@ -22,6 +22,13 @@ export class BetfairRacingEventPage extends RacingEventPage {
     super(sourceUrl);
   }
 
+  async getVenue() {
+    return {
+      name: (await this.getEventName()).split(" ")[0]!,
+      countryName: "australia"
+    };
+  }
+
   async getEventName() {
     this.handleNoDriverPage();
 
@@ -41,6 +48,10 @@ export class BetfairRacingEventPage extends RacingEventPage {
     const nowDD = now.getDate().toString().padStart(2, "0");
     return `${fraggedEventName.slice(0, fraggedEventName.length - 1).join(" ")} ${nowYYYY}${nowMM}${nowDD}${eventStartTimeHHMm!.replace(":", "")}`;
   }
+
+  async getEventStartTime() {
+    return (await this.getEventName()).split(" ").reverse()[0]!
+  };
 
   async getContestantNames() {
     this.handleNoDriverPage();

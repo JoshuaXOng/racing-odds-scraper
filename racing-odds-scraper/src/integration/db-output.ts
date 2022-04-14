@@ -30,7 +30,7 @@ export class DBOutput implements EventsObserver {
     oddsRecords: {
       hostnameSource: string,
       oddsTables: OddsTable[]
-    }
+    }[]
   })[] = [];
 
   //
@@ -65,19 +65,17 @@ export class DBOutput implements EventsObserver {
             countryName: inCountryName
           },
           scheduledStartTime,
-          oddsRecords: {
+          oddsRecords: [{
             hostnameSource: eventPage.sourceUrl.hostname,
             oddsTables: [{
               datetimeCaptured: new Date(),
               oddsRows
             }]
-          },
+          }],
         });
 
         return;
       }
-
-      // ALSO NEED TO INDEX ON HOSTNAME SOURCE
 
       let oddsRows: any = [];
 
@@ -89,14 +87,30 @@ export class DBOutput implements EventsObserver {
         });
       };
 
-      currentEvent.oddsRecords.oddsTables.push({
+      const eventPageHostname = eventPage.sourceUrl.hostname;
+      const oddsRecord = currentEvent.oddsRecords.find(ceor => ceor.hostnameSource === eventPageHostname);
+      
+      if (!oddsRecord) {
+        currentEvent.oddsRecords.push({
+          hostnameSource: eventPageHostname,
+          oddsTables: [{
+            datetimeCaptured: new Date(),
+            oddsRows
+          }]
+        })
+
+        return;
+      }
+
+      oddsRecord.oddsTables.push({
         datetimeCaptured: new Date(),
         oddsRows
-      })
+      });
     }
   }
 
   onEventPageClosure(eventPage: EventPage) {
+    console.log(eventPage)
     // Save to DB 
     // Tidy up this.events
   }

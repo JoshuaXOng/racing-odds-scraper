@@ -29,7 +29,7 @@ export class JsonOutput implements EventsObserver {
   }
 
   onEventPageClosure(eventPage: EventPage) {
-      
+    console.log(eventPage)
   }
 
   toObject() {

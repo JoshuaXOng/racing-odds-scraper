@@ -36,6 +36,7 @@ server.get("/api/souped-events/", async (_, reply) => {
   await eventPageManager.startSouping();
 
   eventPagesProcessor = new DBOutput();
+  // eventPagesProcessor = new JsonOutput();
   eventPageManager.addEventsObserver(eventPagesProcessor);
 
   scheduler.addScheduleObserver(eventPageManager);

@@ -6,18 +6,11 @@ export abstract class EventPage extends Page {
     super(sourceUrl);
   }
 
-  getVenue(): Venue {
-    return {
-      name: "name",
-      countryName: "name",
-    };
-  };
+  abstract getVenue(): Promise<Venue>;
 
   abstract getEventName();
 
-  getEventStartTime(): string {
-    return "202204140115";
-  };
+  abstract getEventStartTime(): Promise<string>;
 
   abstract getContestantNames();
 
