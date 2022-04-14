@@ -6,14 +6,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
-public class LabelledTextInput {
-  public static VBox get(String labelText, String placeholderText, Consumer<String> onChange) {
-    VBox container = new VBox(5);
-    container.setMaxWidth(300);
-    container.setAlignment(Pos.CENTER_LEFT);
+public class LabelledTextInput extends VBox {
+  public LabelledTextInput(String labelText, String placeholderText, Consumer<String> onChange) {
+    super(5);
+    this.setMaxWidth(300);
+    this.setAlignment(Pos.CENTER_LEFT);
 
     Label label = new Label(labelText);
-    container.getChildren().add(label);
+    this.getChildren().add(label);
 
     TextField field = new TextField();
     field.setPromptText(placeholderText);
@@ -21,8 +21,6 @@ public class LabelledTextInput {
         e -> {
           onChange.accept(field.textProperty().getValue());
         });
-    container.getChildren().add(field);
-
-    return container;
+    this.getChildren().add(field);
   }
 }

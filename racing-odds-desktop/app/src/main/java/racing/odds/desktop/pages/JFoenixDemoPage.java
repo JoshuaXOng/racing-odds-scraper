@@ -6,26 +6,23 @@ import javafx.scene.Scene;
 import javafx.scene.layout.FlowPane;
 import racing.odds.desktop.DataStore;
 
-public class JFoenixDemoPage {
-  public static Scene get() {
-    FlowPane layout = new FlowPane();
-    layout.setHgap(20);
-    layout.setVgap(20);
+public class JFoenixDemoPage extends Scene {
+  public JFoenixDemoPage() {
+    super(new FlowPane(), 1280, 720);
+    ((FlowPane) this.getRoot()).setHgap(20);
+    ((FlowPane) this.getRoot()).setVgap(20);
 
-    Scene scene = new Scene(layout, 1280, 720);
-    scene.getStylesheets().add("css/jxo-custom.css");
-    scene.getStylesheets().add("css/jfoenix-components.css");
+    this.getStylesheets().add("css/jxo-custom.css");
+    this.getStylesheets().add("css/jfoenix-components.css");
 
     JFXButton button = new JFXButton("Raised JFX Button");
     button.getStyleClass().add("button-raised");
-    button.setOnMouseReleased(e -> DataStore.mainStage.setScene(JavaFXDemoPage.get()));
+    button.setOnMouseReleased(e -> DataStore.mainStage.setScene(new JavaFXDemoPage()));
 
     JFXToggleButton toggleButton = new JFXToggleButton();
     toggleButton.setText("JFX Toggle Button");
 
-    ((FlowPane) scene.getRoot()).getChildren().add(button);
-    ((FlowPane) scene.getRoot()).getChildren().add(toggleButton);
-
-    return scene;
+    ((FlowPane) this.getRoot()).getChildren().add(button);
+    ((FlowPane) this.getRoot()).getChildren().add(toggleButton);
   }
 }

@@ -8,15 +8,15 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Rectangle;
 import racing.odds.desktop.DataStore;
 
-public class JavaFXDemoPage {
-  public static Scene get() {
-    FlowPane layout = new FlowPane(Orientation.VERTICAL);
-    layout.setHgap(20);
-    layout.setVgap(20);
+public class JavaFXDemoPage extends Scene {
+  public JavaFXDemoPage() {
+    super(new FlowPane(Orientation.VERTICAL), 1280, 920);  
+    ((FlowPane) this.getRoot()).setHgap(20);
+    ((FlowPane) this.getRoot()).setVgap(20);
 
-    Scene scene = new Scene(layout, 1280, 920);
-    scene.getStylesheets().add("css/jxo-custom.css");
-    scene.getStylesheets().add("css/jfoenix-components.css");
+    
+    this.getStylesheets().add("css/jxo-custom.css");
+    this.getStylesheets().add("css/jfoenix-components.css");
 
     Label label =
         new Label(
@@ -32,12 +32,10 @@ public class JavaFXDemoPage {
     box.getStyleClass().add("my-rect");
 
     Button button = new Button("Default Button");
-    button.setOnMouseReleased(e -> DataStore.mainStage.setScene(JFoenixDemoPage.get()));
+    button.setOnMouseReleased(e -> DataStore.mainStage.setScene(new JFoenixDemoPage()));
 
-    ((FlowPane) scene.getRoot()).getChildren().add(label);
-    ((FlowPane) scene.getRoot()).getChildren().add(box);
-    ((FlowPane) scene.getRoot()).getChildren().add(button);
-
-    return scene;
+    ((FlowPane) this.getRoot()).getChildren().add(label);
+    ((FlowPane) this.getRoot()).getChildren().add(box);
+    ((FlowPane) this.getRoot()).getChildren().add(button);
   }
 }

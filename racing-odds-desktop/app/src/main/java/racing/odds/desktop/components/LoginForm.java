@@ -12,31 +12,31 @@ import racing.odds.desktop.Utils;
 import racing.odds.desktop.pages.JavaFXDemoPage;
 import racing.odds.desktop.services.DemoAPI;
 
-public class LoginForm {
+public class LoginForm extends VBox {
   String username;
   String password;
 
-  public VBox get(Consumer<ArrayList<String>> onSubmit) {
-    VBox container = new VBox(20);
-    container.setAlignment(Pos.CENTER);
+  public LoginForm(Consumer<ArrayList<String>> onSubmit) {
+    super(20);
+    this.setAlignment(Pos.CENTER);
 
     Text submitAlert = new Text("Credentials have failed!");
     submitAlert.getStyleClass().add("login-page__alert");
-    container.getChildren().add(submitAlert);
+    this.getChildren().add(submitAlert);
 
-    container
+    this
         .getChildren()
         .add(
-            LabelledTextInput.get(
+            new LabelledTextInput(
                 "Username",
                 "Username",
                 username -> {
                   this.username = username;
                 }));
-    container
+    this
         .getChildren()
         .add(
-            LabelledTextInput.get(
+            new LabelledTextInput(
                 "Password",
                 "Password",
                 password -> {
@@ -51,7 +51,7 @@ public class LoginForm {
         e -> {
           try {
             DataStore.authToken = DemoAPI.getAuthToken(this.username, this.password);
-            DataStore.mainStage.setScene(JavaFXDemoPage.get());
+            DataStore.mainStage.setScene(new JavaFXDemoPage());
           } catch (Exception exception) {
             submitAlert.getStyleClass().remove("login-page__alert");
             Utils.setTimeout(() -> { submitAlert.getStyleClass().add("login-page__alert"); }, 5000);
@@ -60,8 +60,6 @@ public class LoginForm {
           onSubmit.accept(new ArrayList<String>(Arrays.asList(this.username, this.password)));
         });
 
-    container.getChildren().add(submitButton);
-
-    return container;
+    this.getChildren().add(submitButton);
   }
 }
