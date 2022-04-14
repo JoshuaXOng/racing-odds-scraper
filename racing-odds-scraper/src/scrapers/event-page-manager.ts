@@ -1,21 +1,17 @@
-import Fuse from "fuse.js";
 import puppeteer from "puppeteer";
 import { Browser } from "./browsers/browser";
 import { EventPage } from "./pages/event-page";
 import { RacingEventPageFactory } from "./pages/event-page-factories";
 import { SchedulerObserver } from "./scheduler";
 
-const initialFuzeCollection: string[] = [];
-const fuse = new Fuse(initialFuzeCollection, { shouldSort: true, includeScore: true });
-
 export class EventPageManager implements SchedulerObserver {
   private mainBrowser: Browser;
 
   private isSouping = false;
-  desiredPollIntervalInSec = 5;
+  private desiredPollIntervalInSec = 5;
 
-  coveredEventPages: EventPage[] = [];
-  soupedEvents: { [key: string]: { [key: string]: { [key: string]: { value: string; money: string }[] } } } = {};
+  private coveredEventPages: EventPage[] = [];
+  private activeEventsObservers: EventsObserver[] = [];
 
   async initBrowser() {
     this.mainBrowser = new Browser(await puppeteer.launch());
@@ -30,11 +26,12 @@ export class EventPageManager implements SchedulerObserver {
     this.coveredEventPages.push(eventPage);
   }
 
-  async startSoupingEvents() {
+  async startSouping() {
     if (this.isSouping) throw new Error("Scheduler is already souping.");
+    
+    const desiredPollIntervalInMs = this.desiredPollIntervalInSec * 1000;
 
     await this.updateSoup();
-    const desiredPollIntervalInMs = this.desiredPollIntervalInSec * 1000;
     setInterval(async () => {
       await this.updateSoup();
     }, desiredPollIntervalInMs);
@@ -42,37 +39,28 @@ export class EventPageManager implements SchedulerObserver {
     this.isSouping = true;
   }
 
+  addEventsObserver(eventsObserver: EventsObserver) {
+    this.activeEventsObservers.push(eventsObserver);
+  }
+
   private async updateSoup() {
-    this.coveredEventPages.forEach(async (cep) => {
-      const cepEventName = await cep.getEventName();
+    const eObserverResults = this.activeEventsObservers.map(eo => eo.onEventPagesPolling(this.coveredEventPages));
+    await Promise.all(eObserverResults);
 
-      const coveredEventNames = Object.keys(this.soupedEvents);
-      fuse.setCollection(coveredEventNames);
-      const bestEventMatchScore = fuse.search(cepEventName)[0]?.score;
-      if (!coveredEventNames.includes(cepEventName) && bestEventMatchScore && bestEventMatchScore < 0.2) {
-        console.log("Potential miss-shot in event page manager key insertion.");
+    await this.closeFinishedEventPages();
+  }
+
+  private async closeFinishedEventPages() {
+    const cepLength = this.coveredEventPages.length;
+
+    for (let index = 0; index < cepLength; index++) {
+      const coveredPage = this.coveredEventPages[cepLength - index - 1];
+      const canClosePage = await coveredPage?.getHasEventEnded();
+      if (canClosePage) {
+        this.coveredEventPages.splice(cepLength - index - 1, 1);
+        await coveredPage!.close();
       }
-
-      if (!this.soupedEvents[cepEventName]) this.soupedEvents[cepEventName] = {};
-      this.soupedEvents[cepEventName]![cep.sourceUrl.hostname] = await cep.getContestantNamesToOdds();
-
-      //
-      // Tab clean up.
-      // - Two timers that use a driver page and close it cannot co-exist
-      // - Serial nature will race-condition and bloop out
-      //
-
-      const cepLength = this.coveredEventPages.length;
-
-      for (let index = 0; index < cepLength; index++) {
-        const sourcePage = this.coveredEventPages[cepLength - index - 1];
-        const canClose = await sourcePage?.getHasEventEnded();
-        if (canClose) {
-          this.coveredEventPages.splice(cepLength - index - 1, 1);
-          await sourcePage!.close();
-        }
-      }
-    });
+    }
   }
 
   //
@@ -96,4 +84,8 @@ export class EventPageManager implements SchedulerObserver {
   }
 }
 
-export interface EventObserver {}
+export interface EventsObserver {
+  onEventPagesPolling(eventPages: EventPage[]);
+  onEventPageClosure(eventPage: EventPage);
+  toObject();
+}

@@ -1,11 +1,15 @@
 import fastify from "fastify";
+import "dotenv/config";
 import { bookiesToUrls } from "./constants";
-import { EventPageManager } from "./scrapers/event-page-manager";
+import { DBOutput } from "./integration/db-output";
+// import { JsonOutput } from "./integration/json-output";
+import { EventPageManager, EventsObserver } from "./scrapers/event-page-manager";
 import { BetfairSchedulePage } from "./scrapers/pages/schedule-pages/betfair-schedule-page";
 import { Scheduler } from "./scrapers/scheduler";
 
 let scheduler: Scheduler;
 let eventPageManager: EventPageManager;
+let eventPagesProcessor: EventsObserver;
 
 const server = fastify({ logger: true });
 
@@ -18,7 +22,7 @@ server.get("/api/up-coming-events/links/", async (_, reply) => {
 });
 
 server.get("/api/souped-events/", async (_, reply) => {
-  return reply.send(eventPageManager.soupedEvents);
+  return reply.send(eventPagesProcessor.toObject());
 });
 
 (async () => {
@@ -29,7 +33,10 @@ server.get("/api/souped-events/", async (_, reply) => {
 
   eventPageManager = new EventPageManager();
   await eventPageManager.initBrowser();
-  await eventPageManager.startSoupingEvents();
+  await eventPageManager.startSouping();
+
+  eventPagesProcessor = new DBOutput();
+  eventPageManager.addEventsObserver(eventPagesProcessor);
 
   scheduler.addScheduleObserver(eventPageManager);
 

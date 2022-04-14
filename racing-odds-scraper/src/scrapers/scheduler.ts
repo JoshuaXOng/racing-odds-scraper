@@ -15,8 +15,8 @@ export class Scheduler {
   private sourceSchedulePages: SchedulePage[] = [];
 
   private isSouping = false;
-  desiredPollIntervalInSec = 5;
-  upcomingThresholdInMin = 10;
+  private desiredPollIntervalInSec = 5;
+  upcomingThresholdInMin = 10 * 6;
 
   readingLimits: Limits = {
     allowedCountries: [],

@@ -1,37 +1,72 @@
 import { OddsRecord } from "./odds/odds-record";
-import { Venue } from "./venue";
 
 export class Event {
-  venue: Venue;
   scheduledStartTime: string;
-  oddsRecords: OddsRecord[];
+  oddsRecord: OddsRecord;
+
+  constructor(scheduledStartTime: string, hostnameSoure: string) {
+    this.scheduledStartTime = scheduledStartTime;
+    this.oddsRecord = new OddsRecord(hostnameSoure);
+  }
 }
 
-const _ = {
-  venue: {
-    name: "string",
-    country: "string",
-  },
-  scheduledStartTime: "string",
-  oddsRecords: [
-    {
-      hostnameSource: "string",
-      oddsTables: [
-        {
-          datetimeCaptured: null,
-          oddsRows: [
-            {
-              forContestant: { name: "string", horseName: "string" },
-              entryOdds: [
-                {
-                  decimalValue: "string",
-                  availableMoney: "string",
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-  ],
-};
+// class AssociationEnity {
+//   venue: Venue;
+//   event: Event
+// }
+
+// {
+//   venue: {
+//     name: "string",
+//     country: "string",
+//   },
+//   scheduledStartTime: "string",
+//   oddsRecords: {
+//     hostnameSource: "string",
+//     oddsTables: [
+//       {
+//         datetimeCaptured: null,
+//         oddsRows: [
+//           {
+//             forContestant: { name: "string", horseName: "string" },
+//             entryOdds: [
+//               {
+//                 decimalValue: "string",
+//                 availableMoney: "string",
+//               },
+//             ],
+//           },
+//         ],
+//       },
+//     ],
+//   },
+// };
+
+// const _ = {
+//   venue: {
+//     name: "string",
+//     country: "string",
+//     events: [{
+//       scheduledStartTime: "string",
+//       oddsRecords: {
+//         hostnameSource: "string",
+//         oddsTables: [
+//           {
+//             datetimeCaptured: null,
+//             oddsRows: [
+//               {
+//                 forContestant: { name: "string", horseName: "string" },
+//                 entryOdds: [
+//                   {
+//                     decimalValue: "string",
+//                     availableMoney: "string",
+//                   },
+//                 ],
+//               },
+//             ],
+//           },
+//         ],
+//       },
+//     }]
+//   },
+// };
