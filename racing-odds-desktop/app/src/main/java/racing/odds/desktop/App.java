@@ -18,7 +18,7 @@ public class App extends Application {
     Scene initialPage = new LoginPage();
     initialPage.getStylesheets().add("css/jfoenix-components.css");
     initialPage.getStylesheets().add("css/jxo-custom.css");
-    
+
     Image mainStageIcon = new Image("gunther.png");
     mainStage.getIcons().add(mainStageIcon);
     mainStage.setTitle("Racing Odds");

@@ -7,33 +7,57 @@
  */
 
 plugins {
-    // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.9'
     id "com.github.sherter.google-java-format" version "0.9"
 }
 
 repositories {
-    // Use Maven Central for resolving dependencies.
     mavenCentral()
+    maven {
+        url 'https://esri.jfrog.io/artifactory/arcgis'
+    }
+}
+
+ext {
+    arcgisVersion = '100.13.0'
+}
+
+configurations {
+    natives
 }
 
 dependencies {
-    // Use JUnit test framework.
     testImplementation 'junit:junit:4.13.2'
-    // This dependency is used by the application.
     implementation 'com.google.guava:guava:30.1.1-jre'
     implementation 'com.jfoenix:jfoenix:9.0.10'
     implementation 'io.github.cdimascio:java-dotenv:5.2.2'
+    implementation "com.esri.arcgisruntime:arcgis-java:$arcgisVersion"
+    natives "com.esri.arcgisruntime:arcgis-java-jnilibs:$arcgisVersion"
+    natives "com.esri.arcgisruntime:arcgis-java-resources:$arcgisVersion"
+    runtimeOnly "org.slf4j:slf4j-nop:1.7.32"
 }
 
 application {
-    // Define the main class for the application.
     mainClass = 'racing.odds.desktop.App'
 }
 
 javafx {
-    version = "15"
+    version = "11.0.2"
     modules = [ 'javafx.controls' ]
 }
 mainClassName = "App"
+
+task copyNatives(type: Copy) {
+    description = "Copies the arcgis native libraries into the .arcgis directory for development."
+    group = "build"
+    configurations.natives.asFileTree.each {
+        from(zipTree(it))
+    }
+    into "${System.properties.getProperty("user.home")}/.arcgis/$arcgisVersion"
+}
+
+run {
+    dependsOn copyNatives
+    mainClassName = 'com.example.app.App'
+}

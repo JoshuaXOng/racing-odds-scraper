@@ -10,11 +10,10 @@ import racing.odds.desktop.DataStore;
 
 public class JavaFXDemoPage extends Scene {
   public JavaFXDemoPage() {
-    super(new FlowPane(Orientation.VERTICAL), 1280, 920);  
+    super(new FlowPane(Orientation.VERTICAL), 1280, 920);
     ((FlowPane) this.getRoot()).setHgap(20);
     ((FlowPane) this.getRoot()).setVgap(20);
 
-    
     this.getStylesheets().add("css/jxo-custom.css");
     this.getStylesheets().add("css/jfoenix-components.css");
 

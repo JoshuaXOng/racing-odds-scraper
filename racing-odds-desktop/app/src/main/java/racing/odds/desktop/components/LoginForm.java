@@ -24,8 +24,7 @@ public class LoginForm extends VBox {
     submitAlert.getStyleClass().add("login-page__alert");
     this.getChildren().add(submitAlert);
 
-    this
-        .getChildren()
+    this.getChildren()
         .add(
             new LabelledTextInput(
                 "Username",
@@ -33,8 +32,7 @@ public class LoginForm extends VBox {
                 username -> {
                   this.username = username;
                 }));
-    this
-        .getChildren()
+    this.getChildren()
         .add(
             new LabelledTextInput(
                 "Password",
@@ -54,9 +52,13 @@ public class LoginForm extends VBox {
             DataStore.mainStage.setScene(new JavaFXDemoPage());
           } catch (Exception exception) {
             submitAlert.getStyleClass().remove("login-page__alert");
-            Utils.setTimeout(() -> { submitAlert.getStyleClass().add("login-page__alert"); }, 5000);
+            Utils.setTimeout(
+                () -> {
+                  submitAlert.getStyleClass().add("login-page__alert");
+                },
+                5000);
           }
-          
+
           onSubmit.accept(new ArrayList<String>(Arrays.asList(this.username, this.password)));
         });
 

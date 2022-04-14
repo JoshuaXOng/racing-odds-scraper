@@ -27,8 +27,7 @@ public class DemoAPI {
                 .header("Content-Type", "application/json")
                 .build(),
             BodyHandlers.ofString());
-    if (response.statusCode() == 200)
-      return response.body();
+    if (response.statusCode() == 200) return response.body();
     else throw new Exception("Request to auth token end-point failed.");
   }
 
@@ -36,18 +35,14 @@ public class DemoAPI {
     HttpResponse<String> response =
         DemoAPI.httpClient.send(
             HttpRequest.newBuilder()
-                .POST(
-                    BodyPublishers.ofString(
-                        String.format(
-                            "{ \"jwt\": \"%s\" }", token)))
+                .POST(BodyPublishers.ofString(String.format("{ \"jwt\": \"%s\" }", token)))
                 .uri(new URI(DemoAPI.dotenv.get("API_VERIFY_TOKEN_EP")))
                 .header("accept", "application/json")
                 .header("Authorization", DemoAPI.dotenv.get("API_KEY"))
                 .header("Content-Type", "application/json")
                 .build(),
             BodyHandlers.ofString());
-    if (response.statusCode() == 200)
-      return response.body();
+    if (response.statusCode() == 200) return response.body();
     else throw new Exception("Request to verify token end-point failed.");
   }
 
@@ -61,8 +56,7 @@ public class DemoAPI {
                 .header("Authorization", DemoAPI.dotenv.get("API_KEY"))
                 .build(),
             BodyHandlers.ofString());
-    if (response.statusCode() == 200)
-      return response.body();
+    if (response.statusCode() == 200) return response.body();
     else throw new Exception("Request to get users end-point failed.");
   }
 }
