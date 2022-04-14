@@ -1,5 +1,6 @@
 import { EventsObserver } from "../scrapers/event-page-manager";
 import { EventPage } from "src/scrapers/pages/event-page";
+import { mdbClient } from "./mongodb";
 
 type Venue = {
   name: string;
@@ -109,10 +110,22 @@ export class DBOutput implements EventsObserver {
     }
   }
 
-  onEventPageClosure(eventPage: EventPage) {
-    console.log(eventPage)
-    // Save to DB 
-    // Tidy up this.events
+  async onEventPageClosure(eventPage: EventPage) {
+    const { name: atVenueName, countryName: inCountryName } = await eventPage.getVenue();
+    const scheduledStartTime = await eventPage.getEventStartTime();
+
+    const closingEventIndex = this.events.findIndex(
+      e => e.venue.name === atVenueName && 
+      e.venue.countryName === inCountryName &&
+      e.scheduledStartTime === scheduledStartTime
+    )
+    
+    const a = this.events[closingEventIndex]!;
+    mdbClient.db(process.env.INTEGRATION_MONGODB_PRIMARY_DB_NAME).collection("ahhhh").insertOne({
+      a
+    });
+
+    this.events.splice(closingEventIndex, 1);
   }
 
   toObject() {

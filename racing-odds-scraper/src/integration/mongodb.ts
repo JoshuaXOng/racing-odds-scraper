@@ -1,5 +1,5 @@
 import { MongoClient } from "mongodb";
-import "dotenv/config";
+// import "dotenv/config";
 
 const mdbConnectionString = process.env.INTEGRATION_MONGODB_CONNECTION_URL;
 const mdbPrimaryDbName = process.env.INTEGRATION_MONGODB_PRIMARY_DB_NAME;

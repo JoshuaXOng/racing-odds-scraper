@@ -54,9 +54,12 @@ export class EventPageManager implements SchedulerObserver {
     const cepLength = this.coveredEventPages.length;
 
     for (let index = 0; index < cepLength; index++) {
-      const coveredPage = this.coveredEventPages[cepLength - index - 1];
+      const coveredPage = this.coveredEventPages[cepLength - index - 1]!;
+      
       const canClosePage = await coveredPage?.getHasEventEnded();
       if (canClosePage) {
+        await Promise.all(this.activeEventsObservers.map(async aeo => aeo.onEventPageClosure(coveredPage)));
+
         this.coveredEventPages.splice(cepLength - index - 1, 1);
         await coveredPage!.close();
       }
