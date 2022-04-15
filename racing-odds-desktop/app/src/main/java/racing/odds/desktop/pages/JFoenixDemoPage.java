@@ -17,7 +17,7 @@ public class JFoenixDemoPage extends Scene {
 
     JFXButton button = new JFXButton("Raised JFX Button");
     button.getStyleClass().add("button-raised");
-    button.setOnMouseReleased(e -> DataStore.mainStage.setScene(new JavaFXDemoPage()));
+    button.setOnMouseReleased(e -> DataStore.pushScene(new JavaFXDemoPage()));
 
     JFXToggleButton toggleButton = new JFXToggleButton();
     toggleButton.setText("JFX Toggle Button");

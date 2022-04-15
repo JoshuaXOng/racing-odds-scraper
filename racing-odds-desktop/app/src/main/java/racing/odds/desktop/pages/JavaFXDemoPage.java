@@ -31,7 +31,7 @@ public class JavaFXDemoPage extends Scene {
     box.getStyleClass().add("my-rect");
 
     Button button = new Button("Default Button");
-    button.setOnMouseReleased(e -> DataStore.mainStage.setScene(new JFoenixDemoPage()));
+    button.setOnMouseReleased(e -> DataStore.pushScene(new JFoenixDemoPage()));
 
     ((FlowPane) this.getRoot()).getChildren().add(label);
     ((FlowPane) this.getRoot()).getChildren().add(box);

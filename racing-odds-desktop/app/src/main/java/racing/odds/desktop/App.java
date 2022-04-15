@@ -13,8 +13,8 @@ public class App extends Application {
 
   @Override
   public void start(Stage mainStage) {
-    DataStore.mainStage = mainStage;
-
+    DataStore.setMainStage(mainStage);
+    
     Scene initialPage = new LoginPage();
 
     Image mainStageIcon = new Image("gunther.png");

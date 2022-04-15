@@ -17,28 +17,28 @@ public class HomePage extends Scene {
     ItemTile seachForSitesTile = new ItemTile("Search for Testing Sites");
     seachForSitesTile.setOnMouseClicked(
         e -> {
-          DataStore.mainStage.setScene(new TestingSitesPage());
+          DataStore.pushScene(new TestingSitesPage());
         });
     ((VBox) this.getRoot()).getChildren().add(seachForSitesTile);
 
     ItemTile homeBookingTile = new ItemTile("Home Booking");
     homeBookingTile.setOnMouseClicked(
         e -> {
-          DataStore.mainStage.setScene(new HomeBookingPage());
+          DataStore.pushScene(new HomeBookingPage());
         });
     ((VBox) this.getRoot()).getChildren().add(homeBookingTile);
 
     ItemTile onsiteBookingTile = new ItemTile("On-site Booking");
     onsiteBookingTile.setOnMouseClicked(
         e -> {
-          DataStore.mainStage.setScene(new OnsiteBookingPage());
+          DataStore.pushScene(new OnsiteBookingPage());
         });
     ((VBox) this.getRoot()).getChildren().add(onsiteBookingTile);
 
     ItemTile onsiteTestingTile = new ItemTile("On-site Testing");
     onsiteTestingTile.setOnMouseClicked(
         e -> {
-          DataStore.mainStage.setScene(new OnsiteTestingPage());
+          DataStore.pushScene(new OnsiteTestingPage());
         });
     ((VBox) this.getRoot()).getChildren().add(onsiteTestingTile);
   }

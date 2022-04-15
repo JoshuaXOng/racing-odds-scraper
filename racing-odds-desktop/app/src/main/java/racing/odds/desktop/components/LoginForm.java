@@ -49,7 +49,7 @@ public class LoginForm extends VBox {
         e -> {
           try {
             DataStore.authToken = DemoAPI.getAuthToken(this.username, this.password).join().jwt;
-            DataStore.mainStage.setScene(new HomePage());
+            DataStore.pushScene(new HomePage());
           } catch (Exception exception) {
             submitAlert.getStyleClass().remove("login-page__alert");
             Utils.setTimeout(

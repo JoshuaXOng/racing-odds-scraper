@@ -3,7 +3,6 @@ package racing.odds.desktop.pages;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import racing.odds.desktop.components.TestingSitesInfo;
 
 public class TestingSitesPage extends Scene {
@@ -13,7 +12,7 @@ public class TestingSitesPage extends Scene {
     this.getStylesheets().add("css/jfoenix-components.css");
     this.getStylesheets().add("css/jxo-custom.css");
     ((VBox) this.getRoot()).getStyleClass().add("testing-sites-page");
-    
+
     ((VBox) this.getRoot()).getChildren().add(new TestingSitesInfo());
   }
 }
