@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 public class DataStore {
   private static Stage mainStage;
   private static ArrayList<Scene> sceneHistory = new ArrayList<>();
+  // window size
+  static ArrayList<String> alerts = new ArrayList<>();
 
   public static String authToken;
 
