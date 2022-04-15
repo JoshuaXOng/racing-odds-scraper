@@ -17,6 +17,8 @@ public class App extends Application {
     DataStore.setMainStage(mainStage);
 
     Scene mainScene = new Scene(new StackPane(new LoginPage()), 1280, 720);
+    mainScene.getStylesheets().add("css/jfoenix-components.css");
+    mainScene.getStylesheets().add("css/jxo-custom.css");
     DataStore.setMainScene(mainScene);
 
     Image mainStageIcon = new Image("gunther.png");

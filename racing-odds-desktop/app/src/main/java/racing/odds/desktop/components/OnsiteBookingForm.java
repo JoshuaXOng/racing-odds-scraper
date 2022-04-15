@@ -2,7 +2,9 @@ package racing.odds.desktop.components;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import racing.odds.desktop.DataStore;
 
 public class OnsiteBookingForm extends VBox {
   String customerId;
@@ -27,6 +29,9 @@ public class OnsiteBookingForm extends VBox {
     this.getChildren().add(notesInput);
 
     Button submitButton = new Button("Submit");
+    submitButton.setOnMouseClicked(e -> {
+      ((StackPane) DataStore.mainScene.getRoot()).getChildren().add(new ItemTile("dsad"));
+    });
     this.getChildren().add(submitButton);
   }
 }

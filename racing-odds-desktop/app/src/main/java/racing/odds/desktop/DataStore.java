@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 public class DataStore {
   private static Stage mainStage;
-  private static Scene mainScene;
+  public static Scene mainScene;
   private static ArrayList<Node> pageHistory = new ArrayList<>();
   static ArrayList<String> alerts = new ArrayList<>();
 
