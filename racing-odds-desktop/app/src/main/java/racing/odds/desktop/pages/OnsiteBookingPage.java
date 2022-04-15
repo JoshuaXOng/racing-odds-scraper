@@ -1,15 +1,13 @@
 package racing.odds.desktop.pages;
 
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import racing.odds.desktop.components.HorizontalNavbar;
 import racing.odds.desktop.components.OnsiteBookingForm;
 
-public class OnsiteBookingPage extends Scene {
+public class OnsiteBookingPage extends VBox {
   public OnsiteBookingPage() {
-    super(new StackPane(), 1280, 720);
+    super(20);
     this.getStylesheets().add("css/jfoenix-components.css");
     this.getStylesheets().add("css/jxo-custom.css");
     
@@ -22,6 +20,6 @@ public class OnsiteBookingPage extends Scene {
     OnsiteBookingForm testBookingForm = new OnsiteBookingForm();
     mainLayout.getChildren().add(testBookingForm);
     
-    ((StackPane) this.getRoot()).getChildren().add(mainLayout);
+    this.getChildren().add(mainLayout);
   }
 }

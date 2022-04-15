@@ -7,9 +7,9 @@ import racing.odds.desktop.DataStore;
 public class HorizontalNavbar extends HBox {
   public HorizontalNavbar() {
     super();
-    
+
     Button backButton = new Button("Back");
-    backButton.setOnMouseClicked(e -> { DataStore.popScene(); });
+    backButton.setOnMouseClicked(e -> { DataStore.popPage(); });
     this.getChildren().add(backButton);
   }
 }

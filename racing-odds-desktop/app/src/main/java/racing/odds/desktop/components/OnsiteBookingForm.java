@@ -3,8 +3,6 @@ package racing.odds.desktop.components;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
-import racing.odds.desktop.DataStore;
 
 public class OnsiteBookingForm extends VBox {
   String customerId;

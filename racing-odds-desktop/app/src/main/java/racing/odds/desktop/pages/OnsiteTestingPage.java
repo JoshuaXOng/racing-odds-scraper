@@ -1,15 +1,14 @@
 package racing.odds.desktop.pages;
 
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 
-public class OnsiteTestingPage extends Scene {
+public class OnsiteTestingPage extends VBox {
   public OnsiteTestingPage() {
-    super(new VBox(20), 1280, 720);
-    ((VBox) this.getRoot()).setAlignment(Pos.CENTER);
+    super(20);
+    this.setAlignment(Pos.CENTER);
     this.getStylesheets().add("css/jfoenix-components.css");
     this.getStylesheets().add("css/jxo-custom.css");
-    ((VBox) this.getRoot()).getStyleClass().add("on-site-testing-page");
+    this.getStyleClass().add("on-site-testing-page");
   }
 }
