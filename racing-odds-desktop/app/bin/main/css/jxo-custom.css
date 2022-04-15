@@ -5,3 +5,14 @@
 .login-page__alert {
   -fx-fill: transparent;
 }
+
+.home-page {
+  -fx-background-color: #A7C7E7;
+}
+
+.item-tile {
+  -fx-background-color: red;
+}
+
+.item-tile__title {
+}

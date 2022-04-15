@@ -9,7 +9,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import racing.odds.desktop.DataStore;
 import racing.odds.desktop.Utils;
-import racing.odds.desktop.pages.JavaFXDemoPage;
+import racing.odds.desktop.pages.HomePage;
 import racing.odds.desktop.services.DemoAPI;
 
 public class LoginForm extends VBox {
@@ -48,8 +48,8 @@ public class LoginForm extends VBox {
     submitButton.setOnMouseReleased(
         e -> {
           try {
-            DataStore.authToken = DemoAPI.getAuthToken(this.username, this.password);
-            DataStore.mainStage.setScene(new JavaFXDemoPage());
+            DataStore.authToken = DemoAPI.getAuthToken(this.username, this.password).join().jwt;
+            DataStore.mainStage.setScene(new HomePage());
           } catch (Exception exception) {
             submitAlert.getStyleClass().remove("login-page__alert");
             Utils.setTimeout(
