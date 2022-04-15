@@ -6,7 +6,7 @@ import javafx.scene.layout.VBox;
 public class HomeBookingPage extends VBox {
   public HomeBookingPage() {
     super(20);
-    this.setAlignment(Pos.CENTER);
+    this.setAlignment(Pos.TOP_LEFT);
     this.getStylesheets().add("css/jfoenix-components.css");
     this.getStylesheets().add("css/jxo-custom.css");
     this.getStyleClass().add("home-booking-page");

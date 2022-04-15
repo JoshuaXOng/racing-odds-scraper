@@ -8,7 +8,7 @@ import racing.odds.desktop.components.ItemTile;
 public class HomePage extends VBox {
   public HomePage() {
     super(20);
-    this.setAlignment(Pos.CENTER);
+    this.setAlignment(Pos.TOP_LEFT);
     this.getStylesheets().add("css/jfoenix-components.css");
     this.getStylesheets().add("css/jxo-custom.css");
     this.getStyleClass().add("home-page");
