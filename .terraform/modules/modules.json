@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"container-server","Source":"christippett/container-server/cloudinit","Version":"1.2.1","Dir":".terraform/modules/container-server"}]}
