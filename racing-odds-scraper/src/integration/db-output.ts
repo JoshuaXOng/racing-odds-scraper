@@ -120,10 +120,7 @@ export class DBOutput implements EventsObserver {
       e.scheduledStartTime === scheduledStartTime
     )
     
-    const a = this.events[closingEventIndex]!;
-    mdbClient.db(process.env.INTEGRATION_MONGODB_PRIMARY_DB_NAME).collection("ahhhh").insertOne({
-      a
-    });
+    mdbClient.db(process.env.INTEGRATION_MONGODB_PRIMARY_DB_NAME).collection("event").insertOne(this.events[closingEventIndex]!);
 
     this.events.splice(closingEventIndex, 1);
   }

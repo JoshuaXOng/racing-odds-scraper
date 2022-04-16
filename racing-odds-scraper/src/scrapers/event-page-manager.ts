@@ -14,7 +14,7 @@ export class EventPageManager implements SchedulerObserver {
   private activeEventsObservers: EventsObserver[] = [];
 
   async initBrowser() {
-    this.mainBrowser = new Browser(await puppeteer.launch());
+    this.mainBrowser = new Browser(await puppeteer.launch({ args: ['--no-sandbox'] }));
   }
 
   async addEventPage(eventPage: EventPage) {

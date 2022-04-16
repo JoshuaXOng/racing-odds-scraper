@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  racing-odds-scraper:
+    image: joshuaxong/racing-odds-scraper
+    working_dir: /racing-odds-scraper
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - INTEGRATION_MONGODB_CONNECTION_URL=mongodb://localhost:27017
+      - INTEGRATION_MONGODB_PRIMARY_DB_NAME=racing-odds
+    volumes:
+      - ./:/racing-odds-scraper
+    command: npm run stage # bash -c "npm run stage"
+  mongo:
+    image: mongo:4.2.8
+    ports:
+      - "27017:27017"
+    volumes:
+      - database-data:/data/db
+      - database-data:/data/configdb
+
+volumes:
+  database-data:

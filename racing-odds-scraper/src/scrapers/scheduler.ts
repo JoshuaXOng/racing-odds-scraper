@@ -16,7 +16,7 @@ export class Scheduler {
 
   private isSouping = false;
   private desiredPollIntervalInSec = 5;
-  upcomingThresholdInMin = 10;
+  upcomingThresholdInMin = 3;
 
   readingLimits: Limits = {
     allowedCountries: [],
@@ -33,7 +33,7 @@ export class Scheduler {
   private schedulerObservers: SchedulerObserver[] = [];
 
   async initBrowser() {
-    this.mainBrowser = new Browser(await puppeteer.launch());
+    this.mainBrowser = new Browser(await puppeteer.launch({ args: ['--no-sandbox'] }));
   }
 
   async addSourcePage(schedulePage: SchedulePage) {
