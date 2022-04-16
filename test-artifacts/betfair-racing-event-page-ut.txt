@@ -1,158 +1,49 @@
-geelong 202204131300
+gatton 202204161534
 [
-  'mark zahra',       'neil farley',
-  'damien thornton',  'jason benbow',
-  'luke nolen',       'jamie kah',
-  'joe bowditch',     'ethan brown',
-  'jye mcneil',       'carleen hefel',
-  'zac spain',        'patrick moloney',
-  'michael poy',      'fred w kersley',
-  'declan bates',     'h coffey',
-  'blaike mcdougall', 'jamie mott',
-  'jordan childs',    'r p downey'
+  'alex patis',
+  'wendy peel',
+  'jackson murphy',
+  'chris meehan',
+  'montana philpot',
+  'kenji yoshida',
+  'm gray',
+  'nathan thomas',
+  'montanna savva',
+  'brooke ainsworth',
+  'ms c jokic',
+  'm shimodaira',
+  'noriyuki masuda'
 ]
 {
-  'mark zahra': 'body bob',
-  'neil farley': 'chiq magnet',
-  'damien thornton': 'nightsun',
-  'jason benbow': 'our valley star',
-  'luke nolen': 'red sun sensation',
-  'jamie kah': 'skyforger',
-  'joe bowditch': 'soonali',
-  'ethan brown': 'tapa capall',
-  'jye mcneil': 'the negotiator',
-  'carleen hefel': 'thermatic',
-  'zac spain': 'diamond model',
-  'patrick moloney': 'queen of nations',
-  'michael poy': 'queen of fire',
-  'fred w kersley': 'nannu',
-  'declan bates': 'cold one',
-  'h coffey': 'valiancy',
-  'blaike mcdougall': 'liberty steps',
-  'jamie mott': 'social conscience',
-  'jordan childs': 'gulf of lion',
-  'r p downey': 'make it happen'
+  'alex patis': 'home owner',
+  'wendy peel': 'lady kincsem',
+  'jackson murphy': 'maputo bay',
+  'chris meehan': 'sea stitch',
+  'montana philpot': 'alexandra road',
+  'kenji yoshida': 'curley beau',
+  'm gray': 'hokes run',
+  'nathan thomas': 'last royal',
+  'montanna savva': 'dedicated few',
+  'brooke ainsworth': 'spirit of zazou',
+  'ms c jokic': 'simply rose',
+  'm shimodaira': 'rose of taormina',
+  'noriyuki masuda': 'bellas beat'
 }
 {
-  'mark zahra': [
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'neil farley': [
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'damien thornton': [
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'jason benbow': [
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'luke nolen': [
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'jamie kah': [
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'joe bowditch': [
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'ethan brown': [
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'jye mcneil': [
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'carleen hefel': [
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'zac spain': [
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'patrick moloney': [
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'michael poy': [
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'fred w kersley': [
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'declan bates': [],
-  'h coffey': [],
-  'blaike mcdougall': [],
-  'jamie mott': [],
-  'jordan childs': [],
-  'r p downey': []
+  'alex patis': [],
+  'wendy peel': [],
+  'jackson murphy': [],
+  'chris meehan': [],
+  'montana philpot': [],
+  'kenji yoshida': [],
+  'm gray': [],
+  'nathan thomas': [],
+  'montanna savva': [],
+  'brooke ainsworth': [],
+  'ms c jokic': [],
+  'm shimodaira': [],
+  'noriyuki masuda': []
 }
-isEventInPlay: true
-isEventSuspended: true
-hasEventEnded: false
+isEventInPlay: false
+isEventSuspended: false
+hasEventEnded: true
