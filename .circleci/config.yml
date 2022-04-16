@@ -6,7 +6,7 @@ jobs:
       - image: cimg/node:16.14.0
     steps:
       - checkout
-      - run: docker build . > docker container create
+      - run: docker build . | docker container create
       # - run: npm install
       # - run: npm test
 workflows:
