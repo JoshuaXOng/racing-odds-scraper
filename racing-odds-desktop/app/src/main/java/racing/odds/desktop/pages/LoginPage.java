@@ -7,9 +7,7 @@ import racing.odds.desktop.components.LoginForm;
 public class LoginPage extends VBox {
   public LoginPage() {
     super(20);
-    this.setAlignment(Pos.TOP_LEFT);
-    this.getStylesheets().add("css/jfoenix-components.css");
-    this.getStylesheets().add("css/jxo-custom.css");
+    this.setAlignment(Pos.CENTER);
     this.getStyleClass().add("login-page");
 
     VBox loginForm = new LoginForm(fields -> {});

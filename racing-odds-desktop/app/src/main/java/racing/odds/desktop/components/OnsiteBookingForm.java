@@ -30,7 +30,9 @@ public class OnsiteBookingForm extends VBox {
 
     Button submitButton = new Button("Submit");
     submitButton.setOnMouseClicked(e -> {
-      ((StackPane) DataStore.mainScene.getRoot()).getChildren().add(new ItemTile("dsad"));
+      ((StackPane) DataStore.mainScene.getRoot()).getChildren().add(new Modal("PIN Generation", "", () -> {
+        ((StackPane) DataStore.mainScene.getRoot()).getChildren().remove(1);
+      }));
     });
     this.getChildren().add(submitButton);
   }

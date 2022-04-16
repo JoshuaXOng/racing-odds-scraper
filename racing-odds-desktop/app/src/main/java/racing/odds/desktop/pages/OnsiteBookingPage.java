@@ -8,8 +8,6 @@ import racing.odds.desktop.components.OnsiteBookingForm;
 public class OnsiteBookingPage extends VBox {
   public OnsiteBookingPage() {
     super(20);
-    this.getStylesheets().add("css/jfoenix-components.css");
-    this.getStylesheets().add("css/jxo-custom.css");
     
     VBox mainLayout = new VBox(20);
     mainLayout.setAlignment(Pos.TOP_LEFT);

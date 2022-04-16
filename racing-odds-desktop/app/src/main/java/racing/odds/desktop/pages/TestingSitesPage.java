@@ -10,8 +10,6 @@ public class TestingSitesPage extends VBox {
   public TestingSitesPage() {
     super(20);
     this.setAlignment(Pos.TOP_LEFT);
-    this.getStylesheets().add("css/jfoenix-components.css");
-    this.getStylesheets().add("css/jxo-custom.css");
     this.getStyleClass().add("testing-sites-page");
 
     this.getChildren().add(new HorizontalNavbar());

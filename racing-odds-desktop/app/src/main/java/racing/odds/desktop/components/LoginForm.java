@@ -42,7 +42,6 @@ public class LoginForm extends VBox {
                 }));
 
     Button submitButton = new Button("Login");
-    submitButton.getStyleClass().add("button-raised");
     submitButton.getStyleClass().add("login-form__submit-button");
 
     submitButton.setOnMouseReleased(
@@ -51,6 +50,8 @@ public class LoginForm extends VBox {
             DataStore.authToken = DemoAPI.getAuthToken(this.username, this.password).join().jwt;
             DataStore.pushPage(new HomePage());
           } catch (Exception exception) {
+            System.out.println(exception);
+
             submitAlert.getStyleClass().remove("login-page__alert");
             Utils.setTimeout(
                 () -> {

@@ -8,10 +8,7 @@ import javafx.scene.shape.Rectangle;
 public class JavaFXDemoPage extends VBox {
   public JavaFXDemoPage() {
     super(20);
-
-    this.getStylesheets().add("css/jxo-custom.css");
-    this.getStylesheets().add("css/jfoenix-components.css");
-
+    
     Label label =
         new Label(
             "Hello, JavaFX "
