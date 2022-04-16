@@ -8,25 +8,25 @@ terraform {
 }
 
 provider "digitalocean" {
-  token = var.do_token
+  token = "${var.do_token}"
 }
 
-resource "digitalocean_ssh_key" "racing-odds-scraper-key" {
-  name       = "racing-odds-scraper-key"
-  public_key = file(var.do_pub_key)
+resource "digitalocean_ssh_key" "racing-odds-scraper-pub-key" {
+  name       = "racing-odds-scraper-pub-key"
+  public_key = file("${var.do_pub_key}")
 }
 
-module "container-server" {
-  source  = "christippett/container-server/cloudinit"
-  version = "1.2.1"
+# module "container-server" {
+#   source  = "christippett/container-server/cloudinit"
+#   version = "1.2.1"
 
-  domain = "rammus.tech"
-  email  = var.email
+#   domain = "rammus.tech"
+#   email  = "${var.email}"
 
-  container = {
-    image = "joshuaxong/racing-odds-scraper"
-  }
-}
+#   container = {
+#     image = "joshuaxong/racing-odds-scraper"
+#   }
+# }
 
 resource "digitalocean_droplet" "racing-odds-scraper" {
   name   = "racing-odds-scraper"
@@ -34,7 +34,21 @@ resource "digitalocean_droplet" "racing-odds-scraper" {
   region = "sgp1"
   size   = "s-1vcpu-1gb"
 
-  ssh_keys = [digitalocean_ssh_key.racing-odds-scraper-key.fingerprint]
+  ssh_keys = ["${digitalocean_ssh_key.racing-odds-scraper-pub-key.fingerprint}"]
 
-  user_data = module.container-server.cloud_config
+  provisioner "remote-exec" {
+    connection {
+      type = "ssh"
+      user = "root"
+      host = "${self.ipv4_address}"
+      private_key = file("${var.do_priv_key}")
+    }
+
+    inline = [
+      "git clone https://github.com/JoshuaXOng/racing-odds-scraper.git",
+      "cd racing-odds-scraper",
+      "npm install",
+      "docker-compose up",
+    ]
+  }
 }
