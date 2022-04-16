@@ -16,6 +16,7 @@ jobs:
           && rm -rf /var/lib/apt/lists/*
           && wget --quiet https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh -O /usr/sbin/wait-for-it.sh
           && chmod +x /usr/sbin/wait-for-it.sh
+      - run: npm install
       - run: bash -c "cd ./racing-odds-scraper/node_modules/puppeteer && npm run install && cd ../../ && npm run test"
 workflows:
   test:
