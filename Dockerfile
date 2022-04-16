@@ -1,5 +1,7 @@
 FROM node:16.14.0
 
+WORKDIR /racing-odds-scraper
+
 RUN  apt-get update \
      && apt-get install -y wget gnupg ca-certificates procps libxss1 \
      && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
@@ -10,8 +12,6 @@ RUN  apt-get update \
      && wget --quiet https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh -O /usr/sbin/wait-for-it.sh \
      && chmod +x /usr/sbin/wait-for-it.sh
 
-WORKDIR /racing-odds-scraper
-
 COPY package*.json ./
 RUN npm install
 
@@ -19,4 +19,4 @@ COPY ./ ./
 
 EXPOSE 3000
 
-CMD ["npm", "run", "stage"]
+CMD ["npm", "run", "test"]

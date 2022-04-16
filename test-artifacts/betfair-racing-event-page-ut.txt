@@ -1,49 +1,110 @@
-gatton 202204161534
+melton 202204162000
 [
-  'alex patis',
-  'wendy peel',
-  'jackson murphy',
-  'chris meehan',
-  'montana philpot',
-  'kenji yoshida',
-  'm gray',
-  'nathan thomas',
-  'montanna savva',
-  'brooke ainsworth',
-  'ms c jokic',
-  'm shimodaira',
-  'noriyuki masuda'
+  'jack laugher',
+  'm j craven',
+  'j h barker',
+  'g f webster',
+  'lochie cook',
+  'ryan sanderson',
+  'k m gath',
+  'c a alford',
+  'jordan leedham',
+  'j j caldow'
 ]
 {
-  'alex patis': 'home owner',
-  'wendy peel': 'lady kincsem',
-  'jackson murphy': 'maputo bay',
-  'chris meehan': 'sea stitch',
-  'montana philpot': 'alexandra road',
-  'kenji yoshida': 'curley beau',
-  'm gray': 'hokes run',
-  'nathan thomas': 'last royal',
-  'montanna savva': 'dedicated few',
-  'brooke ainsworth': 'spirit of zazou',
-  'ms c jokic': 'simply rose',
-  'm shimodaira': 'rose of taormina',
-  'noriyuki masuda': 'bellas beat'
+  'jack laugher': 'ozzie playboy',
+  'm j craven': 'lamandier',
+  'j h barker': 'eva mateo',
+  'g f webster': 'tuppence',
+  'lochie cook': 'glenavril king',
+  'ryan sanderson': 'radius',
+  'k m gath': 'rockingwithsierra',
+  'c a alford': 'kissmelvis',
+  'jordan leedham': 'franco jolto',
+  'j j caldow': 'messerati'
 }
 {
-  'alex patis': [],
-  'wendy peel': [],
-  'jackson murphy': [],
-  'chris meehan': [],
-  'montana philpot': [],
-  'kenji yoshida': [],
-  'm gray': [],
-  'nathan thomas': [],
-  'montanna savva': [],
-  'brooke ainsworth': [],
-  'ms c jokic': [],
-  'm shimodaira': [],
-  'noriyuki masuda': []
+  'jack laugher': [
+    { value: '2.82', money: '$40' },
+    { value: '3', money: '$26' },
+    { value: '3.15', money: '$500' },
+    { value: '980', money: '$24' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'm j craven': [
+    { value: '0', money: '$0' },
+    { value: '2.3', money: '$26' },
+    { value: '2.9', money: '$88' },
+    { value: '980', money: '$19' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'j h barker': [
+    { value: '0', money: '$0' },
+    { value: '2.22', money: '$175' },
+    { value: '3', money: '$38' },
+    { value: '980', money: '$11' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'g f webster': [
+    { value: '0', money: '$0' },
+    { value: '2.16', money: '$36' },
+    { value: '4', money: '$60' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'lochie cook': [
+    { value: '0', money: '$0' },
+    { value: '1.94', money: '$17' },
+    { value: '2.3', money: '$38' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'ryan sanderson': [
+    { value: '0', money: '$0' },
+    { value: '1.92', money: '$37' },
+    { value: '2.9', money: '$56' },
+    { value: '980', money: '$25' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'k m gath': [
+    { value: '0', money: '$0' },
+    { value: '1.76', money: '$18' },
+    { value: '1.95', money: '$138' },
+    { value: '980', money: '$32' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'c a alford': [
+    { value: '0', money: '$0' },
+    { value: '1.45', money: '$40' },
+    { value: '1.6', money: '$181' },
+    { value: '4', money: '$212' },
+    { value: '980', money: '$31' },
+    { value: '0', money: '$0' }
+  ],
+  'jordan leedham': [
+    { value: '0', money: '$0' },
+    { value: '1.92', money: '$20' },
+    { value: '2.28', money: '$40' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'j j caldow': [
+    { value: '0', money: '$0' },
+    { value: '2', money: '$25' },
+    { value: '2.28', money: '$39' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ]
 }
-isEventInPlay: false
+isEventInPlay: true
 isEventSuspended: false
-hasEventEnded: true
+hasEventEnded: false

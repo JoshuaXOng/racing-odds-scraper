@@ -1,382 +1,14 @@
 [
-  'gatton',         'kembla grange',
-  'alice springs',  'gold coast',
-  'oakbank',        'warracknabeal',
-  'randwick',       'kerang',
-  'moruya',         'ascot',
-  'eagle farm',     'clare',
-  'port macquarie', 'caulfield',
-  'geraldton',      'wagga',
-  'albion park',    'newcastle',
-  'melton',         'launceston',
-  'globe derby',    'northam'
+  'melton',
+  'newcastle',
+  'albion park',
+  'launceston',
+  'globe derby',
+  'wagga',
+  'northam'
 ]
 {
-  gatton: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713034',
-      time: '202204161534'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713037',
-      time: '202204161612'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713040',
-      time: '202204161647'
-    }
-  ],
-  'kembla grange': [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197711674',
-      time: '202204161535'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197711676',
-      time: '202204161615'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197711678',
-      time: '202204161650'
-    }
-  ],
-  'alice springs': [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197710309',
-      time: '202204161537'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197710311',
-      time: '202204161617'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197710313',
-      time: '202204161652'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197710315',
-      time: '202204161725'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197710317',
-      time: '202204161755'
-    }
-  ],
-  'gold coast': [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712763',
-      time: '202204161539'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712766',
-      time: '202204161619'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712769',
-      time: '202204161654'
-    }
-  ],
-  oakbank: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197661051',
-      time: '202204161542'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197661057',
-      time: '202204161622'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197661063',
-      time: '202204161657'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197661069',
-      time: '202204161735'
-    }
-  ],
-  warracknabeal: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197709898',
-      time: '202204161546'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197709901',
-      time: '202204161626'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197709904',
-      time: '202204161701'
-    }
-  ],
-  randwick: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197656561',
-      time: '202204161550'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197656565',
-      time: '202204161630'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197656569',
-      time: '202204161705'
-    }
-  ],
-  kerang: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713013',
-      time: '202204161552'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713016',
-      time: '202204161635'
-    }
-  ],
-  moruya: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712233',
-      time: '202204161554'
-    }
-  ],
-  ascot: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197663635',
-      time: '202204161558'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197663639',
-      time: '202204161634'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197663643',
-      time: '202204161710'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197663647',
-      time: '202204161750'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197663651',
-      time: '202204161825'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197663655',
-      time: '202204161902'
-    }
-  ],
-  'eagle farm': [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197660884',
-      time: '202204161602'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197660888',
-      time: '202204161638'
-    }
-  ],
-  clare: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712653',
-      time: '202204161604'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712656',
-      time: '202204161640'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712659',
-      time: '202204161715'
-    }
-  ],
-  'port macquarie': [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197709710',
-      time: '202204161606'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197709712',
-      time: '202204161641'
-    }
-  ],
-  caulfield: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197657495',
-      time: '202204161610'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197657501',
-      time: '202204161645'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197657507',
-      time: '202204161720'
-    }
-  ],
-  geraldton: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197710779',
-      time: '202204161624'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197710782',
-      time: '202204161656'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197710785',
-      time: '202204161730'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197710788',
-      time: '202204161810'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197710791',
-      time: '202204161845'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197710794',
-      time: '202204161927'
-    }
-  ],
-  wagga: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712337',
-      time: '202204161727'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712339',
-      time: '202204161754'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712341',
-      time: '202204161819'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712343',
-      time: '202204161850'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712345',
-      time: '202204161922'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712347',
-      time: '202204161952'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712349',
-      time: '202204162022'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712351',
-      time: '202204162052'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712353',
-      time: '202204162123'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712355',
-      time: '202204162151'
-    }
-  ],
-  'albion park': [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713493',
-      time: '202204161742'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713496',
-      time: '202204161810'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713499',
-      time: '202204161842'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713502',
-      time: '202204161909'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713505',
-      time: '202204161937'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713508',
-      time: '202204162007'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713511',
-      time: '202204162037'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713514',
-      time: '202204162107'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713517',
-      time: '202204162137'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713520',
-      time: '202204162208'
-    }
-  ],
-  newcastle: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712234',
-      time: '202204161759'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712236',
-      time: '202204161827'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712238',
-      time: '202204161903'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712240',
-      time: '202204161933'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712242',
-      time: '202204162004'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712244',
-      time: '202204162034'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712246',
-      time: '202204162104'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712248',
-      time: '202204162129'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712250',
-      time: '202204162200'
-    }
-  ],
   melton: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712358',
-      time: '202204161802'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712361',
-      time: '202204161832'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712364',
-      time: '202204161857'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712367',
-      time: '202204161930'
-    },
     {
       link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712370',
       time: '202204162000'
@@ -398,23 +30,51 @@
       time: '202204162201'
     }
   ],
+  newcastle: [
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712242',
+      time: '202204162004'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712244',
+      time: '202204162034'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712246',
+      time: '202204162104'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712248',
+      time: '202204162129'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712250',
+      time: '202204162200'
+    }
+  ],
+  'albion park': [
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713508',
+      time: '202204162007'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713511',
+      time: '202204162037'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713514',
+      time: '202204162107'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713517',
+      time: '202204162137'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197713520',
+      time: '202204162208'
+    }
+  ],
   launceston: [
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197723921',
-      time: '202204161814'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197723923',
-      time: '202204161851'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197723925',
-      time: '202204161916'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197723928',
-      time: '202204161942'
-    },
     {
       link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197723930',
       time: '202204162012'
@@ -442,14 +102,6 @@
   ],
   'globe derby': [
     {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197723840',
-      time: '202204161914'
-    },
-    {
-      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197723842',
-      time: '202204161949'
-    },
-    {
       link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197723844',
       time: '202204162019'
     },
@@ -472,6 +124,24 @@
     {
       link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197723854',
       time: '202204162253'
+    }
+  ],
+  wagga: [
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712349',
+      time: '202204162022'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712351',
+      time: '202204162052'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712353',
+      time: '202204162123'
+    },
+    {
+      link: 'https://www.betfair.com.au/exchange/plus/horse-racing/market/1.197712355',
+      time: '202204162151'
     }
   ],
   northam: [
