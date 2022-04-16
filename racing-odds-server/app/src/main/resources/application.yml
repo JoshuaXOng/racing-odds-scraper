@@ -1,8 +1,0 @@
-spring:
-  application:
-    name: racing-odds-server
-logging:
-  file:
-    name: "spring.log" 
-server:
-  port: 8080
