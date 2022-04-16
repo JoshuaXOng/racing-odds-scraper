@@ -5,7 +5,7 @@ A containerized application for scraping and aggregating racing data (in close t
 - Automated, as in, indefinitely determines on it's own what it should scrape  
 - Cross sourced - perhaps most interesting against bookies vs markets (e.g., Betfair)
 
-### Misc. notes:
+### Miscellaneous notes:
 
 - Profile performance...
 - Set a timeout for puppeteer `waitForSelector(...)` - handle
