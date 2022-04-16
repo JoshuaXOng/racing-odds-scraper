@@ -18,7 +18,8 @@ jobs:
           && chmod +x /usr/sbin/wait-for-it.sh
       - run: npm install
       - run: ls
-      - run: bash -c "cd ./node_modules/puppeteer && npm run install && cd ../../ && npm run test"
+      - run: bash -c "cd ./node_modules/puppeteer && npm run install
+      - run: cd ../../ && npm run test"
 workflows:
   test:
     jobs:
