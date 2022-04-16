@@ -8,11 +8,11 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - INTEGRATION_MONGODB_CONNECTION_URL=mongodb://localhost:27017
+      - INTEGRATION_MONGODB_CONNECTION_URL=mongodb://mongo:27017
       - INTEGRATION_MONGODB_PRIMARY_DB_NAME=racing-odds
     volumes:
       - ./:/racing-odds-scraper
-    command: npm run stage # bash -c "npm run stage"
+    command: bash -c "cd ./node_modules/puppeteer && npm run install && cd ../../ && npm run stage"
   mongo:
     image: mongo:4.2.8
     ports:
