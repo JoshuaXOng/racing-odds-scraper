@@ -107,3 +107,6 @@ dist
 variables.tf
 *.tfstate
 *.tfstate.backup
+
+# Cert.
+*.pem
