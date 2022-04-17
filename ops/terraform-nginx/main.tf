@@ -50,6 +50,7 @@ resource "digitalocean_droplet" "nginx-main" {
       "cd ./racing-odds-scraper/ops/nginx/",
       "mv ./jxo-gateway.conf /etc/nginx/conf.d/",
       "rm /etc/nginx/sites-enabled/default",
+      "rm /etc/nginx/sites-available/default",
     ]
   }
 }
