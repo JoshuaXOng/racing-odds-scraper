@@ -11,30 +11,25 @@ provider "digitalocean" {
   token = "${var.do_token}"
 }
 
-resource "digitalocean_ssh_key" "racing-odds-scraper-pub-key" {
+resource "digitalocean_ssh_key" "racing-odds-scraper-pub" {
   name       = "racing-odds-scraper-pub-key"
   public_key = file("${var.do_pub_key}")
 }
 
-# module "container-server" {
-#   source  = "christippett/container-server/cloudinit"
-#   version = "1.2.1"
+resource "digitalocean_vpc" "racing-odds-scraper-main" {
+  name     = "racing-odds-scraper-vpc-main"
+  region   = "sgp1"
+  ip_range = "172.31.255.0/24"
+}
 
-#   domain = "rammus.tech"
-#   email  = "${var.email}"
-
-#   container = {
-#     image = "joshuaxong/racing-odds-scraper"
-#   }
-# }
-
-resource "digitalocean_droplet" "racing-odds-scraper" {
-  name   = "racing-odds-scraper"
+resource "digitalocean_droplet" "racing-odds-scraper-main" {
+  name   = "racing-odds-scraper-droplet-main"
   image  = "docker-18-04"
+  vpc_uuid = "${digitalocean_vpc.racing-odds-scraper-main.id}"
   region = "sgp1"
   size   = "s-1vcpu-1gb"
 
-  ssh_keys = ["${digitalocean_ssh_key.racing-odds-scraper-pub-key.fingerprint}"]
+  ssh_keys = ["${digitalocean_ssh_key.racing-odds-scraper-pub.fingerprint}"]
 
   provisioner "remote-exec" {
     connection {
@@ -45,10 +40,92 @@ resource "digitalocean_droplet" "racing-odds-scraper" {
     }
 
     inline = [
-      "git clone https://github.com/JoshuaXOng/racing-odds-scraper.git",
-      "cd racing-odds-scraper",
-      "npm install",
-      "docker-compose up",
+      "ufw allow http",
+      "ufw allow https",
+      "apt -y install nginx"
+
+      # "apt -y install curl",
+      # "curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -",
+      # "cat /etc/apt/sources.list.d/nodesource.list",
+      # "apt -y install nodejs",
+      # "apt -y install npm",
+      # "npm install -g npm@8.3.1",
+      # "git clone https://github.com/JoshuaXOng/racing-odds-scraper.git",
+      # "cd racing-odds-scraper",
+      # "npm install",
+      # "docker-compose up -d",
     ]
   }
+}
+
+resource "digitalocean_firewall" "racing-odds-scraper-main" {
+  name = "racing-odds-scraper-fw-inbound-22-80-and-443"
+
+  droplet_ids = [digitalocean_droplet.racing-odds-scraper-main.id]
+
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "22"
+    source_addresses = var.whitelisted_ssh_ips
+  }
+
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "80"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "443"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  inbound_rule {
+    protocol         = "icmp"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+}
+
+resource "digitalocean_certificate" "racing-odds-scraper-main" {
+  name    = "racing-odds-scraper-cert-main"
+  type    = "lets_encrypt"
+  domains = [var.racing-odds-scraper-hostname]
+}
+
+// Re-rock the lb seperately.
+resource "digitalocean_loadbalancer" "racing-odds-scraper-public" {
+  name        = "racing-odds-scraper-lb-public"
+  vpc_uuid = digitalocean_vpc.racing-odds-scraper-main.id
+  region      = "sgp1"
+
+  droplet_ids = [digitalocean_droplet.racing-odds-scraper-main.id]
+
+  forwarding_rule {
+    entry_port     = 80
+    entry_protocol = "http"
+    target_port     = 80
+    target_protocol = "http"
+  }
+
+  forwarding_rule {
+    entry_port     = 443
+    entry_protocol = "https"
+    target_port     = 80
+    target_protocol = "http"
+
+    certificate_name = digitalocean_certificate.racing-odds-scraper-main.name
+  }
+}
+
+// Still requires some manual configuration w/ .TECH domains - two way sorta deal.
+resource "digitalocean_domain" "racing-odds-scraper-main" {
+  name       = var.racing-odds-scraper-hostname
+}
+
+resource "digitalocean_record" "racing-odds-scraper-a" {
+  domain = digitalocean_domain.racing-odds-scraper-main.id
+  type   = "A"
+  name   = "@"
+  value  = digitalocean_loadbalancer.racing-odds-scraper-public.ip
 }

@@ -13,3 +13,11 @@ variable "do_token" {
 variable "email" {
   default =
 }
+
+variable "whitelisted_ssh_ips" {
+  default =
+}
+
+variable "racing-odds-scraper-hostname" {
+  default =
+}
