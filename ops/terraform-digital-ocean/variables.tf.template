@@ -21,11 +21,3 @@ variable "whitelisted_ssh_ips" {
 variable "racing-odds-scraper-hostname" {
   default =
 }
-
-variable "racing-odds-scraper-cert-pub-key" {
-  default =
-}
-
-variable "racing-odds-scraper-cert-priv-key" {
-  default =
-}
