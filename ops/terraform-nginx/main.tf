@@ -44,6 +44,7 @@ resource "digitalocean_droplet" "nginx-main" {
       "ufw allow http",
       "ufw allow https",
       "ufw allow 3000",
+      "ufw allow 8000",
       "ufw allow 1337",
       "ufw allow out 80/tcp",
       "ufw allow out 443/tcp",
@@ -84,6 +85,12 @@ resource "digitalocean_firewall" "nginx-main" {
   inbound_rule {
     protocol         = "tcp"
     port_range       = "3000"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "8000"
     source_addresses = ["0.0.0.0/0", "::/0"]
   }
 
