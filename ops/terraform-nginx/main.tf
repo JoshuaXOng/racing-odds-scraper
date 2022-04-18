@@ -40,6 +40,8 @@ resource "digitalocean_droplet" "nginx-main" {
     }
 
     inline = [
+      "git clone https://github.com/JoshuaXOng/racing-odds-scraper.git",
+      
       "apt-get update",
       "ufw allow http",
       "ufw allow https",
@@ -50,9 +52,7 @@ resource "digitalocean_droplet" "nginx-main" {
       "ufw allow out 443/tcp",
       "apt -y install nginx",
 
-      "git clone https://github.com/JoshuaXOng/racing-odds-scraper.git",
-      "cd ./racing-odds-scraper/ops/nginx/",
-      "mv ./jxo-gateway.conf /etc/nginx/conf.d/",
+      "mv /racing-odds-scraper/ops/nginx/jxo-gateway.conf /etc/nginx/conf.d/",
 
       "nginx -s reload",
     ]
