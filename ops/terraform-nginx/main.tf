@@ -44,19 +44,19 @@ resource "digitalocean_droplet" "nginx-main" {
       "ufw allow http",
       "ufw allow https",
       "ufw allow 1337",
+      "ufw allow out 80/tcp",
+      "ufw allow out 443/tcp",
       "apt -y install nginx",
 
       "git clone https://github.com/JoshuaXOng/racing-odds-scraper.git",
       "cd ./racing-odds-scraper/ops/nginx/",
       "mv ./jxo-gateway.conf /etc/nginx/conf.d/",
-      "rm /etc/nginx/sites-enabled/default",
-      "rm /etc/nginx/sites-available/default",
     ]
   }
 }
 
 resource "digitalocean_firewall" "nginx-main" {
-  name = "nginx-fw-in-22-80-443-and-1337-out-dns"
+  name = "nginx-fw-in-22-80-443-and-1337-out-misc"
 
   droplet_ids = [digitalocean_droplet.nginx-main.id]
 
@@ -87,6 +87,18 @@ resource "digitalocean_firewall" "nginx-main" {
   inbound_rule {
     protocol         = "icmp"
     source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  outbound_rule {
+    protocol              = "tcp"
+    port_range            = "80"
+    destination_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  outbound_rule {
+    protocol              = "tcp"
+    port_range            = "443"
+    destination_addresses = ["0.0.0.0/0", "::/0"]
   }
 
   outbound_rule {
