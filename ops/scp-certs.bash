@@ -1,1 +1,0 @@
-scp -i C:\\Users\\jxo\\Desktop\\CodingApps\\Auths\\DigitalOcean\\super-key

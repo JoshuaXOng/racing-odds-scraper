@@ -43,18 +43,17 @@ resource "digitalocean_droplet" "racing-odds-scraper-main" {
       "apt-get update",
       "ufw allow http",
       "ufw allow https",
-      "apt -y install nginx"
 
-      # "apt -y install curl",
-      # "curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -",
-      # "cat /etc/apt/sources.list.d/nodesource.list",
-      # "apt -y install nodejs",
-      # "apt -y install npm",
-      # "npm install -g npm@8.3.1",
-      # "git clone https://github.com/JoshuaXOng/racing-odds-scraper.git",
-      # "cd racing-odds-scraper",
-      # "npm install",
-      # "docker-compose up -d"
+      "apt -y install curl",
+      "curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -",
+      "cat /etc/apt/sources.list.d/nodesource.list",
+      "apt -y install nodejs",
+      "apt -y install npm",
+      "npm install -g npm@8.3.1",
+      "git clone https://github.com/JoshuaXOng/racing-odds-scraper.git",
+      "cd racing-odds-scraper",
+      "npm install",
+      "docker-compose up -d"
     ]
   }
 }
@@ -105,48 +104,26 @@ resource "digitalocean_firewall" "racing-odds-scraper-main" {
   }
 }
 
-resource "digitalocean_certificate" "racing-odds-scraper-main" {
-  name    = "racing-odds-scraper-cert-main"
-  type    = "lets_encrypt"
-  domains = [var.racing-odds-scraper-hostname]
+# resource "digitalocean_loadbalancer" "racing-odds-scraper-public" {
+#   name        = "racing-odds-scraper-lb-public"
+#   vpc_uuid = digitalocean_vpc.racing-odds-scraper-main.id
+#   region      = "sgp1"
 
-  lifecycle {
-    create_before_destroy = true
-  }
-}
+#   droplet_ids = [digitalocean_droplet.racing-odds-scraper-main.id]
 
-resource "digitalocean_loadbalancer" "racing-odds-scraper-public" {
-  name        = "racing-odds-scraper-lb-public"
-  vpc_uuid = digitalocean_vpc.racing-odds-scraper-main.id
-  region      = "sgp1"
+#   forwarding_rule {
+#     entry_port     = 80
+#     entry_protocol = "http"
+#     target_port     = 80
+#     target_protocol = "http"
+#   }
 
-  droplet_ids = [digitalocean_droplet.racing-odds-scraper-main.id]
+#   forwarding_rule {
+#     entry_port     = 443
+#     entry_protocol = "https"
+#     target_port     = 80
+#     target_protocol = "http"
 
-  forwarding_rule {
-    entry_port     = 80
-    entry_protocol = "http"
-    target_port     = 80
-    target_protocol = "http"
-  }
-
-  forwarding_rule {
-    entry_port     = 443
-    entry_protocol = "https"
-    target_port     = 80
-    target_protocol = "http"
-
-    certificate_name = digitalocean_certificate.racing-odds-scraper-main.name
-  }
-}
-
-// Still requires some manual configuration w/ .TECH domains - two way sorta deal.
-resource "digitalocean_domain" "racing-odds-scraper-main" {
-  name       = var.racing-odds-scraper-hostname
-}
-
-resource "digitalocean_record" "racing-odds-scraper-a" {
-  domain = digitalocean_domain.racing-odds-scraper-main.id
-  type   = "A"
-  name   = "@"
-  value  = digitalocean_loadbalancer.racing-odds-scraper-public.ip
-}
+#     certificate_name = digitalocean_certificate.racing-odds-scraper-main.name
+#   }
+# }
