@@ -60,10 +60,10 @@ resource "digitalocean_droplet" "nginx-main" {
   }
 
   provisioner "local-exec" {
-    command = "scp -i ${var.do_priv_key} ${var.racing-odds-scraper-pub-ssl-key} root@${self.ipv4_address}:/etc/letsencrypt/live/rammus.tech/fullchain.pem"
+    command = "scp -i ${var.do_priv_key} ${var.racing-odds-scraper-pub-ssl-key} root@${self.ipv4_address}:/etc/letsencrypt/live/${var.racing-odds-scraper-hostname}/fullchain.pem"
   }
   provisioner "local-exec" {
-    command = "scp -i ${var.do_priv_key} ${var.racing-odds-scraper-priv-ssl-key} root@${self.ipv4_address}:/etc/letsencrypt/live/rammus.tech/privkey.pem"
+    command = "scp -i ${var.do_priv_key} ${var.racing-odds-scraper-priv-ssl-key} root@${self.ipv4_address}:/etc/letsencrypt/live/${var.racing-odds-scraper-hostname}/privkey.pem"
   }
 }
 

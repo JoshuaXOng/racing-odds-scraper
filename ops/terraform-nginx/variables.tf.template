@@ -22,10 +22,10 @@ variable "racing-odds-scraper-hostname" {
   default =
 }
 
-variable "racing-odds-scraper-ssl-pub-key" {
+variable "racing-odds-scraper-pub-ssl-key" {
   default =
 }
 
-variable "racing-odds-scraper-ssl-priv-key" {
+variable "racing-odds-scraper-priv-ssl-key" {
   default =
 }
