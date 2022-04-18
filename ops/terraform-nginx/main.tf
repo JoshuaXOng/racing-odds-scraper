@@ -40,9 +40,10 @@ resource "digitalocean_droplet" "nginx-main" {
     }
 
     inline = [
+      "apt-get update",
+
       "git clone https://github.com/JoshuaXOng/racing-odds-scraper.git",
       
-      "apt-get update",
       "ufw allow http",
       "ufw allow https",
       "ufw allow 3000",
@@ -52,7 +53,7 @@ resource "digitalocean_droplet" "nginx-main" {
       "ufw allow out 443/tcp",
       "apt -y install nginx",
 
-      "mv /racing-odds-scraper/ops/nginx/jxo-gateway.conf /etc/nginx/conf.d/",
+      "mv /root/racing-odds-scraper/ops/nginx/jxo-gateway.conf /etc/nginx/conf.d/",
 
       "nginx -s reload",
     ]
@@ -135,23 +136,20 @@ resource "digitalocean_firewall" "nginx-main" {
   }
 }
 
-# resource "digitalocean_certificate" "nginx-main" {
-#   name    = "nginx-cert-main"
-#   type    = "lets_encrypt"
-#   domains = [var.nginx-hostname]
+resource "digitalocean_domain" "racing-odds-scraper-main" {
+  name       = var.racing-odds-scraper-hostname
+}
 
-#   lifecycle {
-#     create_before_destroy = true
-#   }
-# }
+resource "digitalocean_record" "racing-odds-scraper-a" {
+  domain = digitalocean_domain.racing-odds-scraper-main.id
+  type   = "A"
+  name   = "@"
+  value  = digitalocean_droplet.nginx-main.ipv4_address
+}
 
-# resource "digitalocean_domain" "nginx-main" {
-#   name       = var.nginx-hostname
-# }
-
-# resource "digitalocean_record" "nginx-a" {
-#   domain = digitalocean_domain.nginx-main.id
-#   type   = "A"
-#   name   = "@"
-#   value  = digitalocean_loadbalancer.nginx-public.ip
-# }
+resource "digitalocean_record" "racing-odds-scraper-aaaa" {
+  domain = digitalocean_domain.racing-odds-scraper-main.id
+  type   = "AAAA"
+  name   = "@"
+  value  = digitalocean_droplet.nginx-main.ipv6_address
+}
