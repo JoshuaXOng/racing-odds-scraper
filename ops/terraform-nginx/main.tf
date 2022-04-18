@@ -43,6 +43,7 @@ resource "digitalocean_droplet" "nginx-main" {
       "apt-get update",
       "ufw allow http",
       "ufw allow https",
+      "ufw allow 3000",
       "ufw allow 1337",
       "ufw allow out 80/tcp",
       "ufw allow out 443/tcp",
@@ -51,12 +52,14 @@ resource "digitalocean_droplet" "nginx-main" {
       "git clone https://github.com/JoshuaXOng/racing-odds-scraper.git",
       "cd ./racing-odds-scraper/ops/nginx/",
       "mv ./jxo-gateway.conf /etc/nginx/conf.d/",
+
+      "nginx -s reload",
     ]
   }
 }
 
 resource "digitalocean_firewall" "nginx-main" {
-  name = "nginx-fw-in-22-80-443-and-1337-out-misc"
+  name = "nginx-fw-in-misc-out-misc"
 
   droplet_ids = [digitalocean_droplet.nginx-main.id]
 
@@ -75,6 +78,12 @@ resource "digitalocean_firewall" "nginx-main" {
   inbound_rule {
     protocol         = "tcp"
     port_range       = "443"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "3000"
     source_addresses = ["0.0.0.0/0", "::/0"]
   }
 
