@@ -146,10 +146,3 @@ resource "digitalocean_record" "racing-odds-scraper-a" {
   name   = "@"
   value  = digitalocean_droplet.nginx-main.ipv4_address
 }
-
-resource "digitalocean_record" "racing-odds-scraper-aaaa" {
-  domain = digitalocean_domain.racing-odds-scraper-main.id
-  type   = "AAAA"
-  name   = "@"
-  value  = digitalocean_droplet.nginx-main.ipv6_address
-}
