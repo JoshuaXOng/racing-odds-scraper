@@ -5,3 +5,12 @@ export async function wrappedTryCatch<T>(onSuccess: () => T | Promise<T>): Promi
     return [undefined, error];
   }
 }
+
+export function getCurrentYyyyMmDd(): string {
+  const now = new Date();
+  const nowYYYY = now.getFullYear().toString();
+  const nowMM = (now.getMonth() + 1).toString().padStart(2, "0");
+  const nowDD = now.getDate().toString().padStart(2, "0");
+
+  return nowYYYY + nowMM + nowDD;
+}

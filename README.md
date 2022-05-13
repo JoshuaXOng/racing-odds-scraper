@@ -17,3 +17,4 @@ A containerized application for scraping and aggregating racing data (in close t
 - Bf seemingly does not update in race
 - NEED TO CLOSE ON DELAY because bookies websites don't update all at once - or dependent on schedule page...
 - Log to a file
+- Remove terraform code (I want deployment seperate from logic and ops)

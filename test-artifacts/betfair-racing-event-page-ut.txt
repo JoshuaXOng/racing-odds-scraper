@@ -1,110 +1,153 @@
-melton 202204162000
+scone 202205141105
 [
-  'jack laugher',
-  'm j craven',
-  'j h barker',
-  'g f webster',
-  'lochie cook',
-  'ryan sanderson',
-  'k m gath',
-  'c a alford',
-  'jordan leedham',
-  'j j caldow'
+  'hugh bowman',    'keagan latham',
+  'aaron bullock',  'dylan gibbons',
+  'grant buckley',  'reece jones',
+  'jason collett',  'jackson searle',
+  'alysha collett', 'kerrin mcevoy',
+  'ms rachel king', "kathy o'hara",
+  'jay ford',       'tyler schiller',
+  'tom sherry'
 ]
 {
-  'jack laugher': 'ozzie playboy',
-  'm j craven': 'lamandier',
-  'j h barker': 'eva mateo',
-  'g f webster': 'tuppence',
-  'lochie cook': 'glenavril king',
-  'ryan sanderson': 'radius',
-  'k m gath': 'rockingwithsierra',
-  'c a alford': 'kissmelvis',
-  'jordan leedham': 'franco jolto',
-  'j j caldow': 'messerati'
+  'hugh bowman': 'relucent',
+  'keagan latham': 'to the nines',
+  'aaron bullock': 'angelical',
+  'dylan gibbons': 'impactful',
+  'grant buckley': 'steplee',
+  'reece jones': 'the dramatist',
+  'jason collett': 'sungblue',
+  'jackson searle': 'jousting',
+  'alysha collett': 'raay of dreams',
+  'kerrin mcevoy': 'zadig',
+  'ms rachel king': 'hokahey',
+  "kathy o'hara": 'majestic wings',
+  'jay ford': 'running bear',
+  'tyler schiller': 'martian queen',
+  'tom sherry': 'keen contributer'
 }
 {
-  'jack laugher': [
-    { value: '2.82', money: '$40' },
-    { value: '3', money: '$26' },
-    { value: '3.15', money: '$500' },
-    { value: '980', money: '$24' },
+  'hugh bowman': [
+    { value: '9.8', money: '$22' },
+    { value: '13', money: '$86' },
+    { value: '14.5', money: '$42' },
+    { value: '1000', money: '$24' },
     { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'm j craven': [
+  'keagan latham': [
     { value: '0', money: '$0' },
-    { value: '2.3', money: '$26' },
-    { value: '2.9', money: '$88' },
-    { value: '980', money: '$19' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'j h barker': [
-    { value: '0', money: '$0' },
-    { value: '2.22', money: '$175' },
-    { value: '3', money: '$38' },
-    { value: '980', money: '$11' },
+    { value: '17.5', money: '$23' },
+    { value: '21', money: '$71' },
+    { value: '1000', money: '$9' },
     { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'g f webster': [
+  'aaron bullock': [
+    { value: '6', money: '$40' },
+    { value: '7', money: '$160' },
+    { value: '9', money: '$69' },
+    { value: '48', money: '$45' },
+    { value: '990', money: '$18' },
+    { value: '0', money: '$0' }
+  ],
+  'dylan gibbons': [
     { value: '0', money: '$0' },
-    { value: '2.16', money: '$36' },
-    { value: '4', money: '$60' },
+    { value: '17.5', money: '$23' },
+    { value: '21', money: '$75' },
+    { value: '1000', money: '$9' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'grant buckley': [
+    { value: '12', money: '$63' },
+    { value: '17', money: '$65' },
+    { value: '21', money: '$29' },
+    { value: '1000', money: '$9' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'reece jones': [
+    { value: '3.7', money: '$300' },
+    { value: '4.1', money: '$135' },
+    { value: '4.8', money: '$43' },
+    { value: '5.3', money: '$135' },
+    { value: '6.8', money: '$109' },
+    { value: '8.4', money: '$52' }
+  ],
+  'jason collett': [
+    { value: '7', money: '$33' },
+    { value: '8.6', money: '$129' },
+    { value: '10.5', money: '$53' },
+    { value: '880', money: '$44' },
+    { value: '1000', money: '$5' },
+    { value: '0', money: '$0' }
+  ],
+  'jackson searle': [
+    { value: '15.5', money: '$53' },
+    { value: '18', money: '$33' },
+    { value: '32', money: '$50' },
+    { value: '1000', money: '$7' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'alysha collett': [
+    { value: '0', money: '$0' },
+    { value: '1.02', money: '$22' },
+    { value: '32', money: '$65' },
     { value: '0', money: '$0' },
     { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'lochie cook': [
+  'kerrin mcevoy': [
     { value: '0', money: '$0' },
-    { value: '1.94', money: '$17' },
-    { value: '2.3', money: '$38' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'ryan sanderson': [
-    { value: '0', money: '$0' },
-    { value: '1.92', money: '$37' },
-    { value: '2.9', money: '$56' },
-    { value: '980', money: '$25' },
+    { value: '15.5', money: '$25' },
+    { value: '21', money: '$77' },
+    { value: '1000', money: '$9' },
     { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'k m gath': [
-    { value: '0', money: '$0' },
-    { value: '1.76', money: '$18' },
-    { value: '1.95', money: '$138' },
-    { value: '980', money: '$32' },
-    { value: '0', money: '$0' },
-    { value: '0', money: '$0' }
-  ],
-  'c a alford': [
-    { value: '0', money: '$0' },
-    { value: '1.45', money: '$40' },
-    { value: '1.6', money: '$181' },
-    { value: '4', money: '$212' },
-    { value: '980', money: '$31' },
-    { value: '0', money: '$0' }
-  ],
-  'jordan leedham': [
-    { value: '0', money: '$0' },
-    { value: '1.92', money: '$20' },
-    { value: '2.28', money: '$40' },
-    { value: '0', money: '$0' },
+  'ms rachel king': [
+    { value: '11.5', money: '$31' },
+    { value: '16', money: '$69' },
+    { value: '19.5', money: '$31' },
+    { value: '1000', money: '$11' },
     { value: '0', money: '$0' },
     { value: '0', money: '$0' }
   ],
-  'j j caldow': [
+  "kathy o'hara": [
     { value: '0', money: '$0' },
-    { value: '2', money: '$25' },
-    { value: '2.28', money: '$39' },
+    { value: '18', money: '$33' },
+    { value: '32', money: '$53' },
+    { value: '1000', money: '$7' },
     { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'jay ford': [
+    { value: '8', money: '$28' },
+    { value: '10', money: '$123' },
+    { value: '13.5', money: '$46' },
+    { value: '1000', money: '$32' },
     { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'tyler schiller': [
+    { value: '15.5', money: '$53' },
+    { value: '18', money: '$33' },
+    { value: '32', money: '$50' },
+    { value: '1000', money: '$7' },
+    { value: '0', money: '$0' },
+    { value: '0', money: '$0' }
+  ],
+  'tom sherry': [
+    { value: '8', money: '$28' },
+    { value: '11', money: '$109' },
+    { value: '12.5', money: '$44' },
+    { value: '14', money: '$79' },
+    { value: '1000', money: '$37' },
     { value: '0', money: '$0' }
   ]
 }
-isEventInPlay: true
+isEventInPlay: false
 isEventSuspended: false
 hasEventEnded: false
