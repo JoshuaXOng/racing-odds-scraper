@@ -16,7 +16,7 @@ A containerized application for scraping and aggregating racing data (in close t
 - Find out if `screenshot(...)` has an un-awaitable capture-length/delay - no, DOM does not load in fast enough
 - Add self closing functionality to pages (w/ a potential delay) - confirm with last of schedule page and event page
 - Bf seemingly does not update in race
-- 
+
 ### Likely Fixes:
 
 - Set a timeout for puppeteer `waitForSelector(...)` - handle
