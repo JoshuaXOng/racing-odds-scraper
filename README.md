@@ -7,7 +7,6 @@ A containerized application for scraping and aggregating racing data (in close t
 
 ### Miscellaneous notes:
 
-- Filter out green icon in bf schedule links (appears before event start)
 - YYYYMMDDHHSS
 - Remove terraform code (remove deployment logic from ops and bus. logic)
 
