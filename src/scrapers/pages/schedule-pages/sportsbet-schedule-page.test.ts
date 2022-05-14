@@ -10,7 +10,7 @@ const sportsbetSchedulePageLogger = new Console({
 });
 
 describe("SportsBetSchedulePage Unit Tests.", () => {
-  jest.setTimeout(40000);
+  jest.setTimeout(20000);
 
   let driverBrowser: PBrowser;
   let browser: Browser;

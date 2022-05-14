@@ -35,33 +35,45 @@ export class SportsBetSchedulePage extends SchedulePage {
 
     await this.driverPage.waitForSelector(`.${sportsbetSchedulePageConstants.racing.html.classNames.unfinishedEvent}`);
 
-    const formattedVrNames = await this.getVenueNames();
+    const formattedVenueNames = await this.getVenueNames();
 
-    const formattedVrEvents = await this.driverPage.$$eval(`.${sportsbetSchedulePageConstants.racing.html.classNames.scheduleRow}`, (venueRows) => {  
-      return venueRows.map(vr => {
+    let formattedVrEvents = await this.driverPage.$$eval(`.${sportsbetSchedulePageConstants.racing.html.classNames.scheduleRow}`, (venueRows) => {  
+      return venueRows.map(venueRow => {
         const now = new Date();
-        const nowYYYY = now.getFullYear().toString();
-        const nowMM = (now.getMonth() + 1).toString().padStart(2, "0");
-        const nowDD = now.getDate().toString().padStart(2, "0");
+        const nowYyyy = now.getFullYear().toString();
+        const nowMm = (now.getMonth() + 1).toString().padStart(2, "0");
+        const nowDd = now.getDate().toString().padStart(2, "0");
 
-        let vrEvents: { link: string | null, time: string }[] = [];
-        for (let i = 1; i < vr.children.length; i++) {
-          vrEvents.push({
-            link: vr.children[0]!.getAttribute("href"),
-            time: `${nowYYYY}${nowMM}${nowDD}${vr.innerHTML.replace(":", "")}`,
+        let venueRowEvents: { link: string | null, time: string }[] = [];
+        for (let i = 1; i < venueRow.children.length; i++) {
+          let venueRowEventText = (venueRow.children[i] as HTMLElement).innerText;
+
+          if (venueRowEventText.includes("m")) {
+            const eventStart = new Date(now);
+            eventStart.setMinutes(eventStart.getMinutes() + parseInt(venueRowEventText.split(" ")[0]!.replace("m", "")));
+            venueRowEventText = `${eventStart.getHours()}:${eventStart.getMinutes()}`;
+          } else if (venueRowEventText.includes("s")) {
+            const eventStart = new Date(now);
+            venueRowEventText = `${eventStart.getHours()}:${eventStart.getMinutes()}`;
+          } else if (!venueRowEventText.includes(":"))
+            continue;
+
+          venueRowEvents.push({
+            link: window.location.origin + venueRow.children[i]!.children[0]!.getAttribute("href"),
+            time: `${nowYyyy}${nowMm}${nowDd}${venueRowEventText.replace(":", "")}`,
           })
         }
         
-        return vrEvents;
+        return venueRowEvents;
       })
     });
 
-    if (formattedVrNames.length !== formattedVrEvents.length)
+    if (formattedVenueNames.length !== formattedVrEvents.length)
       throw new SchedulePageError("Number of read venue location names do not match rows of data");
 
     let venueNamesToEvents = {};
-    for (let index of formattedVrNames.keys()) {
-      const venueName = formattedVrNames[index]!;
+    for (let index of formattedVenueNames.keys()) {
+      const venueName = formattedVenueNames[index]!;
       const venueEvents = formattedVrEvents[index];
 
       venueNamesToEvents = { ...venueNamesToEvents, [venueName]: venueEvents };
