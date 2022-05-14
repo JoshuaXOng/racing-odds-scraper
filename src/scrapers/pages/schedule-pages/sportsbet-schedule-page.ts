@@ -1,4 +1,5 @@
 // import { bookiesToUrls } from "../../../constants";
+import { ScheduleViewEvent } from "src/scrapers/scraper-types";
 import { SchedulePage, SchedulePageError } from "../schedule-page";
 
 const sportsbetSchedulePageConstants = {
@@ -44,11 +45,14 @@ export class SportsBetSchedulePage extends SchedulePage {
         const nowMm = (now.getMonth() + 1).toString().padStart(2, "0");
         const nowDd = now.getDate().toString().padStart(2, "0");
 
-        let venueRowEvents: { link: string | null, time: string }[] = [];
+        let venueRowEvents: ScheduleViewEvent[] = [];
         for (let i = 1; i < venueRow.children.length; i++) {
           let venueRowEventText = (venueRow.children[i] as HTMLElement).innerText;
-
-          if (venueRowEventText.includes("m")) {
+          
+          if (venueRowEventText.includes("LIVE") || venueRowEventText.includes("-")) {
+            const eventStart = new Date(now);
+            venueRowEventText = `${eventStart.getHours()}:${eventStart.getMinutes()}`;
+          } else if (venueRowEventText.includes("m")) {
             const eventStart = new Date(now);
             eventStart.setMinutes(eventStart.getMinutes() + parseInt(venueRowEventText.split(" ")[0]!.replace("m", "")));
             venueRowEventText = `${eventStart.getHours()}:${eventStart.getMinutes()}`;
@@ -61,6 +65,7 @@ export class SportsBetSchedulePage extends SchedulePage {
           venueRowEvents.push({
             link: window.location.origin + venueRow.children[i]!.children[0]!.getAttribute("href"),
             time: `${nowYyyy}${nowMm}${nowDd}${venueRowEventText.replace(":", "")}`,
+            raceNo: `${i}`,
           })
         }
         

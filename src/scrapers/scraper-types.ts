@@ -1,5 +1,11 @@
+export type ScheduleViewEvent = { 
+  link: string; 
+  time: string;
+  raceNo: string;
+};
+
 export type EventSchedule = {
-  [key: string]: { link: string; time: string }[];
+  [key: string]: ScheduleViewEvent[];
 };
 
 export type Venue = {
