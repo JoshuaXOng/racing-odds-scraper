@@ -7,14 +7,25 @@ A containerized application for scraping and aggregating racing data (in close t
 
 ### Miscellaneous notes:
 
-- Profile performance...
-- Set a timeout for puppeteer `waitForSelector(...)` - handle
-- Find out if `screenshot(...)` has an un-awaitable capture-length/delay - no, DOM does not load in fast enough
 - Filter out green icon in bf schedule links (appears before event start)
-- Add self closing functionality to pages (w/ a potential delay)
-- Pages should self poll
 - YYYYMMDDHHSS
+- Remove terraform code (remove deployment logic from ops and bus. logic)
+
+### Issues:
+
+- Find out if `screenshot(...)` has an un-awaitable capture-length/delay - no, DOM does not load in fast enough
+- Add self closing functionality to pages (w/ a potential delay) - confirm with last of schedule page and event page
 - Bf seemingly does not update in race
-- NEED TO CLOSE ON DELAY because bookies websites don't update all at once - or dependent on schedule page...
-- Log to a file
-- Remove terraform code (I want deployment seperate from logic and ops)
+
+### Likely Fixes:
+
+- Set a timeout for puppeteer `waitForSelector(...)` - handle
+- Puppeteer runs browser queries in isolation - "XXS" to fetch localy hosted scripts
+
+### Look Into:
+
+- Log to a file plis
+- Profile performance...
+- D3
+- Some analysis tool
+- Desktop Appication for visualization (Electron, Taurin)
